@@ -1,0 +1,328 @@
+
+      <article>
+        <div class="container">
+          <div class="image_prod">
+            <img [src]="product.images[0].src" [alt]="product.images[0].alt">
+          </div>
+          <div class="link" (click)="open()">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </div>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              {{product.title}}
+              
+            </div>
+            <!-- <div class="container__signature-price">
+              23 руб
+            </div> -->
+          </div>
+        </div>
+      </article>
+
+<!-- 
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/2.jpg" alt="Болт БСР">
+          <a class="link" href="./boltbsr.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Болт БСР
+            </div>
+            <div class="container__signature-price">
+              49 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/3.jpg" alt="Анкерный болт">
+          <a class="link" href="./anchorbolt.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Анкерный болт
+            </div>
+            <div class="container__signature-price">
+              57 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/4.jpg" alt="Закладная деталь">
+          <a class="link" href="./embeddedpart.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Закладная деталь
+            </div>
+            <div class="container__signature-price">
+              278 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/2.jpg" alt="Болт БСР">
+          <a class="link" href="./boltbsr.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Болт БСР
+            </div>
+            <div class="container__signature-price">
+              49 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/5.jpg" alt="Футеровочный болт">
+          <a class="link" href="./metallplate.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Футеровочный болт
+            </div>
+            <div class="container__signature-price">
+              34 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/6.jpg" alt="Гайка">
+          <a class="link" href="./screw.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Гайка
+            </div>
+            <div class="container__signature-price">
+              34 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/7.jpg" alt="Усиленная гайка">
+          <a class="link" href="./embeddedscrew.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Усиленная гайка
+            </div>
+            <div class="container__signature-price">
+              59 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/8.jpg" alt="Контршайба">
+          <a class="link" href="./counterwasher.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Контршайба
+            </div>
+            <div class="container__signature-price">
+              32 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/9.jpg" alt="Гвоздь">
+          <a class="link" href="./nail.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Гвоздь
+            </div>
+            <div class="container__signature-price">
+              12 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/10.jpg" alt="Корончатая гайка">
+          <a class="link" href="./castellatednut.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Корончатая гайка
+            </div>
+            <div class="container__signature-price">
+              66 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/11.jpg" alt="Оси">
+          <a class="link" href="./osi.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Оси
+            </div>
+            <div class="container__signature-price">
+              113 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/12.jpg" alt="Откидной болт">
+          <a class="link" href="./swingbolt.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Откидной болт
+            </div>
+            <div class="container__signature-price">
+              98 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/13.jpg" alt="Саморез">
+          <a class="link" href="./selftappingscrew.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Саморез
+            </div>
+            <div class="container__signature-price">
+              10 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/14.jpg" alt="Высокопрочная шайба">
+          <a class="link" href="./highstrengthwasher.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Высокопрочная шайба
+            </div>
+            <div class="container__signature-price">
+              32 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/15.jpg" alt="Шарнир">
+          <a class="link" href="./sharnir.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Шарнир
+            </div>
+            <div class="container__signature-price">
+              256 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/16.jpg" alt="Шлицевая гайка">
+          <a class="link" href="./shlicevaya.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Шлицевая гайка
+            </div>
+            <div class="container__signature-price">
+              256 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/17.jpg" alt="Штуцер">
+          <a class="link" href="./shtuzer.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Штуцер
+            </div>
+            <div class="container__signature-price">
+              569 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/18.jpg" alt="Скоба">
+          <a class="link" href="./brace.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Скоба
+            </div>
+            <div class="container__signature-price">
+              98 руб
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="container">
+          <img src="http://192.168.113.30:8080/assets/19.jpg" alt="Стопорное кольцо">
+          <a class="link" href="./retainingring.html">
+            <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+          </a>
+          <div class="container__signature">
+            <div class="container__signature-name">
+              Стопорное кольцо
+            </div>
+            <div class="container__signature-price">
+              87 руб
+            </div>
+          </div>
+        </div>
+      </article>
+
+ -->

@@ -1,0 +1,119 @@
+<!-- <div [classList]="product.images[0].alt" class="product">
+
+  <img [src]="product.images[0].src" alt="" class="product_img">
+  <h2>{{product.name}}</h2>
+  <p>{{product.title}}</p>
+  <button 
+    class="button_details"
+    [ngClass]="{
+      'button_details_yellow': !detail,
+      'button_details_blue': detail
+    }"
+    (click)="detail = !detail"
+  >
+    {{ detail ? 'Скрыть' : 'Показать' }} детали  
+  </button>
+  <div *ngIf="detail">
+    <p>{{product.desc}}</p>
+  </div>
+
+</div> -->
+<!-- <app-product 
+    *ngFor="let product of products" 
+    [product]="product"
+  ></app-product> -->
+<main class="">
+  <div class="page">
+
+    <div class="titles">
+      Продукция
+    </div>
+    <div class="section-center products">
+
+      <!-- <section class="nav">
+        <div class="nav-form">
+          <form class="">
+            <div class="form-control"><input type="text" name="text" id="search" placeholder="Поиск"
+                class="search-input" value=""></div>
+            <div class="form-control form-category">
+              <h5>Категории</h5>
+              <select name="category" class="category" id="nav-category">
+                <option value="all">Все</option>
+                <option value="fasteners">Крепежные детали</option>
+                <option value="embedded">Закладные детали</option>
+                <option value="anchor">Анкера</option>
+                <option value="high-strength">Высокопрочный крепеж</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <h5>Марка стали</h5>
+              <select name="steel" class="steel" id="nav-steel">
+                <option value="all">Все</option>
+                <option value="09Г2С">09Г2С</option>
+                <option value="14Х17Н2">14Х17Н2</option>
+                <option value="12Х18Н10Т">12Х18Н10Т</option>
+                <option value="30ХГСА">30ХГСА</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <h5>Покрытие</h5>
+              <select name="coating" class="coating" id="nav-coating">
+                <option value="all">Все</option>
+                <option value="brass">Латунь</option>
+                <option value="zinc">Цинк</option>
+                <option value="copper">Медь</option>
+                <option value="steel">Сталь</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <div id="slider" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+                <div class="noUi-base">
+                  <div class="noUi-connects">
+                    <div class="noUi-connect" style="transform: translate(1.9019%, 0px) scale(0.980981, 1);"></div>
+                  </div>
+                  <div class="noUi-origin" style="transform: translate(-98.0981%, 0px); z-index: 5;">
+                    <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider"
+                      aria-orientation="horizontal" aria-valuemin="1.0" aria-valuemax="1000.0" aria-valuenow="20.0"
+                      aria-valuetext="20.00">
+                      <div class="noUi-touch-area"></div>
+                      <div class="noUi-tooltip">20.0</div>
+                    </div>
+                  </div>
+                  <div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;">
+                    <div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider"
+                      aria-orientation="horizontal" aria-valuemin="20.0" aria-valuemax="1000.0" aria-valuenow="1000.0"
+                      aria-valuetext="1000.00">
+                      <div class="noUi-touch-area"></div>
+                      <div class="noUi-tooltip">1000.0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form><button class="clear-filter" type="button">Очистить фильтры</button>
+        </div>
+      </section> -->
+      <section class="cards">
+        <div class="cards__area">
+          <div class="products-container">
+            <app-prod [product]="products[0]"></app-prod>
+            <app-prod [product]="products[1]"></app-prod>
+            <app-prod [product]="products[2]"></app-prod>
+            <app-prod [product]="products[3]"></app-prod>
+            <app-prod [product]="products[4]"></app-prod>
+            <app-prod [product]="products[5]"></app-prod>
+            <app-prod [product]="products[6]"></app-prod>
+            <app-prod [product]="products[7]"></app-prod>
+            <app-prod [product]="products[8]"></app-prod>
+            <app-prod [product]="products[9]"></app-prod>
+            <app-prod [product]="products[10]"></app-prod>
+            <app-prod [product]="products[11]"></app-prod>
+            <app-prod [product]="products[12]"></app-prod>
+            <app-prod [product]="products[13]"></app-prod>
+            <app-prod [product]="products[14]"></app-prod>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
