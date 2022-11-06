@@ -1,6 +1,6 @@
 {
   "name": "msametiz",
-  "version": "0.0.0",
+  "version": "0.3.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,9 +11,13 @@
     "serve:ssr": "node dist/msametiz/server/main.js",
     "build:ssr": "ng build && ng run msametiz:server",
     "prerender": "ng run msametiz:prerender",
-    "postinstall": "ng build --prod"
+    "postinstall": "ng build"
   },
   "private": true,
+  "engines": {
+    "node": "16.13.1",
+    "npm": "8.13.2"
+  },
   "dependencies": {
     "@angular/animations": "^14.2.3",
     "@angular/common": "^14.2.0",
