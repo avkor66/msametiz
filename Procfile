@@ -1,1 +1,1 @@
-web: node dist/msametiz/server/main.js
+web: node main.js
