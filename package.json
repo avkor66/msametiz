@@ -4,12 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:ssr": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run msametiz:serve-ssr",
     "serve:ssr": "node dist/msametiz/server/main.js",
-    "build:ssr": "ng build && ng run msametiz:server",
+    "build": "ng build && ng run msametiz:server",
     "prerender": "ng run msametiz:prerender",
     "postinstall": "ng build"
   },
