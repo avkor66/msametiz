@@ -1,0 +1,1 @@
+web: node dist/msametiz/server/main.js
