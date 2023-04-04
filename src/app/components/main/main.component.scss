@@ -132,6 +132,7 @@ section {
     background-repeat: no-repeat;
     color: #FFF;
     height: 60vh;
+    min-height: 500px;
 
     &__wrapper {
       width: $width;
@@ -162,6 +163,7 @@ section {
     background-repeat: no-repeat;
     color: #FFF;
     height: 80vh;
+    min-height: 500px;
 
     &__wrapper {
       width: $width;
@@ -412,7 +414,7 @@ section {
 }
 
 .carusel {
-  height: 100%;
+  height: 91%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -553,6 +555,8 @@ section {
 
 a {
   text-decoration: none;
+  color: #FFFFFF;
+
 }
 
 header {

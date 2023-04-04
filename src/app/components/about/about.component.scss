@@ -140,6 +140,7 @@ section {
     background-repeat: no-repeat;
     color: #FFF;
     height: 60vh;
+    min-height: 500px;
 
     &__wrapper {
       width: $width;

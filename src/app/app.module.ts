@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,8 +16,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { TitleComponent } from './components/title/title.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+// import { CaruselComponent } from './components/carusel/carusel.component';
 import { ProductService } from './service/product.servise';
 import { HttpClientModule } from "@angular/common/http";
+import { LeftRightComponent } from './components/left-right/left-right.component';
+import { LeftRightEqComponent } from './components/left-right-eq/left-right-eq.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -33,11 +38,17 @@ import { HttpClientModule } from "@angular/common/http";
     PageNotFoundComponent,
     ProductComponent,
     ServicesComponent,
+    // CaruselComponent,
+    LeftRightEqComponent,
+    LeftRightComponent,
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
+    SwiperModule,
     RouterModule.forRoot([
       {path: 'delivery', component: DeliveryComponent},
       {path: '', component: MainComponent},
