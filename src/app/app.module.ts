@@ -22,6 +22,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { LeftRightComponent } from './components/left-right/left-right.component';
 import { LeftRightEqComponent } from './components/left-right-eq/left-right-eq.component';
 import { SwiperModule } from 'swiper/angular';
+import { CalcComponent } from './components/calc/calc.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SwiperModule } from 'swiper/angular';
     // CaruselComponent,
     LeftRightEqComponent,
     LeftRightComponent,
+    CalcComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { SwiperModule } from 'swiper/angular';
       {path: 'contacts', component: ContactsComponent},
       {path: 'equipment', component: EquipmentComponent},
       {path: 'services', component: ServicesComponent},
+      {path: 'calc', component: CalcComponent},
       // {path: '', redirectTo: '/products', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent},
     ]),
@@ -69,4 +72,3 @@ import { SwiperModule } from 'swiper/angular';
   ]
 })
 export class AppModule { }
- 
