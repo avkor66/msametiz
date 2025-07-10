@@ -23,6 +23,10 @@ import { LeftRightComponent } from './components/left-right/left-right.component
 import { LeftRightEqComponent } from './components/left-right-eq/left-right-eq.component';
 import { SwiperModule } from 'swiper/angular';
 import { CalcComponent } from './components/calc/calc.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { SignupComponent } from './components/signup/signup.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
   declarations: [
@@ -43,27 +47,31 @@ import { CalcComponent } from './components/calc/calc.component';
     LeftRightEqComponent,
     LeftRightComponent,
     CalcComponent,
+    ModalComponent,
+    SignupComponent,
+    FocusDirective,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    HttpClientModule,
-    SwiperModule,
-    RouterModule.forRoot([
-      {path: 'delivery', component: DeliveryComponent},
-      {path: '', component: MainComponent},
-      {path: 'about', component: AboutComponent},
-      {path: 'products', component: ProductComponent},
-      {path: 'contacts', component: ContactsComponent},
-      {path: 'equipment', component: EquipmentComponent},
-      {path: 'services', component: ServicesComponent},
-      {path: 'calc', component: CalcComponent},
-      // {path: '', redirectTo: '/products', pathMatch: 'full'},
-      {path: '**', component: PageNotFoundComponent},
-    ]),
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        BrowserModule.withServerTransition({appId: 'serverApp'}),
+        AppRoutingModule,
+        HttpClientModule,
+        SwiperModule,
+        RouterModule.forRoot([
+            {path: 'delivery', component: DeliveryComponent},
+            {path: '', component: MainComponent},
+            {path: 'about', component: AboutComponent},
+            {path: 'products', component: ProductComponent},
+            {path: 'contacts', component: ContactsComponent},
+            {path: 'equipment', component: EquipmentComponent},
+            {path: 'services', component: ServicesComponent},
+            {path: 'calc', component: CalcComponent},
+            // {path: '', redirectTo: '/products', pathMatch: 'full'},
+            {path: '**', component: PageNotFoundComponent},
+        ]),
+        ReactiveFormsModule,
+    ],
   providers: [
     ProductService
   ],
