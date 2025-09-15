@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import {ModalService} from "../../service/modal.service";
 const logo = '../../../assets/data/images/logo.svg'
 const tgl = '../../../assets/data/images/icons/btn-toggle.svg'
 
@@ -11,13 +12,14 @@ const tgl = '../../../assets/data/images/icons/btn-toggle.svg'
 export class HeaderComponent {
   logo = logo
   tgl = tgl
-  
+  constructor(public  modalService: ModalService) {
+  }
   // const btnToggle = document.getElementById('btn-toggle')
   // const menuToggle = document.getElementById('toggle-menu')
   // const navMenuItem = document.querySelectorAll('.nav-menu-item')
   // let flag = false
   // let rand = Math.floor(Math.random() * 8)
-  
+
   // window.onscroll = function(){
   //     return false;
   //   }
@@ -37,22 +39,22 @@ export class HeaderComponent {
   //         const cardPets_ = document.createElement('div')
   //         cardPets_.classList.add('modal__menu')
   //         document.body.insertAdjacentElement('afterbegin', cardPets_)
-     
+
   //         document.querySelector('.modal__menu').addEventListener('click', () => {
   //             menuToggle.classList.add('transition-toggle-menu-leave')
-  
+
   //             menuToggle.classList.remove('transition-toggle-menu')
   //             btnToggle.classList.remove('rotate')
   //             btnToggle.classList.add('rotate-leave')
   //             flag = false
-  //             document.querySelector('.modal__menu').remove()    
+  //             document.querySelector('.modal__menu').remove()
   //         })
-  
+
   //     }
   // })
   // menuToggle.addEventListener('animationend', () => {
   //     menuToggle.classList.remove('transition-toggle-menu-leave')
-  
+
   // })
 
 

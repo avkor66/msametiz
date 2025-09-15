@@ -72,7 +72,7 @@
       </button>
     </div>
     <div class="header__order__btn">
-      <button>
+      <button (click)="modalService.open()" >
         ВОЙТИ
       </button>
     </div>
@@ -105,7 +105,7 @@
   <img src="{{ tgl }}" alt="btn-toggle" class="toggle__img">
 </div>
 
-  <app-modal title="Регистрация">
+  <app-modal *ngIf="modalService.isVisible$ | async" title="Регистрация">
     <app-signup></app-signup>
   </app-modal>
 
