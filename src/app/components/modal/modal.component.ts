@@ -8,7 +8,13 @@ import {ModalService} from "../../service/modal.service";
 })
 export class ModalComponent implements OnInit {
 
-  @Input() title: string;
+  @Input() title: string = '';
+  mode: 'signin' | 'signup' = 'signin';
+
+  switchMode(newMode: 'signin' | 'signup') {
+    this.mode = newMode;
+  }
+
   constructor(public modalService: ModalService) { }
 
   ngOnInit(): void {

@@ -1,4 +1,8 @@
-<form class="modal__form" [formGroup]="form" (ngSubmit)="submit()">
+<form
+  class="modal__form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
   <input type="text" id="email" formControlName="email" class="modal__input" placeholder="email" appFocus>
   <p class="modal__validator"
      *ngIf="email.errors?.email && email.touched"
@@ -8,5 +12,7 @@
   <p class="modal__validator"
      *ngIf="password.errors?.minlength && password.touched"
   >Min length 6 characters</p>
-  <button class="modal__button" type="submit">SIGNUP</button>
+
+  <button class="modal__button" type="submit">Зарегистрирповаться</button>
+
 </form>

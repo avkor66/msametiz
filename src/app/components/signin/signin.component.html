@@ -1,0 +1,31 @@
+<form
+  class="modal__form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+
+  <input
+    formControlName="email"
+    type="text" id="email"
+    class="modal__input" placeholder="email"
+    appFocus
+  >
+
+  <p class="modal__validator"
+     *ngIf="email?.errors?.email && email?.touched"
+  >Incorrect input Email</p>
+
+  <input
+    formControlName="password"
+    type="password" id="password"
+    class="modal__input" placeholder="password"
+  >
+
+  <p class="modal__validator"
+     *ngIf="password?.errors?.minlength && password?.touched"
+  >Min length 6 characters</p>
+
+  <button class="modal__button" type="submit">Войти</button>
+
+</form>
+

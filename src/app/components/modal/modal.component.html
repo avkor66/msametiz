@@ -3,11 +3,31 @@
   (click)="modalService.close()"
 ></div>
 
-
 <div class="modal">
   <h1 class="modal__title">
-    {{ title | titlecase }}
+    {{ mode === 'signin' ? 'Вход' : 'Регистрация' }}
   </h1>
 
-  <ng-content></ng-content>
+  <div *ngIf="mode === 'signin'">
+    <app-signin></app-signin>
+
+    Нет аккаунта?
+    <a href="#"
+       class="button" type="submit"
+       (click)="switchMode('signup')"
+    >Зарегистрироваться</a>
+
+  </div>
+
+  <div *ngIf="mode === 'signup'">
+    <app-signup></app-signup>
+
+    Есть аккаунт?
+    <a href="#"
+       class="button" type="submit"
+       (click)="switchMode('signin')"
+    >Войти</a>
+
+  </div>
+
 </div>
