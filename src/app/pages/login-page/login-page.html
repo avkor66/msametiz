@@ -1,15 +1,38 @@
-<form action="" class="login-form">
+<form
+
+  class="login-form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
   <h1 class="h1 mb60">Вход</h1>
   <label class="control-label mb16">
     Login
-    <input class="control-input" type="text" placeholder="Введите логин">
+    <input
+      formControlName="email"
+      class="control-input"
+      type="text"
+      placeholder="Введите логин"
+    >
+<!--    <p class="modal__validator"-->
+<!--       *ngIf="email?.errors?.email && email?.touched"-->
+<!--    >Incorrect input Email</p>-->
   </label>
   <label class="control-label mb32">
     Password
-    <input class="control-input" type="password" placeholder="Введите пароль">
+    <input
+      formControlName="password"
+      class="control-input"
+      type="password"
+      placeholder="Введите пароль"
+    >
+<!--    <p class="modal__validator"-->
+<!--       *ngIf="password?.errors?.minlength && password?.touched"-->
+<!--    >Min length 6 characters</p>-->
   </label>
 
-  <button class="btn btn-shadow">Войти</button>
+  <button class="btn btn-shadow" type="submit">Войти</button>
 </form>
 
 <img src="/assets/images/logo.svg" alt="logo">
+
+
