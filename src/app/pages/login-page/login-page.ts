@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Auth} from '../../auth/auth';
 import {Router} from '@angular/router';
@@ -16,6 +16,7 @@ export class LoginPage {
   authService = inject(Auth);
   router = inject(Router);
 
+  isPasswordVisible = signal<boolean>(false)
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,7 +37,6 @@ export class LoginPage {
       this.authService.login(this.form.value)
         .subscribe(res => {
           this.router.navigate(['/']);
-          console.log(res);
       })
     }
   }

@@ -11,3 +11,27 @@ img {
   width: 80%;
   max-width: 500px;
 }
+
+#SVGRepo_bgCarrier {
+  height: 20px;
+  width: 20px;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.password-eye-btn.active {
+  color: var(--primary-color);
+}

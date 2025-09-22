@@ -4,12 +4,15 @@ import {SearchPage} from './pages/search-page/search-page';
 import {ProfilePage} from './pages/profile-page/profile-page';
 import {Layout} from './common-ui/layout/layout';
 import {canActivateAuth} from './auth/access.gard';
+import {SettingsPage} from './pages/settings-page/settings-page';
 
 export const routes: Routes = [
   {
     path: '', component: Layout, children: [
-      {path: '', component: SearchPage},
-      {path: 'profile', component: ProfilePage},
+      {path: '', redirectTo: 'profile/me', pathMatch: 'full'},
+      {path: 'profile/:id', component: ProfilePage},
+      {path: 'settings', component: SettingsPage},
+      {path: 'search', component: SearchPage},
     ],
     canActivate: [canActivateAuth]
   },
