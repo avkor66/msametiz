@@ -31,7 +31,7 @@
 
 <div class="mt20 to-subscribers">
   <a
-    [routerLink]="['/subscribers']"
+    [routerLink]="['/users/subscribers']"
     class="to-subscriber-link medium-text"
   >Все подписчики</a>
   <svg icon="arrow" class="to-subscriber-icon"></svg>
@@ -46,7 +46,7 @@
       <img src="/assets/images/avatar.jpeg" alt="avatar">
     }
     <div class="medium-text username-text">{{ me.firstName }}.{{ me.lastName }}</div>
-    <a [routerLink]="['settings']" class="settings-btn">
+    <a [routerLink]="['/users/settings']" class="settings-btn">
       <svg icon="settings" class="svg-icon"></svg>
     </a>
   }

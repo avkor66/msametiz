@@ -9,10 +9,10 @@ import {ProfileService} from "../../data/services/profile";
     RouterOutlet,
     Sidebar
   ],
-  templateUrl: './layout.html',
-  styleUrl: './layout.scss'
+  templateUrl: './layout-profile.html',
+  styleUrl: './layout-profile.scss'
 })
-export class Layout {
+export class LayoutProfile {
   // profileService = inject(ProfileService);
   // ngOnInit() {
   //   console.log('me in ngOnInit()');

@@ -1,0 +1,33 @@
+<img
+  src="/assets/images/logo.svg"
+  alt="logo"
+  class=""
+>
+
+<nav class="header-menu">
+
+  <h1 class="h4 mt6">МетСервис-А</h1>
+
+  <ul class="header-menu-list">
+    @for (menuItem of menuItems; track menuItem) {
+      <li>
+        <a
+          class="menu-item"
+          [routerLink]="[menuItem.link]"
+          routerLinkActive="active"
+        >
+          <svg [icon]="menuItem.icon" class="svg-icon"></svg>
+          <span>{{ menuItem.label }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
+
+
+<div class="header-btn">
+  <a class="btn to-header-btn" [routerLink]="['/login']">Войти</a>
+
+  <a class="btn to-header-btn" [routerLink]="['/login']">Заказать</a>
+</div>
+

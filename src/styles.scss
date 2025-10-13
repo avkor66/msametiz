@@ -44,6 +44,10 @@ body {
   margin-bottom: 60px;
 }
 
+.mt6 {
+  margin-top: 6px;
+}
+
 .ml16 {
   margin-left: 16px;
 }
@@ -120,6 +124,7 @@ body {
   font-weight: 500;
   line-height: 16px;
 }
+
 .regular {
   font-size: 14px;
   font-style: normal;
@@ -148,6 +153,7 @@ body {
   font-family: "JetBrains Mono", sans-serif;
   color: var(--light-color);
 }
+
 .form-input {
   font-size: 14px;
   font-style: normal;
