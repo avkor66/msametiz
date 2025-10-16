@@ -1,0 +1,21 @@
+
+<div class="carousel">
+  <div class="carousel__title">
+    {{ header }}
+  </div>
+<swiper-container
+  mousewheel-force-to-axis="true"
+  slides-per-view="2"
+  pagination="true"
+  navigation="true"
+>
+  @for (photo of photos; track photo) {
+    <swiper-slide>
+      <div class="carousel-items">
+        <img class="carousel__image" [src]="[photo.url]" [alt]="photo.label" />
+        <span class="carousel-items-name">{{ photo.label }}</span>
+      </div>
+    </swiper-slide>
+  }
+</swiper-container>
+</div>

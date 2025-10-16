@@ -1,0 +1,28 @@
+<section id="products-detail">
+
+<div class="product-detail">
+  <h2>{{ product.title }}</h2>
+
+  <div class="product-detail__gallery">
+    @for (image of product.images; track image) {
+      <img
+        [src]="image.src"
+        [alt]="image.alt"
+      />
+
+    }
+  </div>
+
+  <p class="product-detail__desc">{{ product.desc }}</p>
+
+  <div class="product-detail__text">
+      <p>
+        {{ product.description }}
+      </p>
+
+  </div>
+
+  <a href="/products" class="back-button">← Вернуться к каталогу</a>
+</div>
+
+</section>
