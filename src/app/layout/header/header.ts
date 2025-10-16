@@ -18,12 +18,12 @@ export class Header {
     {
       label: 'Главная',
       icon: 'main',
-      link: ''
+      link: '/'
     },
     {
       label: 'Продукция',
       icon: 'products',
-      link: 'products'
+      link: '/products'
     },
     {
       label: 'Услуги',
@@ -34,6 +34,11 @@ export class Header {
       label: 'Калькулятор',
       icon: 'calc',
       link: '/calc'
+    },
+    {
+      label: 'О нас',
+      icon: 'contacts',
+      link: '/about'
     },
     {
       label: 'Контакты',

@@ -15,9 +15,10 @@
           class="menu-item"
           [routerLink]="[menuItem.link]"
           routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
         >
           <svg [icon]="menuItem.icon" class="svg-icon"></svg>
-          <span>{{ menuItem.label }}</span>
+          <span class="no-wrap">{{ menuItem.label }}</span>
         </a>
       </li>
     }

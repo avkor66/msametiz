@@ -1,0 +1,23 @@
+<section class="products">
+  <h2 class="products__title">Продукция МетСервис-А</h2>
+
+  <div class="products__grid">
+
+  @for (product of products; track product) {
+    <div class="product-card">
+      <div class="product-card__image">
+        <img [src]="product.images[0].src" [alt]="product.images[0].alt" />
+      </div>
+
+      <div class="product-card__content">
+
+        <h3>{{ product.title }}</h3>
+        <p class="product-card__desc">{{ product.desc }}</p>
+        <a [routerLink]="['/products', product.name]" class="product-card__button">Подробнее</a>
+
+      </div>
+    </div>
+  }
+  </div>
+
+</section>

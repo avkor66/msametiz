@@ -10,13 +10,6 @@ import {ServicesCarousel} from './services-carousel/services-carousel';
   styleUrl: './home-page.scss'
 })
 export class HomePage {
-  // obj = {
-  //   tk_jde: '../../../assets/data/images/tk_logo/jde.svg',
-  //   tk_baikalsr: '../../../assets/data/images/tk_logo/baikalsr.svg',
-  //   tk_dellin: '../../../assets/data/images/tk_logo/dellin.png',
-  //   tk_express: '../../../assets/data/images/tk_logo/express-auto.png',
-  //   tk_kit: '../../../assets/data/images/tk_logo/kit.svg',
-  // }
 
   photosServices = [
     {url: '/assets/images/photos/tokar_1.jpeg', label: 'Токарные работы'},

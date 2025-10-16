@@ -1,7 +1,5 @@
-import {AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Input, ViewChild} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-import { Swiper } from 'swiper/types';
-import {JsonPipe} from '@angular/common';
 
 register();
 
@@ -11,14 +9,13 @@ register();
   styleUrl: './services-carousel.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
-  imports: [
-    JsonPipe
-  ]
+  imports: []
 })
 
 export class ServicesCarousel {
-  @Input() photos! : {url: string, label: string}[];
+  @Input() photos!: {url: string, label: string}[];
   @Input() header!: string;
+  @Input() color!: string;
 }
 
 
