@@ -10,16 +10,15 @@ import { IProduct } from 'src/app/models/product'
 export class ProdComponent {
   @Input() product: IProduct
   @ViewChild('app-prod') link: HTMLDivElement
-  
+
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver
     ) {}
-    
+
   open() {
-    
+
     let article = document.querySelector('.page') as HTMLDivElement
-    console.log(this.product);
-    
+
     article.innerHTML = `
     <div class="post">
       <div class="post__back">
@@ -35,7 +34,7 @@ export class ProdComponent {
           <h2>
           ${this.product.title}
           </h2>
-          
+
           <p class="desc-text">
           ${this.product.desc}
 
@@ -43,7 +42,7 @@ export class ProdComponent {
 
           <p class="info">
             <span>Марка стали:</span>
-            
+
           </p>
           <p class="info">
             <span>Категория:</span>
@@ -51,7 +50,7 @@ export class ProdComponent {
           </p>
           <p class="info">
             <span>Год:</span>
-            
+
           </p>
           <p class="info">
             <span>на складе:</span>

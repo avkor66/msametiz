@@ -16,12 +16,18 @@ import { HeaderComponent } from './components/header/header.component';
 import { TitleComponent } from './components/title/title.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-// import { CaruselComponent } from './components/carusel/carusel.component';
 import { ProductService } from './service/product.servise';
 import { HttpClientModule } from "@angular/common/http";
 import { LeftRightComponent } from './components/left-right/left-right.component';
 import { LeftRightEqComponent } from './components/left-right-eq/left-right-eq.component';
 import { SwiperModule } from 'swiper/angular';
+import { CalcComponent } from './components/calc/calc.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { SignupComponent } from './components/signup/signup.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { FocusDirective } from './directives/focus.directive';
+import { SigninComponent } from './components/signin/signin.component';
+import {canActivateAuth} from "./auth/access.gard";
 
 @NgModule({
   declarations: [
@@ -38,28 +44,34 @@ import { SwiperModule } from 'swiper/angular';
     PageNotFoundComponent,
     ProductComponent,
     ServicesComponent,
-    // CaruselComponent,
     LeftRightEqComponent,
     LeftRightComponent,
+    CalcComponent,
+    ModalComponent,
+    SignupComponent,
+    FocusDirective,
+    SigninComponent,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    HttpClientModule,
-    SwiperModule,
-    RouterModule.forRoot([
-      {path: 'delivery', component: DeliveryComponent},
-      {path: '', component: MainComponent},
-      {path: 'about', component: AboutComponent},
-      {path: 'products', component: ProductComponent},
-      {path: 'contacts', component: ContactsComponent},
-      {path: 'equipment', component: EquipmentComponent},
-      {path: 'services', component: ServicesComponent},
-      // {path: '', redirectTo: '/products', pathMatch: 'full'},
-      {path: '**', component: PageNotFoundComponent},
-    ]),
+      BrowserModule,
+      BrowserAnimationsModule,
+      BrowserModule.withServerTransition({appId: 'serverApp'}),
+      AppRoutingModule,
+      HttpClientModule,
+      SwiperModule,
+      RouterModule.forRoot([
+          {path: '', component: MainComponent},
+          {path: 'delivery', component: DeliveryComponent},
+          {path: 'about', component: AboutComponent},
+          {path: 'products', component: ProductComponent},
+          {path: 'contacts', component: ContactsComponent},
+          {path: 'equipment', component: EquipmentComponent},
+          {path: 'services', component: ServicesComponent},
+          {path: 'calc', component: CalcComponent},
+          {path: 'login', component: ModalComponent},
+          {path: '**', component: PageNotFoundComponent},
+      ]),
+      ReactiveFormsModule,
   ],
   providers: [
     ProductService
@@ -69,4 +81,3 @@ import { SwiperModule } from 'swiper/angular';
   ]
 })
 export class AppModule { }
- 
