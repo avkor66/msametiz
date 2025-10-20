@@ -3,6 +3,7 @@ import {ICart} from '../../data/interfaces/product.interface';
 import {HttpClient} from '@angular/common/http';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {DecimalPipe} from '@angular/common';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-calc-page',
@@ -69,7 +70,7 @@ export class CalcPage {
 
 
   ngOnInit() {
-    this.http.get<ICart[]>('http://localhost:8080/api/v1/cart')
+    this.http.get<ICart[]>(environment.apiUrl + 'api/v1/cart')
       .subscribe(data => {
         this.cart = data;
         console.log(data);

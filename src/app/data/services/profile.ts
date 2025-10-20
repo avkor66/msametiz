@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {map, Observable, tap} from 'rxjs';
 import {Profile, User} from '../interfaces/profile.interface';
 import {Pageable} from '../interfaces/pageable.interface';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ProfileService {
   http: HttpClient = inject(HttpClient)
 
   baseApiUrl: string = 'https://icherniakov.ru/yt-course/';
-  baseUrl: string = 'http://localhost:3000/';
+  baseUrl: string = environment.apiUrl;
 
   me = signal<Profile | null>(null);
   filteredProfiles = signal<Profile[]>([]);
