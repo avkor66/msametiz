@@ -4,6 +4,7 @@ import {TokenResponse} from './auth.intarface';
 import {catchError, tap, throwError} from 'rxjs';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class Auth {
   router = inject(Router);
   cookieService = inject(CookieService)
 
-  url: string = 'http://localhost:3000/';
+  url: string = environment.apiUrl;
   token: string | null = null;
   refresh_token: string | null = null;
 

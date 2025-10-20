@@ -13,6 +13,7 @@ import {ProductsPage} from './pages/products-page/products-page';
 import {CalcPage} from './pages/calc-page/calc-page';
 import {AboutPage} from './pages/about-page/about-page';
 import {ProductDetail} from './pages/products-page/product-detail/product-detail';
+import {NotFoundPage} from './pages/not-found-page/not-found-page';
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
@@ -34,4 +35,7 @@ export const routes: Routes = [
     canActivate: [canActivateAuth]
   },
   {path: 'login', component: LoginPage},
+  {path: '**', component: Layout, children: [
+    {path: '', component: NotFoundPage},
+  ]}
 ];
