@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://128.199.43.180:3000/'
+  apiUrl: 'https://api.msametiz96.ru/'
 };
