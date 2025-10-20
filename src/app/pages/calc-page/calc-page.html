@@ -1,1 +1,145 @@
-<p>calc-page works!</p>
+<main class="calc">
+  <div class="calc-page">
+    <div class="calc-page-title">Калькулятор стоимости (в разаработке)</div>
+
+    <form [formGroup]="form" class="calc-page-content">
+
+
+
+
+      <div class="calc-wrapper">
+        <div class="calc-wrapper-changer">
+
+      <!-- Переключатель категорий -->
+      <div class="select-title">
+        <div class="select-title-buttons">
+          <button
+            type="button"
+            class="abtn"
+            [class.active]="form.value.category === 'metiz'"
+            (click)="setCategory('metiz')">
+            Метизы
+          </button>
+          <button
+            type="button"
+            class="abtn"
+            [class.active]="form.value.category === 'construct'"
+            (click)="setCategory('construct')">
+            Конструкции
+          </button>
+        </div>
+        <div class="select-title-reset" (click)="resetForm()">Сбросить</div>
+      </div>
+
+
+      <!-- Тип -->
+      <div class="select-option">
+        <div class="select-option-line">
+      <div class="window">
+        <div class="window-icon"><i class="fa fa-cog"></i></div>
+        <div class="window-name"><p>Тип</p></div>
+        <select class="window-select" formControlName="type">
+          @if (form.value.category === 'metiz') {
+            @for (t of types; track t) {
+              <option>{{ t }}</option>
+            }
+          } @else {
+            @for (c of constructions; track c) {
+              <option>{{ c }}</option>
+            }
+          }
+        </select>
+      </div>
+        </div>
+      </div>
+
+      <!-- Вид -->
+      <div class="select-option">
+        <div class="select-option-line">
+          <div class="window">
+            <div class="window-icon"><i class="fa fa-wrench"></i></div>
+            <div class="window-name"><p>Вид</p></div>
+            <select class="window-select" formControlName="subtype">
+              @for (s of subtypes; track s) {
+                <option>{{ s }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Размеры -->
+      <div class="select-option">
+        <div class="select-option-title">Параметры изделия</div>
+        <div class="select-option-line">
+          <div class="window">
+            <div class="window-icon"><i class="fa fa-balance-scale"></i></div>
+            <div class="window-name"><p>Вес (кг)</p></div>
+            <input type="number" formControlName="weight" class="window-input" />
+          </div>
+
+          <div class="window">
+            <div class="window-icon"><i class="fa fa-cube"></i></div>
+            <div class="window-name"><p>Объём (м³)</p></div>
+            <input type="number" formControlName="volume" class="window-input" />
+          </div>
+
+          <div class="window">
+            <div class="window-icon"><i class="fa fa-cubes"></i></div>
+            <div class="window-name"><p>Количество</p></div>
+            <input type="number" formControlName="quantity" class="window-input" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Доставка -->
+      <div class="select-bottom">
+        <div class="select-bottom-shipping">
+          <div class="select-bottom-shipping-title">Доставка</div>
+          <div class="select-bottom-shipping-buttons">
+            <button
+              type="button"
+              class="yes"
+              [class.active]="form.value.delivery"
+              (click)="form.patchValue({ delivery: true })">
+              Да
+            </button>
+            <button
+              type="button"
+              class="no"
+              [class.active]="!form.value.delivery"
+              (click)="form.patchValue({ delivery: false })">
+              Нет
+            </button>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <div class="calc-wrapper-result">
+
+      <!-- Стоимость -->
+      <div class="select-bottom-price">
+        <div class="window total">
+          <div class="window-icon"><p>₽</p></div>
+          <div class="window-name">
+            <p>Итого:</p>
+            <strong>{{ total() | number: '1.2-2' }}</strong>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      </div>
+
+      <!-- Комментарий -->
+      <div class="select-option">
+      <div class="comment">
+        <div class="comment-title">Комментарий</div>
+        <textarea formControlName="comment" rows="3" class="comment-text"></textarea>
+      </div>
+      </div>
+    </form>
+
+  </div>
+</main>

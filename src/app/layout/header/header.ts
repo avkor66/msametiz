@@ -33,7 +33,7 @@ export class Header {
     {
       label: 'Калькулятор',
       icon: 'calc',
-      link: '/'
+      link: '/calc'
     },
     {
       label: 'О нас',
