@@ -1,0 +1,41 @@
+.select-option {
+  margin: 0 60px;
+  &-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #667582;
+  }
+
+  &-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.window {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #d6eaff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  background: #fdfdfd;
+  width: 500px;
+
+  &-name p {
+    font-weight: 600;
+    color: #006790;
+    margin: 0;
+  }
+
+  .window-input,
+  select {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 6px;
+    flex: 1;
+    background: transparent;
+  }
+}

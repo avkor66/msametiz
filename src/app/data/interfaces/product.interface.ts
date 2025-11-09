@@ -27,11 +27,107 @@ export interface IClient {
   age: bigint
 }
 
-export interface ICart {
-  id: bigint,
-  type: string,
+export interface IOrders {
+  guestId: string,
+  sessionId: string,
+  device: string,
   status: string,
-  createDate: string,
-  price: bigint
+  cart: ICartSmall,
+  contact: {
+    name: string,
+    phone: string,
+    email: string
+  },
+  userMeta: {
+    ip: string,
+    userAgent: string,
+    referer: string,
+    createdAt: Date
+  },
+}
+export interface ICartSmall {
+  height: number | undefined,
+  species: string;
+  stateStandard: string;
+  diameter: string,
+  length: string;
+  threadLength: string;
+  steelGrade: string;
+  execution: string;
+  quantity: number | undefined;
+  delivery: boolean;
+  volume: number;
+  comment: string
 }
 
+export interface ICart {
+  threadPitch: number | undefined,
+  height: number | undefined,
+  outerDiameter: number | undefined,
+  innerDiameter: number | undefined,
+  species: string;
+  stateStandard: string;
+  stateStandards: string[];
+  diameter: string,
+  diameters: string[];
+  length: string;
+  lengths: string[];
+  threadLength: string;
+  threadLengths: string[];
+  steelGrade: string;
+  steelGrades: string[];
+  execution: string;
+  quantity: number | undefined;
+  delivery: boolean;
+  volume: number;
+  comment: string
+}
+
+export interface IMaterials {
+  id: number;
+  content: string,
+  dimensions: string,
+  comment: string,
+  steelGrade: string,
+  productName: string,
+  standard: string,
+  parameter: string,
+  weight: string,
+  numberOfPieces: string,
+  quantityWeight: string,
+  unitOfMeasurement: string,
+  price: string,
+  note: string,
+  linkPhoto: string
+}
+
+interface IPageableMaterials {
+  "pageNumber": number,
+  "pageSize": number,
+  "sort": {
+    "empty": boolean,
+    "sorted": boolean,
+    "unsorted": boolean
+  },
+  "offset": number,
+  "paged": boolean,
+  "unpaged": boolean
+}
+
+export interface ISupplierMaterials {
+  content: IMaterials[],
+  pageable: IPageableMaterials,
+  last: false,
+  totalPages: number,
+  totalElements: number,
+  first: boolean,
+  size: number,
+  number: number,
+  sort: {
+    empty: boolean,
+    sorted: boolean,
+    unsorted: boolean,
+  },
+  numberOfElements: number,
+  empty: boolean
+}

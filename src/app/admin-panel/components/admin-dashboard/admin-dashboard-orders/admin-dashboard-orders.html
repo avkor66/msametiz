@@ -1,0 +1,65 @@
+<table class="table table-light custom-table-width table-hover align-middle">
+    <thead>
+    <tr>
+        <th class="fw-20 " scope="col">#</th>
+        <th class="fw-130" scope="col">Клиент</th>
+        <th class="fw-100 text-center" scope="col">Продукт</th>
+        <th class="fw-100 text-center" scope="col">Стандарт</th>
+        <th class="fw-100 text-center" scope="col">Размеры</th>
+        <th class="fw-200 text-center" scope="col">Комментарий</th>
+        <th class="fw-100 text-center" scope="col">Дата</th>
+        <th class="fw-80" scope="col">Статус</th>
+        <th class="fw-330" scope="col">ID</th>
+        <th class="fw-80 text-center" scope="col">Device</th>
+        <th class="fw-150" scope="col">Примечание</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        @for (item of data; track item) {
+            <tr>
+                <th class="p-1 fs-075" scope="row">1</th>
+                <td class="p-1 fs-090">
+                    <app-popover
+                            [mainContent]="item.contact.name"
+                            [hoverMessage]="item.contact.name + item.contact.email + item.contact.phone">
+                    </app-popover>
+                </td>
+                <td class="p-1 fs-090 text-center">{{ item.cart.species }}</td>
+                <td class="p-1 fs-075 text-left">
+                    <p class="mb-0">
+                        {{ item.cart.steelGrade }}
+                    </p>
+                    <p class="mb-0">
+                        {{ item.cart.stateStandard }}
+                    </p>
+                </td>
+                <td class="p-1 fs-080 text-center">
+                    <app-popover
+                            [mainContent]="item.cart.diameter"
+                            [hoverMessage]="item.cart.diameter + item.cart.height + item.cart.length + item.cart.threadLength">
+                    </app-popover>
+                <td class="p-1 fs-075">{{ item.cart.comment }}</td>
+                <td class="p-1 fs-080 text-center">
+                    <p class="mb-0">
+                        {{ item.userMeta.createdAt | date:'dd.MM.yyyy':'Europe/Moscow' }}
+                    </p>
+                    <p class="mb-0">
+                        {{ item.userMeta.createdAt | date:'HH:mm':'Europe/Moscow' }}
+                    </p>
+                </td>
+                <td class="p-1 fs-075 text-center">{{ item.status }}</td>
+                <td class="p-1 fs-075">
+                    <p class="mb-0">
+                        {{ item.guestId }}
+                    </p>
+                    <p class="mb-0">
+                        {{ item.sessionId }}
+                    </p>
+                </td>
+                <td class="p-1 fs-090 text-center">{{ item.device }}</td>
+                <td class="p-1 fs-090 text-primary">{{ item.cart.delivery ? 'Нужна доставка' : 'Не нужна доставка' }} </td>
+            </tr>
+        }
+    </tbody>
+</table>

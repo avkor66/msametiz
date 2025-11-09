@@ -23,12 +23,17 @@
       </li>
     }
   </ul>
+
 </nav>
 
-
 <div class="header-btn">
-  <a class="btn to-header-btn" [routerLink]="['/login']">Войти</a>
-
-  <a class="btn to-header-btn" [routerLink]="['/login']">Заказать</a>
+  @if (username) {
+    <p>Привет, {{username}}</p>
+    <a class="btn to-header-btn" [routerLink]="['/account']">Профиль</a>
+    <a class="btn to-header-btn" (click)="onLogout()">Выйти</a>
+  } @else {
+    <p></p>
+    <a class="btn to-header-btn" [routerLink]="['/login']">Войти</a>
+  }
 </div>
 

@@ -1,5 +1,6 @@
 import {Component, inject, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {Auth} from "./auth/auth";
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,9 @@ import {RouterOutlet} from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Metservis');
+  private authService = inject(Auth);
 
+  ngOnInit(): void {
+    this.authService.initializeUser();
+  }
 }

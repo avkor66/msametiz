@@ -14,6 +14,25 @@ import {CalcPage} from './pages/calc-page/calc-page';
 import {AboutPage} from './pages/about-page/about-page';
 import {ProductDetail} from './pages/products-page/product-detail/product-detail';
 import {NotFoundPage} from './pages/not-found-page/not-found-page';
+import {AdminLayout} from "./admin-panel/components/admin-layout/admin-layout";
+import {AdminDashboard} from "./admin-panel/components/admin-dashboard/admin-dashboard";
+import {AdminUsers} from "./admin-panel/pages/admin-users/admin-users";
+import {AdminSettings} from "./admin-panel/pages/admin-settings/admin-settings";
+import {canActivateAdmin} from "./auth/admin.guard";
+import {
+  AdminDashboardOrders
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-orders/admin-dashboard-orders";
+import {
+  AdminDashboardProducts
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-products/admin-dashboard-products";
+import {
+  AdminDashboardCustomers
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-customers/admin-dashboard-customers";
+import {AdminSettingsCalc} from "./admin-panel/pages/admin-settings/admin-settings-calc/admin-settings-calc";
+import {AdminUsersPrivate} from "./admin-panel/pages/admin-users/admin-users-private/admin-users-private";
+import {
+  AdminDashboardSuppliers
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-suppliers/admin-dashboard-suppliers";
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
@@ -25,14 +44,28 @@ export const routes: Routes = [
       {path: 'services', component: ServicesPage},
       {path: 'about', component: AboutPage},
     ]},
-  {
-    path: 'users', component: LayoutProfile, children: [
+  {path: 'account', component: LayoutProfile, children: [
       {path: '', redirectTo: 'profile/me', pathMatch: 'full'},
       {path: 'profile/:id', component: ProfilePage},
       {path: 'settings', component: SettingsPage},
       {path: 'search', component: SearchPage},
+      {path: 'admin', redirectTo: '/admin', pathMatch: 'prefix'},
     ],
     canActivate: [canActivateAuth]
+  },
+  {path: 'admin', component: AdminLayout, children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: AdminDashboard },
+      { path: 'orders', component: AdminDashboardOrders },
+      { path: 'products', component: AdminDashboardProducts },
+      { path: 'customers', component: AdminDashboardCustomers },
+      { path: 'suppliers', component: AdminDashboardSuppliers },
+      { path: 'users', component: AdminUsers },
+      { path: 'users/private', component: AdminUsersPrivate },
+      { path: 'settings', component: AdminSettings },
+      { path: 'settings/calc', component: AdminSettingsCalc },
+    ],
+    canActivate: [canActivateAdmin]
   },
   {path: 'login', component: LoginPage},
   {path: '**', component: Layout, children: [

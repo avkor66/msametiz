@@ -2,120 +2,184 @@
   <div class="calc-page">
     <div class="calc-page-title">Калькулятор стоимости (в разаработке)</div>
 
-    <form [formGroup]="form" class="calc-page-content">
-
-
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="calc-page-content">
 
 
       <div class="calc-wrapper">
         <div class="calc-wrapper-changer">
 
-      <!-- Переключатель категорий -->
-      <div class="select-title">
-        <div class="select-title-buttons">
-          <button
-            type="button"
-            class="abtn"
-            [class.active]="form.value.category === 'metiz'"
-            (click)="setCategory('metiz')">
-            Метизы
-          </button>
-          <button
-            type="button"
-            class="abtn"
-            [class.active]="form.value.category === 'construct'"
-            (click)="setCategory('construct')">
-            Конструкции
-          </button>
-        </div>
-        <div class="select-title-reset" (click)="resetForm()">Сбросить</div>
-      </div>
+          <!-- Переключатель категорий -->
+          <div class="select-title">
+            <div class="select-title-buttons">
+              <button
+                type="button"
+                class="abtn"
+                [class.active]="form.value.category === 'metiz'"
+                (click)="setCategory('metiz')">
+                Метизы
+              </button>
+              <button
+                type="button"
+                class="abtn"
+                [class.active]="form.value.category === 'detail'"
+                (click)="setCategory('detail')">
+                Детали
+              </button>
+<!--              <button-->
+<!--                type="button"-->
+<!--                class="abtn"-->
+<!--                [class.active]="form.value.category === 'construct'"-->
+<!--                (click)="setCategory('construct')">-->
+<!--                Конструкции-->
+<!--              </button>-->
+            </div>
+            <div class="select-title-reset" (click)="resetForm()">Сбросить</div>
+          </div>
 
+          <!-- Вид -->
+          <div class="select-option" (change)="onSpeciesChange($event)">
+            <div class="select-option-line">
+              <div class="window">
+                <div class="window-name"><p>Вид</p></div>
+                <select class="window-select" formControlName="species">
+                  @if (form.value.category === 'metiz') {
+                    @for (s of species; track s) {
+                      <option [value]="s.value">{{ s.label }}</option>
+                    }
+<!--                  } @else if (form.value.category === 'detail') {-->
+<!--                    @for (d of details; track d) {-->
+<!--                      <option>{{ d }}</option>-->
+<!--                    }-->
+                  } @else {
+                    @for (c of details; track c) {
+                      <option>{{ c }}</option>
+                    }
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
 
-      <!-- Тип -->
-      <div class="select-option">
-        <div class="select-option-line">
-      <div class="window">
-        <div class="window-icon"><i class="fa fa-cog"></i></div>
-        <div class="window-name"><p>Тип</p></div>
-        <select class="window-select" formControlName="type">
           @if (form.value.category === 'metiz') {
-            @for (t of types; track t) {
-              <option>{{ t }}</option>
+            <!-- ГОСТ -->
+            <app-select-option
+              [formGroup]="form"
+              [option] = cart.stateStandards
+              controlName="stateStandard"
+              selectName="ГОСТ"
+              (change)="onStateStandardChange($event)"
+            ></app-select-option>
+
+            <!-- Диаметр-->
+            <app-select-option
+              [formGroup]="form"
+              [option] = cart.diameters
+              controlName="diameter"
+              selectName="Диаметр"
+              (change)="onDiameterChange($event)"
+            ></app-select-option>
+
+            @if (form.value.species === 'bolt') {
+              <!-- Длина-->
+              <app-select-option
+                [formGroup]="form"
+                [option] = cart.lengths
+                controlName="length"
+                selectName="Длина"
+                (change)="onLengthChange($event)"
+              ></app-select-option>
             }
-          } @else {
-            @for (c of constructions; track c) {
-              <option>{{ c }}</option>
+
+            @if (form.value.species === 'hairpin') {
+              <!-- Длина-->
+              <app-select-option
+                [formGroup]="form"
+                [option] = cart.lengths
+                controlName="length"
+                selectName="Длина"
+                (change)="onLengthChange($event)"
+              ></app-select-option>
+              <!-- Длина резьбы-->
+              <app-select-option
+                [formGroup]="form"
+                [option] = cart.threadLengths
+                controlName="threadLength"
+                selectName="Длина резьбы"
+                (change)="onThreadLengthChange($event)"
+              ></app-select-option>
             }
+
           }
-        </select>
-      </div>
-        </div>
-      </div>
 
-      <!-- Вид -->
-      <div class="select-option">
-        <div class="select-option-line">
-          <div class="window">
-            <div class="window-icon"><i class="fa fa-wrench"></i></div>
-            <div class="window-name"><p>Вид</p></div>
-            <select class="window-select" formControlName="subtype">
-              @for (s of subtypes; track s) {
-                <option>{{ s }}</option>
-              }
-            </select>
+          @if (form.value.category === 'detail') {
+            <!-- Серия -->
+            <app-select-option
+              [formGroup]="form"
+              [option] = series
+              controlName="series"
+              selectName="Серия"
+            ></app-select-option>
+
+            <!-- Подвид -->
+            <app-select-option
+              [formGroup]="form"
+              [option] = subspecies
+              controlName="subspecies"
+              selectName="Подвид"
+            ></app-select-option>
+
+            <!-- Тип исполнения -->
+            <app-select-option
+              [formGroup]="form"
+              [option] = execution
+              controlName="execution"
+              selectName="Тип исполнения"
+            ></app-select-option>
+
+          }
+
+          <!-- Марка стали -->
+          <app-select-option
+            [formGroup]="form"
+            [option] = cart.steelGrades
+            controlName="steelGrade"
+            selectName="Сталь"
+            (change)="onSteelChange($event)"
+          ></app-select-option>
+
+          <!-- Количество -->
+          <div class="select-option">
+            <div class="select-option-line">
+              <div class="window">
+                <div class="window-name"><p>Количество</p></div>
+                <input type="number" formControlName="quantity" class="window-input" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Доставка -->
+          <div class="select-bottom">
+            <div class="select-bottom-shipping">
+              <div class="select-bottom-shipping-title">Доставка</div>
+              <div class="select-bottom-shipping-buttons">
+                <button
+                  type="button"
+                  class="yes"
+                  [class.active]="form.value.delivery"
+                  (click)="form.patchValue({ delivery: true })">
+                  Да
+                </button>
+                <button
+                  type="button"
+                  class="no"
+                  [class.active]="!form.value.delivery"
+                  (click)="form.patchValue({ delivery: false })">
+                  Нет
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Размеры -->
-      <div class="select-option">
-        <div class="select-option-title">Параметры изделия</div>
-        <div class="select-option-line">
-          <div class="window">
-            <div class="window-icon"><i class="fa fa-balance-scale"></i></div>
-            <div class="window-name"><p>Вес (кг)</p></div>
-            <input type="number" formControlName="weight" class="window-input" />
-          </div>
-
-          <div class="window">
-            <div class="window-icon"><i class="fa fa-cube"></i></div>
-            <div class="window-name"><p>Объём (м³)</p></div>
-            <input type="number" formControlName="volume" class="window-input" />
-          </div>
-
-          <div class="window">
-            <div class="window-icon"><i class="fa fa-cubes"></i></div>
-            <div class="window-name"><p>Количество</p></div>
-            <input type="number" formControlName="quantity" class="window-input" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Доставка -->
-      <div class="select-bottom">
-        <div class="select-bottom-shipping">
-          <div class="select-bottom-shipping-title">Доставка</div>
-          <div class="select-bottom-shipping-buttons">
-            <button
-              type="button"
-              class="yes"
-              [class.active]="form.value.delivery"
-              (click)="form.patchValue({ delivery: true })">
-              Да
-            </button>
-            <button
-              type="button"
-              class="no"
-              [class.active]="!form.value.delivery"
-              (click)="form.patchValue({ delivery: false })">
-              Нет
-            </button>
-          </div>
-        </div>
-      </div>
-
-      </div>
       <div class="calc-wrapper-result">
 
       <!-- Стоимость -->
@@ -124,9 +188,33 @@
           <div class="window-icon"><p>₽</p></div>
           <div class="window-name">
             <p>Итого:</p>
-            <strong>{{ total() | number: '1.2-2' }}</strong>
+            <strong></strong>
           </div>
         </div>
+
+<!--        &lt;!&ndash; Размеры &ndash;&gt;-->
+<!--        <div class="select-option">-->
+<!--          <div class="select-option-line">-->
+<!--            <div class="window">-->
+<!--              <div class="window-icon"><i class="fa fa-balance-scale"></i></div>-->
+<!--              <div class="window-name"><p>Вес (кг)</p></div>-->
+<!--              <input type="number" formControlName="weight" class="window-input" />-->
+<!--            </div>-->
+
+<!--            <div class="window">-->
+<!--              <div class="window-icon"><i class="fa fa-cube"></i></div>-->
+<!--              <div class="window-name"><p>Объём (м³)</p></div>-->
+<!--              <input type="number" formControlName="volume" class="window-input" />-->
+<!--            </div>-->
+
+<!--            <div class="window">-->
+<!--              <div class="window-icon"><i class="fa fa-cubes"></i></div>-->
+<!--              <div class="window-name"><p>Количество</p></div>-->
+<!--              <input type="number" formControlName="quantity" class="window-input" />-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
       </div>
       </div>
 
@@ -134,10 +222,17 @@
 
       <!-- Комментарий -->
       <div class="select-option">
-      <div class="comment">
-        <div class="comment-title">Комментарий</div>
-        <textarea formControlName="comment" rows="3" class="comment-text"></textarea>
+        <div class="comment">
+          <div class="comment-title">Комментарий</div>
+          <textarea formControlName="comment" rows="3" class="comment-text"></textarea>
+        </div>
       </div>
+      <div class="select-title">
+        <div class="select-title-buttons">
+
+          <button type="submit" class="abtn">Отправить</button>
+
+        </div>
       </div>
     </form>
 

@@ -18,17 +18,17 @@ export class ProfileService {
   filteredProfiles = signal<Profile[]>([]);
 
   getTestAccounts(): Observable<Profile[]> {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
+    return this.http.get<Profile[]>(`${this.baseApiUrl}/account/test_accounts`)
   }
 
   getAccount(id: string) {
-    return this.http.get<Profile>(`${this.baseUrl}admin/${id}`, {
+    return this.http.get<Profile>(`${this.baseUrl}/admin/${id}`, {
       withCredentials: true
     })
   }
 
   getMe(): Observable<Profile> {
-    return this.http.get<Profile>(`${this.baseUrl}profile/me`, {
+    return this.http.get<Profile>(`${this.baseUrl}/profile/me`, {
       withCredentials: true
     }).pipe(
       tap(res => this.me.set(res))
@@ -36,7 +36,7 @@ export class ProfileService {
   }
 
   getSubscribersShortList(subsAmount = 3) {
-    return this.http.get<Pageable<User>>(`${this.baseUrl}admin/users`, {
+    return this.http.get<Pageable<User>>(`${this.baseUrl}/admin/users`, {
       withCredentials: true
     }).pipe(
       map(res => res.users.slice(0, subsAmount))
@@ -45,7 +45,7 @@ export class ProfileService {
   //TODO
   patchProfile(profile: Partial<Profile>) {
     return this.http.patch<Profile>(
-      `${this.baseUrl}profile/update`,
+      `${this.baseUrl}/profile/update`,
       profile,
       { withCredentials: true }
     )
@@ -55,14 +55,14 @@ export class ProfileService {
     const fd = new FormData();
     fd.append('image', file);
     return this.http.post<Profile>(
-      `${this.baseUrl}profile/upload_image`,
+      `${this.baseUrl}/profile/upload_image`,
       fd,
       { withCredentials: true }
     )
   }
   //TODO
   filterProfiles(params: Record<string, any>) {
-    return this.http.get<Pageable<Profile>>(`${this.baseUrl}admin/users`, {
+    return this.http.get<Pageable<Profile>>(`${this.baseUrl}/admin/users`, {
       params,
       withCredentials: true
     }).pipe(

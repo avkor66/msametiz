@@ -1,0 +1,8 @@
+<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+    @for (item of activeMenuItems; track item) {
+        <li>
+            <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-toggle="collapse" class="nav-link px-3 py-sm-1 align-middle">
+                <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline">{{item.label}}</span> </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,27 @@
+:host{
+  @media (min-width: 1200px) {
+    .col-xl-2 {
+      width: 18.666667%;
+    }
+  }
+  @media (min-width: 1400px) {
+    .col-xl-2 {
+      width: 16.866667%;
+    }
+  }
+  @media (min-width: 1600px) {
+    .col-xl-2 {
+      width: 14.466667%;
+    }
+  }
+  @media (min-width: 1800px) {
+    .col-xl-2 {
+      width: 12.266667%;
+    }
+  }
+  @media (min-width: 2000px) {
+    .col-xl-2 {
+      width: 10%;
+    }
+  }
+}

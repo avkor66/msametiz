@@ -25,3 +25,12 @@ export interface User {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface AuthUser {
+  id: number;
+  email: string;
+  name: string;
+  role: 'admin' | 'user';
+  avatar?: string;
+  createdAt: Date;
+}
