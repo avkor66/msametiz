@@ -64,7 +64,7 @@ body {
   height: 24px;
 }
 
-.btn {
+.btn-custom {
   width: 100%;
   max-width: 600px;
   border: none;
@@ -129,6 +129,13 @@ body {
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
+}
+
+.large-text {
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 40px;
 }
 
 .regular {
@@ -209,4 +216,9 @@ body {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.custom-line-bottom {
+  border-bottom: #5F646D solid 0.5px;
+  font-size: 12px;
 }

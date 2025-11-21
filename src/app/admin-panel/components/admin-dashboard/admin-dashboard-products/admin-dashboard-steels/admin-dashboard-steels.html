@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-12 mb-3 mb-sm-0">
+        @for (item of steelStandardData; track item) {
+            <div class="card w-75 m-2">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                    <p class="card-text">{{ item.title }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @for (size of item.grades; track size) {
+                        <li class="list-group">
+                                <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Марка: {{ size.steelGradeName }}</h5>
+                                        <small>Плотность: {{ size.density }}</small>
+                                    </div>
+                                    <p class="mb-1">Состав: {{ size.description }}</p>
+                                    <p class="mb-1">Описание: {{ size.weldability }}</p>
+                                    <p class="mb-1">Применение: {{ size.application }}</p>
+                                    <small>Аналоги: {{ size.substitutes }}</small>
+                                </div>
+                        </li>
+<!--                        <li class="row m-0 p-1 custom-line-bottom">-->
+<!--                            <div class="col-1">-->
+<!--                                Марка: {{ size.steelGradeName }}-->
+<!--                            </div>-->
+<!--                            <div class="col-2">-->
+<!--                                Состав: {{ size.description }}-->
+<!--                            </div>-->
+<!--                            <div class="col-2">-->
+<!--                                Аналоги: {{ size.substitutes }}-->
+<!--                            </div>-->
+<!--                            <div class="col-3">-->
+<!--                                Описание: {{ size.weldability }}-->
+<!--                            </div>-->
+<!--                            <div class="col-3">-->
+<!--                                Применение: {{ size.application }}-->
+<!--                            </div>-->
+<!--                            <div class="col-1">-->
+<!--                                Плотность: {{ size.density }}-->
+<!--                            </div>-->
+<!--                        </li>-->
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>

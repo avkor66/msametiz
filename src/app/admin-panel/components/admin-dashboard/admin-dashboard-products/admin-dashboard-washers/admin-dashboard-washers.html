@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-12 mb-3 mb-sm-0">
+        @for (item of washerStandardData; track item) {
+            <div class="card w-75 m-2">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.standard }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ item.title }}</h6>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @for (size of item.washerSizes; track size) {
+                        <li class="row m-0 p-1 custom-line-bottom">
+                            <div class="col-2">
+                                Размер: {{ size.size }}
+                            </div>
+                            <div class="col-1">
+                                M: {{ size.nominal_thread_diameter }}
+                            </div>
+                            <div class="col-1">
+                                d: {{ size.inner_diameter }}
+                            </div>
+                            <div class="col-1">
+                                D: {{ size.outer_diameter }}
+                            </div>
+                            <div class="col-2">
+                                Толщина: {{ size.thickness }}
+                            </div>
+                            <div class="col-2">
+                                Сторона: {{ size.width_b }}
+                            </div>
+                            <div class="col-2">
+                                {{ size.purpose }}
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>

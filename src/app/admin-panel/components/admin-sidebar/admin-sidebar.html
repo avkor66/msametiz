@@ -1,8 +1,38 @@
 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
     @for (item of activeMenuItems; track item) {
-        <li>
-            <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-toggle="collapse" class="nav-link px-3 py-sm-1 align-middle">
-                <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline">{{item.label}}</span> </a>
-        </li>
+        @if ( item.cascade ) {
+            <li>
+                <a [routerLink]="item.link"
+                   routerLinkActive="active"
+                   [routerLinkActiveOptions]="{ exact: true }"
+                   data-bs-toggle="collapse"
+                   [attr.data-bs-target]="'#collapse' + item.icon"
+                   aria-expanded="false"
+                   [attr.aria-controls]="item.icon"
+                   class="nav-link px-3 py-sm-1 align-middle">
+                    <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline">{{item.label}}</span> </a>
+                    <ul class="collapse mx-lg-4 list-unstyled" [id]="'collapse' + item.icon">
+                        @for (subItem of item.cascade; track subItem) {
+                        <li>
+                            <a [routerLink]="subItem.link"
+                               routerLinkActive="active"
+                               [routerLinkActiveOptions]="{ exact: true }"
+                               data-bs-toggle="collapse"
+                               class="nav-link px-3 py-sm-1 align-middle">
+                                <i class="fs-4 {{subItem.icon}}"></i> <span class="ms-2 d-none d-sm-inline">{{subItem.label}}</span> </a>
+                        </li>
+                        }
+                    </ul>
+            </li>
+        } @else {
+            <li>
+                <a [routerLink]="item.link"
+                   routerLinkActive="active"
+                   [routerLinkActiveOptions]="{ exact: true }"
+                   data-bs-toggle="collapse"
+                   class="nav-link px-3 py-sm-1 align-middle">
+                    <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline">{{item.label}}</span> </a>
+            </li>
+        }
     }
 </ul>

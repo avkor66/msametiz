@@ -33,6 +33,18 @@ import {AdminUsersPrivate} from "./admin-panel/pages/admin-users/admin-users-pri
 import {
   AdminDashboardSuppliers
 } from "./admin-panel/components/admin-dashboard/admin-dashboard-suppliers/admin-dashboard-suppliers";
+import {
+  AdminDashboardWashers
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-products/admin-dashboard-washers/admin-dashboard-washers";
+import {
+  AdminDashboardSteels
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-products/admin-dashboard-steels/admin-dashboard-steels";
+import {
+  AdminDashboardPrice
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-suppliers/admin-dashboard-price/admin-dashboard-price";
+import {
+  AdminDashboardUpload
+} from "./admin-panel/components/admin-dashboard/admin-dashboard-suppliers/admin-dashboard-upload/admin-dashboard-upload";
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
@@ -58,8 +70,12 @@ export const routes: Routes = [
       { path: 'dashboard', component: AdminDashboard },
       { path: 'orders', component: AdminDashboardOrders },
       { path: 'products', component: AdminDashboardProducts },
+      { path: 'products/washer', component: AdminDashboardWashers },
+      { path: 'products/steel', component: AdminDashboardSteels },
       { path: 'customers', component: AdminDashboardCustomers },
       { path: 'suppliers', component: AdminDashboardSuppliers },
+      { path: 'suppliers/price', component: AdminDashboardPrice },
+      { path: 'suppliers/upload', component: AdminDashboardUpload },
       { path: 'users', component: AdminUsers },
       { path: 'users/private', component: AdminUsersPrivate },
       { path: 'settings', component: AdminSettings },

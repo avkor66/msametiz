@@ -2,13 +2,20 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { environment } from '../../../environments/environment';
-import {IOrders, ISupplierMaterials} from "../interfaces/product.interface";
+import {
+  IOrders,
+  ISteelGrade,
+  ISteelStandard,
+  ISupplierMaterials,
+  IWasherStandard
+} from "../interfaces/product.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
   private apiUrlMaterials: string = `${environment.apiMaterialsUrl}products`;
+  private apiUrlMaterials_: string = `http://localhost:8082/`;
   private apiUrlApplications: string = `${environment.apiApplicationsUrl}cart/costs`;
 
   constructor(private http: HttpClient) {}
@@ -21,5 +28,21 @@ export class AdminService {
 
   getOrdersFromApplications() {
     return this.http.get<IOrders[]>(this.apiUrlApplications);
+  }
+
+  getSteelStandards() {
+    return this.http.get<ISteelStandard[]>(`${environment.apiMaterialsUrl}steel/standard`, {withCredentials: true});
+  }
+
+  getSteelGrades() {
+    return this.http.get<ISteelGrade[]>(`${environment.apiMaterialsUrl}steel/grade`, {withCredentials: true});
+  }
+
+  getWasherStandards() {
+    return this.http.get<IWasherStandard[]>(`${environment.apiMaterialsUrl}details/washer/standard`, {withCredentials: true});
+  }
+
+  getWasherGrades() {
+    return this.http.get<ISteelGrade[]>(`${environment.apiMaterialsUrl}details/washer/grade`, {withCredentials: true});
   }
 }

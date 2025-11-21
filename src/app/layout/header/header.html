@@ -29,11 +29,11 @@
 <div class="header-btn">
   @if (username) {
     <p>Привет, {{username}}</p>
-    <a class="btn to-header-btn" [routerLink]="['/account']">Профиль</a>
-    <a class="btn to-header-btn" (click)="onLogout()">Выйти</a>
+    <a class="btn-custom to-header-btn" [routerLink]="['/account']">Профиль</a>
+    <a class="btn-custom to-header-btn" (click)="onLogout()">Выйти</a>
   } @else {
     <p></p>
-    <a class="btn to-header-btn" [routerLink]="['/login']">Войти</a>
+    <a class="btn-custom to-header-btn" [routerLink]="['/login']">Войти</a>
   }
 </div>
 

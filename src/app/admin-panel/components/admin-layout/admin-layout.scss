@@ -1,3 +1,12 @@
+:root {
+  --dark-color: #000000;
+  --light-color: #FFFFFF;
+  --primary-color: #AE7AFF;
+  --gray-color: #5F646D;
+  --dark-hover-color: #161616;
+  --light-transparent-color: rgba(255, 255, 255, 0.75);
+}
+
 :host{
   @media (min-width: 1200px) {
     .col-xl-2 {
@@ -21,7 +30,10 @@
   }
   @media (min-width: 2000px) {
     .col-xl-2 {
-      width: 10%;
+      width: 11%;
     }
+  }
+  .container-fluid {
+    background-color: var(--light-transparent-color);
   }
 }

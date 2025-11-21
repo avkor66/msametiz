@@ -33,19 +33,27 @@ export class AdminSidebar implements OnInit, OnDestroy {
   }
   // Ваши исходные данные
   menuDashboardItems: MenuItem[] = [
-    { label: 'Панель', icon: 'bi-speedometer2', link: '/admin/dashboard' },
-    { label: 'Заказы', icon: 'bi-table', link: '/admin/orders' },
-    { label: 'Продукция', icon: 'bi-grid', link: '/admin/products' },
-    { label: 'Покупатели', icon: 'bi-people', link: '/admin/customers' },
-    { label: 'Поставщики', icon: 'bi-people', link: '/admin/suppliers' }
+    { label: 'Панель', icon: 'bi-speedometer2', link: '/admin/dashboard', cascade: null },
+    { label: 'Заказы', icon: 'bi-table', link: '/admin/orders', cascade: null },
+    { label: 'Продукция', icon: 'bi-grid', link: '/admin/products', cascade: [
+        { label: 'Шайбы', icon: 'bi-record-circle-fill', link: '/admin/products/washer', cascade: null },
+        { label: 'Сталь', icon: 'bi-layers', link: '/admin/products/steel', cascade: null }
+      ]
+    },
+    { label: 'Покупатели', icon: 'bi-people', link: '/admin/customers', cascade: null },
+    { label: 'Поставщики', icon: 'bi-person-gear', link: '/admin/suppliers', cascade: [
+        { label: 'Прайсы', icon: 'bi-list-columns', link: '/admin/suppliers/price', cascade: null },
+        { label: 'Загрузка', icon: 'bi-filetype-xlsx', link: '/admin/suppliers/upload', cascade: null }
+      ]
+    }
   ];
   menuUsersItems: MenuItem[] = [
-    { label: 'Общие', icon: 'bi-speedometer2', link: '/admin/users' },
-    { label: 'Частные', icon: 'bi-table', link: '/admin/users/private' }
+    { label: 'Общие', icon: 'bi-speedometer2', link: '/admin/users', cascade: null },
+    { label: 'Частные', icon: 'bi-table', link: '/admin/users/private', cascade: null }
   ];
   menuSettingsItems: MenuItem[] = [
-    { label: 'Общие', icon: 'bi-speedometer2', link: '/admin/settings' },
-    { label: 'Калькулятор', icon: 'bi-table', link: '/admin/settings/calc' }
+    { label: 'Общие', icon: 'bi-speedometer2', link: '/admin/settings', cascade: null },
+    { label: 'Калькулятор', icon: 'bi-table', link: '/admin/settings/calc', cascade: null }
   ];
 
   ngOnDestroy() {
@@ -69,4 +77,5 @@ export interface MenuItem {
   label: string;
   icon: string;
   link: string;
+  cascade: MenuItem[] | null;
 }

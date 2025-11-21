@@ -131,3 +131,44 @@ export interface ISupplierMaterials {
   numberOfElements: number,
   empty: boolean
 }
+
+export interface IWasherStandard {
+  description: string,
+  file: string,
+  image: string,
+  link: string,
+  standard: string,
+  title: string,
+  type: string,
+  steelGrades: ISteelGrade[],
+  washerSizes: IWasherSize[]
+}
+
+interface IWasherSize {
+  nominal_thread_diameter: number,
+  inner_diameter: number,
+  outer_diameter: number | null,
+  purpose: string,
+  size: string,
+  thickness: number,
+  width_b: number | null,
+}
+
+export interface ISteelStandard {
+  name: string,
+  file: string,
+  images: string,
+  link: string,
+  title: string,
+  grades: ISteelGrade[]
+}
+
+export interface ISteelGrade {
+  steelGradeName: string,
+  description: string,
+  substitutes: string,
+  weldability: string,
+  application: string,
+  density: number,
+}
+

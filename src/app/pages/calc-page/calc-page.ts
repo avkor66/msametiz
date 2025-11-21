@@ -307,10 +307,5 @@ export class CalcPage {
 
   ngOnInit() {
 
-    // this.http.get<ICart[]>(environment.apiUrl + 'api/v1/cart')
-    //   .subscribe(data => {
-    //     this.cart = data;
-    //     console.log(data);
-    //   })
   }
 }
