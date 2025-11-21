@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Auth} from "../../../auth/auth";
+import {ShoppingCart} from "../../../product-ui/shopping-cart/shopping-cart";
+import {ProductList} from "../../../product-ui/product-list/product-list";
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ShoppingCart, ProductList],
   templateUrl: './admin-dashboard.html',
   styleUrl: './admin-dashboard.scss'
   })

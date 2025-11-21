@@ -37,79 +37,62 @@
           </div>
 
           <!-- Вид -->
-          <div class="select-option" (change)="onSpeciesChange($event)">
-            <div class="select-option-line">
-              <div class="window">
-                <div class="window-name"><p>Вид</p></div>
-                <select class="window-select" formControlName="species">
-                  @if (form.value.category === 'metiz') {
-                    @for (s of species; track s) {
-                      <option [value]="s.value">{{ s.label }}</option>
-                    }
-<!--                  } @else if (form.value.category === 'detail') {-->
-<!--                    @for (d of details; track d) {-->
-<!--                      <option>{{ d }}</option>-->
-<!--                    }-->
-                  } @else {
-                    @for (c of details; track c) {
-                      <option>{{ c }}</option>
-                    }
-                  }
-                </select>
-              </div>
+            <div class="select-option">
+                <div class="select-option-line">
+                    <div class="window">
+                        <div class="window-name"><p>Вид</p></div>
+                        <select class="window-select" formControlName="species">
+                            <option [ngValue]="null">Выберите вид</option>
+                            @if (form.value.category === 'metiz') {
+                                @for (s of species; track s) {
+                                    <option [value]="s.value">{{ s.label }}</option>
+                                }
+                            } @else {
+                                @for (c of details; track c) {
+                                    <option>{{ c }}</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          @if (form.value.category === 'metiz') {
-            <!-- ГОСТ -->
-            <app-select-option
-              [formGroup]="form"
-              [option] = cart.stateStandards
-              controlName="stateStandard"
-              selectName="ГОСТ"
-              (change)="onStateStandardChange($event)"
-            ></app-select-option>
 
-            <!-- Диаметр-->
-            <app-select-option
-              [formGroup]="form"
-              [option] = cart.diameters
-              controlName="diameter"
-              selectName="Диаметр"
-              (change)="onDiameterChange($event)"
-            ></app-select-option>
 
-            @if (form.value.species === 'bolt') {
-              <!-- Длина-->
-              <app-select-option
-                [formGroup]="form"
-                [option] = cart.lengths
-                controlName="length"
-                selectName="Длина"
-                (change)="onLengthChange($event)"
-              ></app-select-option>
-            }
+              @if (form.value.category === 'metiz') {
+                  <app-select-option
+                          [formGroup]="form"
+                          [option]="(availableStateStandards$ | async)!"
+                          controlName="stateStandard"
+                          selectName="ГОСТ"
+                  ></app-select-option>
 
-            @if (form.value.species === 'hairpin') {
-              <!-- Длина-->
-              <app-select-option
-                [formGroup]="form"
-                [option] = cart.lengths
-                controlName="length"
-                selectName="Длина"
-                (change)="onLengthChange($event)"
-              ></app-select-option>
-              <!-- Длина резьбы-->
-              <app-select-option
-                [formGroup]="form"
-                [option] = cart.threadLengths
-                controlName="threadLength"
-                selectName="Длина резьбы"
-                (change)="onThreadLengthChange($event)"
-              ></app-select-option>
-            }
+                  <app-select-option
+                          [formGroup]="form"
+                          [option]="(availableDiameters$ | async)!"
+                          controlName="diameter"
+                          selectName="Диаметр"
+                  ></app-select-option>
 
-          }
+                  @if (form.value.species === 'bolt' || form.value.species === 'hairpin') {
+                      <app-select-option
+                              [formGroup]="form"
+                              [option]="(availableLengths$ | async)!"
+                              controlName="length"
+                              selectName="Длина"
+                      ></app-select-option>
+                  }
+
+                  @if (form.value.species === 'hairpin') {
+                      <app-select-option
+                              [formGroup]="form"
+                              [option]="(availableThreadLengths$ | async)!"
+                              controlName="threadLength"
+                              selectName="Длина резьбы"
+                      ></app-select-option>
+                  }
+              }
+
 
           @if (form.value.category === 'detail') {
             <!-- Серия -->
@@ -139,13 +122,13 @@
           }
 
           <!-- Марка стали -->
-          <app-select-option
-            [formGroup]="form"
-            [option] = cart.steelGrades
-            controlName="steelGrade"
-            selectName="Сталь"
-            (change)="onSteelChange($event)"
-          ></app-select-option>
+            <app-select-option
+                    [formGroup]="form"
+                    [option]="(availableSteelGrades$ | async)!"
+                    controlName="steelGrade"
+                    selectName="Сталь"
+            ></app-select-option>
+
 
           <!-- Количество -->
           <div class="select-option">
@@ -192,28 +175,6 @@
           </div>
         </div>
 
-<!--        &lt;!&ndash; Размеры &ndash;&gt;-->
-<!--        <div class="select-option">-->
-<!--          <div class="select-option-line">-->
-<!--            <div class="window">-->
-<!--              <div class="window-icon"><i class="fa fa-balance-scale"></i></div>-->
-<!--              <div class="window-name"><p>Вес (кг)</p></div>-->
-<!--              <input type="number" formControlName="weight" class="window-input" />-->
-<!--            </div>-->
-
-<!--            <div class="window">-->
-<!--              <div class="window-icon"><i class="fa fa-cube"></i></div>-->
-<!--              <div class="window-name"><p>Объём (м³)</p></div>-->
-<!--              <input type="number" formControlName="volume" class="window-input" />-->
-<!--            </div>-->
-
-<!--            <div class="window">-->
-<!--              <div class="window-icon"><i class="fa fa-cubes"></i></div>-->
-<!--              <div class="window-name"><p>Количество</p></div>-->
-<!--              <input type="number" formControlName="quantity" class="window-input" />-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
 
       </div>
       </div>

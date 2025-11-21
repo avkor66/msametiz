@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "name": "Retro Gaming Console",
+      "description": "Relive the classics with this amazing retro console.",
+      "price": 59.99,
+      "imageUrl": "https://images.unsplash.com/photo-1744472649709-22a4eedb172a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmV0cm8lMjBHYW1pbmclMjBDb25zb2xlfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "prod_002",
+      "name": "Wireless Ergonomic Mouse",
+      "description": "Comfortable and precise wireless mouse for long work hours.",
+      "price": 25.50,
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V2lyZWxlc3MlMjBNb3VzZXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "prod_003",
+      "name": "Mechanical Keyboard (RGB)",
+      "description": "Clicky and responsive keyboard with customizable RGB lighting.",
+      "price": 89.95,
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1679177183572-a4056053b8a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWVjaGFuaWNhbCUyMGtleWJvYXJkJTIwcmdifGVufDB8fDB8fHww"
+    },
+    {
+      "id": "prod_004",
+      "name": "Noise-Cancelling Headphones",
+      "description": "Immerse yourself in sound, block out the world.",
+      "price": 149.00,
+      "imageUrl": "https://images.unsplash.com/photo-1656457537704-11f3bcaee2fd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fE5vaXNlJTIwQ2FuY2VsbGluZyUyMEhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "prod_005",
+      "name": "Smart Fitness Tracker",
+      "description": "Monitor your activity and stay motivated.",
+      "price": 45.00,
+      "imageUrl": "https://media.istockphoto.com/id/1372077120/photo/over-the-shoulder-view-of-young-asian-sports-woman-checks-her-fitness-statistics-on.webp?a=1&b=1&s=612x612&w=0&k=20&c=JP7gEDFqVzPjl9yu8WGiZ-_cDDYg8xqEcfV2YYGfTHc="
+    }
+  ]
+}

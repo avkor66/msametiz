@@ -1,0 +1,29 @@
+<h2>Products</h2>
+
+<div *ngIf="isLoading$ | async" class="loading" >
+    Loading Products .... pls wait
+</div>
+
+<div *ngIf="error$ |async as error" class="error" >
+    <p>Error loading the Products....</p>
+    <pre>{{ error?.message || error | json }}</pre>
+</div>
+
+
+<div *ngIf="!(isLoading$ | async) && !(error$ | async)" class="product-grid">
+    <ng-container *ngIf="products$ | async as products">
+        <div *ngIf="!products || products.length === 0" class="empty-message">
+            No products available at the moment.
+        </div>
+
+        <div *ngFor="let product of products" class="product-card">
+            <img [src]="product.imageUrl" [alt]="product.name" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/300x200/cccccc/ffffff?text=Image+Error'">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">{{ product.price | currency:'USD':'symbol' }}</p>
+                <button (click)="addToCart(product.id)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
