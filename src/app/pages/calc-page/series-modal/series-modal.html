@@ -1,0 +1,29 @@
+<div class="modal-content">
+    @let brand = currentBrands | async;
+    @if (brand) {
+
+        <img [src]="brand.images" alt="poster" class="modal-poster">
+        <div class="modal-detail">
+            <div class="modal-detail__title">{{ brand.brand }}</div>
+            <div class="modal-detail__year">{{ brand.anchorSpecifications }}</div>
+            <div class="modal-detail__description">
+                <small>
+                    {{brand.drawingDesignation}}
+                </small>
+                <span>
+                    {{brand.plateDimensionsMM}}
+                </span>
+            </div>
+            <button
+                    class="modal-close"
+                    (click)="modalService.close()"
+            >
+            </button>
+            <div class="modal-rating">{{ brand.totalWeightKg }}</div>
+        </div>
+
+    } @else {
+        <h3>Данные утеряны при загрузке...</h3>
+    }
+</div>
+

@@ -1,0 +1,50 @@
+.modal-custom {
+  position: fixed;
+  background: #ffffff;
+  padding: 15px;
+  left: 50%;
+  top: 450px;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 450px;
+  border-radius: 10px;
+  z-index: 2;
+  opacity: 1;
+  animation: fadeInModal 1s ease-out 1;
+  &__wrappers {
+    background: #000000;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: fadeInWrap 1s ease-out 1;
+    z-index: 1;
+  }
+}
+
+@keyframes fadeInWrap {
+  0% { opacity: 0; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes fadeInModal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 719px) {
+  .modal-custom {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 499px) {
+  .modal-custom {
+    overflow: hidden;
+    overflow-y: auto;
+    top: 350px;
+  }
+}

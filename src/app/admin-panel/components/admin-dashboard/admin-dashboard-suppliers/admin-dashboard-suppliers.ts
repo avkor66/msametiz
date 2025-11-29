@@ -1,14 +1,11 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {AdminService} from "../../../../data/services/admin";
-import {IMaterials, ISupplierMaterials} from "../../../../data/interfaces/product.interface"
-import {Popover} from "./popover/popover";
+import {IMaterials} from "../../../../data/interfaces/product.interface"
 import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
 
 @Component({
   selector: 'app-admin-dashboard-suppliers',
-  imports: [
-    Popover
-  ],
+  imports: [],
   templateUrl: './admin-dashboard-suppliers.html',
   styleUrl: './admin-dashboard-suppliers.scss'
 })

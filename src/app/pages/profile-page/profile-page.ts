@@ -17,7 +17,6 @@ import {PostFeed} from './post-feed/post-feed';
     AsyncPipe,
     RouterLink,
     SvgIcon,
-    ImgUrlPipe,
     PostFeed
   ],
   templateUrl: './profile-page.html',

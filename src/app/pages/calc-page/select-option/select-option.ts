@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {User} from '../../../data/interfaces/profile.interface';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -15,4 +14,5 @@ export class SelectOption {
   @Input() controlName!: string;
   @Input() formGroup!: FormGroup;
   @Input() selectName!: string;
+
 }

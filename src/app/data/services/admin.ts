@@ -3,7 +3,8 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { environment } from '../../../environments/environment';
 import {
-  IOrders,
+  IBrands,
+  IOrders, ISeries,
   ISteelGrade,
   ISteelStandard,
   ISupplierMaterials,
@@ -17,6 +18,7 @@ export class AdminService {
   private apiUrlMaterials: string = `${environment.apiMaterialsUrl}products`;
   private apiUrlMaterials_: string = `http://localhost:8082/`;
   private apiUrlApplications: string = `${environment.apiApplicationsUrl}cart/costs`;
+  private apiApplications: string = environment.apiApplicationsUrl;
 
   constructor(private http: HttpClient) {}
 

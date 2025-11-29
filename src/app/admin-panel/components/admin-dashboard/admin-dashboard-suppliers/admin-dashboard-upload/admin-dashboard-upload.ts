@@ -23,15 +23,15 @@ export class AdminDashboardUpload {
 
   fileBrowserHandler(event: Event) {
     const file: File | undefined = (event.target as HTMLInputElement)?.files?.[0];
-    this.proccessFile(file);
+    this.processFile(file);
 
     (event.target as HTMLInputElement).value = '';
 
 
   }
 
-  onFileDroped(file: File) {
-    this.proccessFile(file);
+  onFileDropped(file: File) {
+    this.processFile(file);
   }
 
   checkPrice() {
@@ -57,7 +57,7 @@ export class AdminDashboardUpload {
     });
   }
 
-  proccessFile(file: File | null | undefined) {
+  processFile(file: File | null | undefined) {
     this.uploadStatus = '';
     this.uploadError = '';
 

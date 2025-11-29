@@ -9,7 +9,7 @@ import {ImgUrlPipe} from '../../helpers/pipes/img-url-pipe';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SvgIcon, RouterLink, AsyncPipe, SubscriberCard, ImgUrlPipe, RouterLinkActive],
+  imports: [SvgIcon, RouterLink, ImgUrlPipe, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss'
 })
@@ -25,9 +25,9 @@ export class Sidebar {
       link: 'profile/me'
     },
     {
-      label: 'Чаты',
+      label: 'Заявки',
       icon: 'chats',
-      link: 'chats'
+      link: 'orders'
     },
     {
       label: 'Поиск',

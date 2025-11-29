@@ -32,7 +32,7 @@ export interface IOrders {
   sessionId: string,
   device: string,
   status: string,
-  cart: ICartSmall,
+  cart: ICartSmall[],
   contact: {
     name: string,
     phone: string,
@@ -172,3 +172,39 @@ export interface ISteelGrade {
   density: number,
 }
 
+export interface ISeries {
+  series: string,
+  documentName: string,
+  issue: number,
+  classificationByGroup: IClassificationByGroup[]
+}
+
+interface IClassificationByGroup {
+  groupNumber: number,
+  brandRange: string,
+  structureType: string,
+  anchorLocation: string,
+  description: string,
+}
+
+
+
+export interface IBrands {
+  group101_164: IBrand[],
+  group201_228: IBrand[],
+  group301_323: IBrand[],
+  group401_418: IBrand[],
+  group501_571: IBrand[],
+  group601_617: IBrand[],
+  group701_795: IBrand[],
+  group801_834: IBrand[],
+}
+
+export interface IBrand {
+  "brand": string,
+  "drawingDesignation": string,
+  "plateDimensionsMM": string,
+  "anchorSpecifications": string,
+  "totalWeightKg": number,
+  "images": string
+}

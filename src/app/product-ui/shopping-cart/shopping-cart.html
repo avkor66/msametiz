@@ -1,4 +1,4 @@
-<h2>Shopping Cart</h2>
+<h2>Заявка на расчет стоимости</h2>
 
 <ng-container *ngIf="cartItem$ | async as items">
     <div *ngIf="!items || items.length === 0" class="empty-cart">
@@ -16,7 +16,7 @@
             </li>
             <li *ngFor="let item of items;" class="cart-item">
                 <div class="item-details">
-                    <img [src]="item.imageUrl" [alt]="item.name" class="item-image" onerror="this.src='https://placehold.co/60x40/cccccc/ffffff?text=Img'">
+                    <img [src]="item.imageUrl" [alt]="item.name" class="item-image">
                     <span>{{ item.name }}</span>
                 </div>
                 <div class="item-quantity">
@@ -24,8 +24,8 @@
                     <span>{{ item.quantity }}</span>
                     <button (click)="increase(item.productId)" class="quantity-btn" aria-label="Increase quantity">+</button>
                 </div>
-                <span class="item-price">{{ item.price | currency:'USD':'symbol' }}</span>
-                <span class="item-total">{{ item.lineTotal | currency:'USD':'symbol' }}</span>
+                <span class="item-price">{{ item.price | currency:'RUB ':'symbol' }}</span>
+                <span class="item-total">{{ item.lineTotal | currency:'RUB ':'symbol' }}</span>
                 <div class="item-actions">
                     <button (click)="remove(item.productId)" class="remove-btn" aria-label="Remove item">Remove</button>
                 </div>
@@ -33,9 +33,10 @@
         </ul>
 
         <div class="cart-summary">
-            <button (click)="clearCart()" class="clear-cart-btn">Clear Cart</button>
+            <button (click)="clearCart()" class="clear-cart-btn">Очистить корзину</button>
+            <button (click)="processAndSendOrderOldSchool()" class="clear-cart-btn">Отправить заявку на расчет</button>
             <div class="cart-total">
-                <strong>Grand Total: {{ totalPrice$ | async | currency:'USD':'symbol' }}</strong>
+                <strong>Grand Total: {{ totalPrice$ | async | currency:'RUB ':'symbol' }}</strong>
             </div>
         </div>
     </div>

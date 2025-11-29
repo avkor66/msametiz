@@ -48,7 +48,7 @@ $gray-light: #dadada;
 
 .product-card__image {
   width: 100%;
-  height: 220px; /* одинаковая высота для всех изображений */
+  height: 220px;
   overflow: hidden;
   background: #f0f0f0;
 }
@@ -56,7 +56,7 @@ $gray-light: #dadada;
 .product-card__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* заполняет контейнер, обрезая по центру */
+  object-fit: cover;
   object-position: center;
   display: block;
   transition: transform 0.4s ease;

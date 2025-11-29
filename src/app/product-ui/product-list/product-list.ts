@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 import {Product} from "../../products/product.model";
 import * as ProductSelectors from '../../products/product.selectors';
 import * as ProductActions from '../../products/product.actions';
-import * as CartActions from '../../cart/cart.action';
+import * as CartActions from '../../cart/cart.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -32,7 +32,7 @@ export class ProductList implements OnInit {
     this.store.dispatch(ProductActions.loadProduct());
   }
 
-  addToCart(productId: string) {
-    this.store.dispatch(CartActions.addItem({productId}))
+  addToCart(productId: string, quantity: number) {
+    this.store.dispatch(CartActions.addItem({productId, quantity}))
   }
 }

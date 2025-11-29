@@ -22,7 +22,8 @@ export class ProductEffects {
           catchError(error => {
             return of(ProductActions.loadProductFailure({error}));
           })
-        ))
+        )
+      )
     )
   )
 }

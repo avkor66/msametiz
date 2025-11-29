@@ -2,6 +2,7 @@ import {inject, Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, delay, Observable, throwError} from "rxjs";
 import {Product} from "./product.model";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ import {Product} from "./product.model";
 export class ProductService {
   private http = inject(HttpClient);
 
-  private productsUrl = 'http://localhost:3000/products';
+  private productsUrl = `${environment.apiApplicationsUrl}products`;
 
   getProducts() : Observable<Product[]> {
     return this.http.get<Product[]>(this.productsUrl).pipe(

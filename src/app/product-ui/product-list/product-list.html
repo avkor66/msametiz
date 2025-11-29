@@ -17,12 +17,12 @@
         </div>
 
         <div *ngFor="let product of products" class="product-card">
-            <img [src]="product.imageUrl" [alt]="product.name" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/300x200/cccccc/ffffff?text=Image+Error'">
+            <img [src]="product.imageUrl" [alt]="product.name" class="product-image" loading="lazy">
             <div class="product-info">
                 <h3>{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
                 <p class="product-price">{{ product.price | currency:'USD':'symbol' }}</p>
-                <button (click)="addToCart(product.id)" class="add-to-cart-btn">Add to Cart</button>
+                <button (click)="addToCart(product.id, 1)" class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
     </ng-container>

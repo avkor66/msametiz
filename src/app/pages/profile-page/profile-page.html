@@ -4,7 +4,7 @@
       [profile]="profile"
     ></app-profile-header>
 
-    <a class="btn-custom to-setting-btn" [routerLink]="['/users/settings']">Редактировать
+    <a class="btn-custom to-setting-btn" [routerLink]="['/account/settings']">Редактировать
       <svg icon="settings" class="svg-icon"></svg>
     </a>
 
@@ -12,33 +12,5 @@
 
   <main class="profile-page__body">
     <app-post-feed></app-post-feed>
-
-    <div>
-      <h3 class="h6 mb16">Подписчики</h3>
-      <div class="subscribers-wrapper">
-        @for ( subscriber of subscribers$ | async ; track subscriber.id) {
-          <a class="subscriber-avatar-btn" [routerLink]="['/users/profile', subscriber.id]">
-            @if (subscriber.avatarUrl) {
-              <img [src]="subscriber.avatarUrl | imgUrl" alt="">
-            } @else {
-              <img src="/assets/images/avatar.jpeg" alt="avatar">
-            }
-          </a>
-        }
-        <a class="to-subscribers-search" [routerLink]="['/users/search']">
-        </a>
-      </div>
-      <h3 class="h6 mb16">Навыки</h3>
-
-      <div class="stack-wrapper mb32">
-        @for (skill of profile.stack; track skill) {
-          <div class="skill-tag">{{skill}}</div>
-        }
-      </div>
-
-      <h3 class="h6 mb16">О себе</h3>
-      <p class="medium-text">{{ profile.description }}</p>
-
-    </div>
   </main>
 }

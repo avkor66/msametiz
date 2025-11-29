@@ -13,5 +13,4 @@ export const loadProductSuccess = createAction(
 export const loadProductFailure = createAction(
   '[Product API] Load Products Failure',
   props<{ error: any }>()
-
 )

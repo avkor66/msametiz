@@ -1,0 +1,28 @@
+<div class="catalog-wrapper">
+    <header class="catalog__header">
+        <h3 class="catalog__header-title">Серии</h3>
+        @let serie = series | async;
+        @if (serie) {
+            @for (item of serie.classificationByGroup; track item) {
+                <span class="series-title">{{ item.brandRange }}</span>
+            }
+        }
+    </header>
+    <section class="catalog__content">
+        @let brandsGroup = brands | async;
+        @if (brandsGroup) {
+            @for (item of brandsGroup.group101_164; track item) {
+                <app-series-card
+                    [film]="item"
+                ></app-series-card>
+            }
+        } @else {
+            <p>Ничего не найдено</p>
+        }
+    </section>
+    @if ( modalService.isVisible$ | async ) {
+        <app-modal>
+            <app-series-modal></app-series-modal>
+        </app-modal>
+    }
+</div>

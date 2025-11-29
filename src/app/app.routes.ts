@@ -45,21 +45,36 @@ import {
 import {
   AdminDashboardUpload
 } from "./admin-panel/components/admin-dashboard/admin-dashboard-suppliers/admin-dashboard-upload/admin-dashboard-upload";
+import {CalcLayout} from "./pages/calc-page/calc-layout/calc-layout";
+import {CalcBolts} from "./pages/calc-page/calc-bolts/calc-bolts";
+import {CalcWashers} from "./pages/calc-page/calc-washers/calc-washers";
+import {CalcNuts} from "./pages/calc-page/calc-nuts/calc-nuts";
+import {ShoppingCart} from "./product-ui/shopping-cart/shopping-cart";
+import {CalcEmbedded} from "./pages/calc-page/calc-embedded/calc-embedded";
+import {OrdersPage} from "./pages/orders-page/orders-page";
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
       {path: '', component: HomePage},
       {path: 'contacts', component: ContactsPage},
-      {path: 'calc', component: CalcPage},
       {path: 'products', component: ProductsPage},
       {path: 'products/:name', component: ProductDetail},
       {path: 'services', component: ServicesPage},
       {path: 'about', component: AboutPage},
     ]},
+  {path: 'calc', component: CalcLayout, children: [
+      {path: '',  redirectTo: 'bolts', pathMatch: 'full'},
+      {path: 'bolts', component: CalcBolts},
+      {path: 'washers', component: CalcWashers},
+      {path: 'nuts', component: CalcNuts},
+      {path: 'cart', component: ShoppingCart},
+      {path: 'embedded', component: CalcEmbedded},
+    ]},
   {path: 'account', component: LayoutProfile, children: [
       {path: '', redirectTo: 'profile/me', pathMatch: 'full'},
       {path: 'profile/:id', component: ProfilePage},
       {path: 'settings', component: SettingsPage},
+      {path: 'orders', component: OrdersPage},
       {path: 'search', component: SearchPage},
       {path: 'admin', redirectTo: '/admin', pathMatch: 'prefix'},
     ],

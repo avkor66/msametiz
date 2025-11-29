@@ -1,15 +1,13 @@
-<div class="select-option" [formGroup]="formGroup">
-  <div class="select-option-line">
-    <div class="window">
-      <div class="window-name"><p>{{ selectName }}</p></div>
-      <select
-        class="window-select"
+<div class="form-floating select-option" [formGroup]="formGroup">
+    <select
+        class="form-select"
+        id="floatingSelect"
+        aria-label="Выберите значение"
         [formControlName]="controlName"
-      >
+    >
         @for (s of option; track s) {
           <option>{{ s }}</option>
         }
-      </select>
-    </div>
-  </div>
+    </select>
+    <label for="floatingSelect">{{ selectName }}</label>
 </div>

@@ -1,0 +1,9 @@
+:host{
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: var(--bs-info);
+    background-color: #393939;
+  }
+  .nav-link {
+    color: var(--bs-primary-bg-subtle);
+  }
+}

@@ -1,0 +1,118 @@
+<main class="calc">
+    <div class="calc-page">
+        <div class="calc-page-title">
+            Калькулятор стоимости (Гайки)
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="calc-page-content form-floating">
+
+
+            <div class="calc-wrapper">
+                <div class="calc-wrapper-changer">
+                    <div class="select-option">
+                        <div class="select-option-line">
+                            <h3>Каталог гаек</h3>
+                        </div>
+                    </div>
+
+                    <app-select-option
+                            [formGroup]="form"
+                            [option]="(availableStateStandards$ | async)!"
+                            controlName="stateStandard"
+                            selectName="ГОСТ"
+                    ></app-select-option>
+
+                    <app-select-option
+                            [formGroup]="form"
+                            [option]="(availableDiameters$ | async)!"
+                            controlName="diameter"
+                            selectName="Диаметр"
+                    ></app-select-option>
+
+
+                    <!-- Марка стали -->
+                    <app-select-option
+                            [formGroup]="form"
+                            [option]="(availableSteelGrades$ | async)!"
+                            controlName="steelGrade"
+                            selectName="Сталь"
+                    ></app-select-option>
+
+
+                    <!-- Количество -->
+                    <div class="select-option">
+                        <div class="select-option-line">
+                            <div class="window">
+                                <div class="window-name"><p>Количество</p></div>
+                                <input type="number" formControlName="quantity" class="window-input" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Комментарий -->
+                    <div class="form-floating select-option">
+                        <textarea class="form-control" formControlName="comment" placeholder="Введите комментарии к заявке" id="floatingTextarea" style="height: 100px"></textarea>
+                        <label for="floatingTextarea">Комментарии</label>
+                    </div>
+                    <div class="select-option">
+                        <div class="select-option-line">
+                            <div class="select-title-reset" (click)="resetForm()">Сбросить</div>
+                        </div>
+                    </div>
+
+                    <!--                    &lt;!&ndash; Доставка &ndash;&gt;-->
+                    <!--                    <div class="select-bottom">-->
+                    <!--                        <div class="select-bottom-shipping">-->
+                    <!--                            <div class="select-bottom-shipping-title">Доставка</div>-->
+                    <!--                            <div class="select-bottom-shipping-buttons">-->
+                    <!--                                <button-->
+                    <!--                                        type="button"-->
+                    <!--                                        class="yes"-->
+                    <!--                                        [class.active]="form.value.delivery"-->
+                    <!--                                        (click)="form.patchValue({ delivery: true })">-->
+                    <!--                                    Да-->
+                    <!--                                </button>-->
+                    <!--                                <button-->
+                    <!--                                        type="button"-->
+                    <!--                                        class="no"-->
+                    <!--                                        [class.active]="!form.value.delivery"-->
+                    <!--                                        (click)="form.patchValue({ delivery: false })">-->
+                    <!--                                    Нет-->
+                    <!--                                </button>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+                <div class="calc-wrapper-result">
+
+                    <!-- Картинка -->
+                    <div class="select-bottom-price">
+                        <img [src]="nutImageUrl" alt="washer" style="height: 300px;">
+                    </div>
+                    <!-- Стоимость -->
+
+                </div>
+
+            </div>
+
+
+
+            <div class="select-title mt-4">
+                <div class="select-title-buttons flex justify-center w-full">
+
+                    <button
+                            type="button"
+                            (click)="addToCart()"
+                            class="abtn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                            [disabled]="form.invalid"
+                    >
+                        Добавить в заявку
+                    </button>
+
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</main>

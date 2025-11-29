@@ -4,7 +4,7 @@
   width: 90vw;
   max-width: 1900px;
   margin: 0 auto;
-  height: 75px;
+  height: 80px;
 
 }
 
@@ -16,9 +16,10 @@
 }
 
 .header-menu-list {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  gap: 10px;
   list-style: none;
+  justify-items: start;
 }
 
 .menu-item {

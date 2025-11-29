@@ -1,0 +1,28 @@
+@if (film) {
+    <article
+            class="film-card"
+            [attr.data-id]="film.brand"
+    >
+        <div class="film-card__poster">
+            <img [src]="film.images" [alt]="film.brand" class="poster-image">
+        </div>
+        <div class="film-card__name">
+            <strong class="card-subtitle">Закладная деталь: {{ film.brand }}</strong>
+            <strong>{{ film.drawingDesignation }}</strong>
+            <strong>{{ film.plateDimensionsMM }}</strong>
+            <strong>{{ film.anchorSpecifications }}</strong>
+            <strong> Вес: {{ film.totalWeightKg }}</strong>
+            <div class="film-card__footer">
+                <span>Цена по запросу</span>
+                <button
+                        class="btn-order"
+                        (click)="modalService.addToCart($event)"
+                        [attr.data-id]="film.brand"
+                >Заказать</button>
+            </div>
+        </div>
+    </article>
+} @else {
+    <h3>Данные не найдены...</h3>
+}
+

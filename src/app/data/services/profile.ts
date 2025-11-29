@@ -4,6 +4,7 @@ import {map, Observable, tap} from 'rxjs';
 import {Profile, User} from '../interfaces/profile.interface';
 import {Pageable} from '../interfaces/pageable.interface';
 import {environment} from '../../../environments/environment';
+import {IOrders} from "../interfaces/product.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +12,13 @@ import {environment} from '../../../environments/environment';
 export class ProfileService {
   http: HttpClient = inject(HttpClient)
 
-  baseApiUrl: string = 'https://icherniakov.ru/yt-course/';
+  private apiUrlApplications: string = `${environment.apiApplicationsUrl}cart/costs`;
   baseUrl: string = environment.apiUsersUrl;
 
   me = signal<Profile | null>(null);
   filteredProfiles = signal<Profile[]>([]);
+  profileOrders = signal<IOrders[]>([]);
 
-  getTestAccounts(): Observable<Profile[]> {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
-  }
 
   getAccount(id: string) {
     return this.http.get<Profile>(`${this.baseUrl}admin/${id}`, {
@@ -31,7 +30,10 @@ export class ProfileService {
     return this.http.get<Profile>(`${this.baseUrl}profile/me`, {
       withCredentials: true
     }).pipe(
-      tap(res => this.me.set(res))
+      tap(res => {
+        console.log('запись в ме ' + JSON.stringify(res));
+        this.me.set(res)
+      })
     )
   }
 
@@ -68,5 +70,11 @@ export class ProfileService {
     }).pipe(
       tap(res => this.filteredProfiles.set(res.users)),
     )
+  }
+
+  loadUserOrders(email: string | undefined) {
+    return this.http.get<IOrders[]>(`${this.apiUrlApplications}/user?email=${email}`, {
+      withCredentials: true
+    });
   }
 }

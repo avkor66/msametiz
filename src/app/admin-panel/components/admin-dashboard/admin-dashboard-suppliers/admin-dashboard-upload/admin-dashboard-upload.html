@@ -16,14 +16,13 @@
     class="dropzone"
     tabindex="0"
     (keyup.enter)="fileDrop.click()"
-    (fileDropped)="onFileDroped($event)"
+    (fileDropped)="onFileDropped($event)"
 >
 
     <div class="dropzone-content">
         <svg icon="upload" class="svg-icon"></svg>
         <span class="large-text">Перетащите изображение или Загрузите</span>
     </div>
-
 
     <input
         tabindex="-1"

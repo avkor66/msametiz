@@ -7,7 +7,7 @@ import {ProductList} from "../../../product-ui/product-list/product-list";
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [CommonModule, ShoppingCart, ProductList],
+  imports: [CommonModule],
   templateUrl: './admin-dashboard.html',
   styleUrl: './admin-dashboard.scss'
   })

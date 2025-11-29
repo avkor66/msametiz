@@ -1,8 +1,11 @@
+<a href="/">
+
 <img
   src="/assets/images/logo.svg"
   alt="logo"
   class="ml16 mb20"
 >
+</a>
 
 <nav>
   <ul class="main-menu-list">
@@ -22,21 +25,21 @@
   </ul>
 </nav>
 
-<p class="medium-text mb20">Подписчики</p>
+<!--<p class="medium-text mb20">Подписчики</p>-->
 
-@for ( profile of subscribers$ | async ; track profile.id) {
-  <app-subscriber-card
-    [profile]="profile"
-  ></app-subscriber-card>
-}
+<!--@for ( profile of subscribers$ | async ; track profile.id) {-->
+<!--  <app-subscriber-card-->
+<!--    [profile]="profile"-->
+<!--  ></app-subscriber-card>-->
+<!--}-->
 
-<div class="mt20 to-subscribers">
-  <a
-    [routerLink]="['/users/subscribers']"
-    class="to-subscriber-link medium-text"
-  >Все подписчики</a>
-  <svg icon="arrow" class="to-subscriber-icon"></svg>
-</div>
+<!--<div class="mt20 to-subscribers">-->
+<!--  <a-->
+<!--    [routerLink]="['/users/subscribers']"-->
+<!--    class="to-subscriber-link medium-text"-->
+<!--  >Все подписчики</a>-->
+<!--  <svg icon="arrow" class="to-subscriber-icon"></svg>-->
+<!--</div>-->
 
 
 <footer class="sidebar__footer">
@@ -47,7 +50,7 @@
       <img src="/assets/images/avatar.jpeg" alt="avatar">
     }
     <div class="medium-text username-text">{{ me.firstName }}.{{ me.lastName }}</div>
-    <a [routerLink]="['/users/settings']" class="settings-btn">
+    <a [routerLink]="['/account/settings']" class="settings-btn">
       <svg icon="settings" class="svg-icon"></svg>
     </a>
   }

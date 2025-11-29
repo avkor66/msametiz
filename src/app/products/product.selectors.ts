@@ -3,6 +3,11 @@ import {createFeatureSelector, createSelector} from "@ngrx/store";
 
 export const selectProductState = createFeatureSelector<fromProducts.ProductState>(fromProducts.productFeatureKey)
 
+export const selectProductMap = createSelector(
+  selectProductState,
+  (state) => state.products // Словарь { [id]: Product }
+);
+
 export const selectAllProducts = createSelector(
   selectProductState,
   (state: fromProducts.ProductState) => state.products

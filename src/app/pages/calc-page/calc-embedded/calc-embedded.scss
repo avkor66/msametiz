@@ -1,0 +1,116 @@
+.catalog  {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 10px;
+    gap: 10px;
+    margin: 10px;
+    position: relative;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &-title {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    &-search {
+      text-align: right;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(310px, 1fr));
+    grid-gap: 30px;
+    grid-auto-flow: dense;
+  }
+}
+.series-title {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #5F646D;
+}
+.search-input {
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  width: 250px;
+}
+
+@media (max-width: 1050px) {
+  .catalog {
+    &__content {
+      grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+      justify-content: space-evenly;
+    }
+    &__header {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+      justify-content: space-evenly;
+      grid-gap: 20px;
+      grid-auto-flow: dense;
+      &-title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .catalog {
+    &__content {
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    &__header {
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      &-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 719px) {
+  .catalog {
+    &__content {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+    &__header {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      &-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .catalog {
+    &-wrapper {
+      padding: 0;
+    }
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    &__header {
+      grid-template-columns: 1fr;
+      grid-gap: 5px;
+      &-title {
+        font-size: 1.8rem;
+      }
+      &-search {
+        text-align: left;
+      }
+    }
+  }
+  .search-input {
+    width: calc(100% - 20px);
+  }
+}
