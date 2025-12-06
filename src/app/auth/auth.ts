@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {TokenResponse} from './auth.intarface';
-import {catchError, Observable, tap, throwError} from 'rxjs';
+import {catchError, map, Observable, tap, throwError} from 'rxjs';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {environment} from '../../environments/environment';
@@ -79,6 +79,13 @@ export class Auth {
         console.log(val)
         this.saveTokens(val)
       })
+    )
+  }
+
+  register(payload: {firstName: string, lastName: string, email: string, password: string}) {
+    return this.http.post<TokenResponse>(
+      `${this.url}auth/signup/`,
+      payload, { withCredentials: true }
     )
   }
 

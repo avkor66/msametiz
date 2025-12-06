@@ -1,7 +1,10 @@
+<div class="header-wrapper">
+<div class="header-left">
+
 <a href="/"><img
   src="/assets/images/logo.svg"
   alt="logo"
-  class=""
+  class="header-image"
 ></a>
 
 <nav class="header-menu">
@@ -15,7 +18,7 @@
           class="menu-item"
           [routerLink]="[menuItem.link]"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: menuItem.exact }"
         >
           <svg [icon]="menuItem.icon" class="svg-icon"></svg>
           <span class="no-wrap">{{ menuItem.label }}</span>
@@ -25,15 +28,24 @@
   </ul>
 
 </nav>
+</div>
 
 <div class="header-btn">
   @if (username) {
-    <p>Привет, {{username}}</p>
+    <span class="header-username">{{username}}</span>
     <a class="btn-custom to-header-btn" [routerLink]="['/account']">Профиль</a>
     <a class="btn-custom to-header-btn" (click)="onLogout()">Выйти</a>
   } @else {
-    <p></p>
     <a class="btn-custom to-header-btn" [routerLink]="['/login']">Войти</a>
   }
+
+        <i
+                class="bi bi-minecart-loaded header-cart"
+                [routerLink]="['/calc/cart']"
+        >
+            <div class="header-cart-volume">{{cartItems()}}</div>
+        </i>
+
+</div>
 </div>
 

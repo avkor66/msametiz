@@ -52,6 +52,7 @@ import {CalcNuts} from "./pages/calc-page/calc-nuts/calc-nuts";
 import {ShoppingCart} from "./product-ui/shopping-cart/shopping-cart";
 import {CalcEmbedded} from "./pages/calc-page/calc-embedded/calc-embedded";
 import {OrdersPage} from "./pages/orders-page/orders-page";
+import {ResetPasswordPage} from "./pages/login-page/reset-password-page/reset-password-page";
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
@@ -61,6 +62,7 @@ export const routes: Routes = [
       {path: 'products/:name', component: ProductDetail},
       {path: 'services', component: ServicesPage},
       {path: 'about', component: AboutPage},
+      {path: 'password-reset/:token', component: ResetPasswordPage},
     ]},
   {path: 'calc', component: CalcLayout, children: [
       {path: '',  redirectTo: 'bolts', pathMatch: 'full'},

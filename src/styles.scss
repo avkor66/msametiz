@@ -4,6 +4,7 @@
   --dark-color: #000000;
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
+  --primary-hover-color: #8142f3;
   --gray-color: #5F646D;
   --dark-hover-color: #161616;
   --light-transparent-color: rgba(255, 255, 255, 0.75);
@@ -13,8 +14,11 @@
   --light: #f5f5f5;
   --white: #fff;
   --max-width: 1100px;
+  --login-background-color: #e3e3e3
 }
 
+:host {
+}
 *,
 *:before,
 *:after {
@@ -27,7 +31,7 @@ body {
   font-family: 'JetBrains Mono', sans-serif;
   background: var(--dark-color);
   color: var(--light-color);
-  height: 100dvh;
+  //height: 100vh;
 }
 
 .mb4 {
@@ -52,6 +56,10 @@ body {
 
 .mt6 {
   margin-top: 6px;
+}
+
+.mt60 {
+  margin-top: 60px;
 }
 
 .ml16 {
@@ -81,9 +89,13 @@ body {
   font-size: 14px;
   line-height: 24px;
   cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid var(--dark-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  &:hover {
+    background: var(--primary-hover-color);
+  }
 }
+
 
 .btn-shadow {
   position: relative;
@@ -154,7 +166,7 @@ body {
 .control-label {
   display: block;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 16px;
 }
 
@@ -163,14 +175,15 @@ body {
   max-width: 600px;
   display: block;
   border: 1px solid var(--light-color);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 12px 20px;
-  background: var(--dark-color);
+  margin-top: 10px;
+  background: var(--light-color);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 21px;
   font-family: "JetBrains Mono", sans-serif;
-  color: var(--light-color);
+  color: #1f1f1f;
 }
 
 .form-input {

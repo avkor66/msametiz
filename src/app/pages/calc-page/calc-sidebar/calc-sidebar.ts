@@ -1,6 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
 import {NavigationEnd, Router, RouterLink, RouterLinkActive} from "@angular/router";
-import {filter, Subscription} from "rxjs";
+import {filter, Observable, Subscription, tap} from "rxjs";
+import {Store} from "@ngrx/store";
+import * as CartSelectors from "../../../cart/cart.selectors";
+import {CartItemDetailed} from "../../../cart/cart.model";
 
 @Component({
   selector: 'app-calc-sidebar',
@@ -12,13 +15,25 @@ import {filter, Subscription} from "rxjs";
   styleUrl: './calc-sidebar.scss'
 })
 export class CalcSidebar implements OnInit, OnDestroy {
+  private store = inject(Store)
   currentUrl: string = '';
   private routerSubscription: Subscription | undefined;
   activeMenuItems: MenuItem[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.cartItem$ = this.store.select(CartSelectors.selectCartItemsWithDetails);
+  }
+
+  cartItems = signal<number>(0)
+  cartItem$: Observable<CartItemDetailed[]>;
+
+
 
   ngOnInit() {
+    this.cartItem$.subscribe(item => {
+      this.cartItems.set(item.length);
+      }
+    );
     this.setActiveMenu(this.router.url);
 
     this.routerSubscription = this.router.events.pipe(
@@ -31,7 +46,7 @@ export class CalcSidebar implements OnInit, OnDestroy {
       } else this.setActiveMenu('/admin');
     });
   }
-  // Ваши исходные данные
+
   menuDashboardItems: MenuItem[] = [
     { label: 'Болты', icon: 'bi-screwdriver', link: '/calc/bolts', cascade: null },
     { label: 'Гайки', icon: 'bi-nut-fill', link: '/calc/nuts', cascade: null },

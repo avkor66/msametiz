@@ -39,4 +39,18 @@ export class UserService {
       withCredentials: true
     });
   }
+
+  sendEmail(email: string): any {
+    return this.http.post<any>(`${environment.apiUsersUrl}auth/password/forgot`, {email}, {
+      withCredentials: true
+    });
+  }
+
+  passwordReset(password: string, token: string | undefined ): any {
+    return this.http.post<any>(
+      `${environment.apiUsersUrl}auth/password/reset/${token}`,
+      { password, token },
+      { withCredentials: true }
+    );
+  }
 }

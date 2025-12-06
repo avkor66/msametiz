@@ -6,8 +6,6 @@ import {Observable, take} from "rxjs";
 import * as CartSelectors from '../../cart/cart.selectors'
 import * as CartActions from '../../cart/cart.actions'
 import * as ProductActions from '../../products/product.actions'
-import * as fromCart from '../../cart/cart.reducer';
-import * as fromProduct from '../../products/product.reducer';
 import * as ProductSelectors from '../../products/product.selectors';
 import {CartItem} from "../../cart/cart.model";
 import {CartService} from "../../data/services/cart";
@@ -55,12 +53,10 @@ export class ShoppingCart implements OnInit {
   processAndSendOrderOldSchool() {
     this.cartItem$
       .pipe(
-        // Берем только одно текущее значение и автоматически отписываемся
         take(1)
       )
       .subscribe(
         (currentCartItems: CartItemDetailed[]) => {
-
           const orderItems = currentCartItems.map(item => {
               console.log(item);
               let ob = {
@@ -87,18 +83,18 @@ export class ShoppingCart implements OnInit {
                   ob.threadLength = product?.threadLength!
                   ob.steelGrade = product?.steelGrade!
                 }))
-            return ({...ob,
-            productId: item.productId,
-            quantity: item.quantity,
-            price: item.price,
+            return ({
+              ...ob,
+              productId: item.productId,
+              quantity: item.quantity,
+              price: item.price,
               imageUrl: item.imageUrl,
-
           })
           }
           );
 
           const orderData = {
-            items: orderItems, // Передаем очищенный массив
+            items: orderItems,
             totalPrice: currentCartItems.reduce((acc, item) => acc + item.lineTotal, 0)
           };
 
@@ -106,6 +102,7 @@ export class ShoppingCart implements OnInit {
 
           // Отправка на сервер
           this.cartService.sendCart(orderData)
+          this.store.dispatch(CartActions.clearCart())
         }
       );
   }

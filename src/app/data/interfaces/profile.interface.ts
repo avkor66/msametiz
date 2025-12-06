@@ -11,6 +11,7 @@ export interface Profile {
   city: string,
   description: string,
   fullName: string,
+  role: 'admin' | 'user';
 }
 
 export interface User {

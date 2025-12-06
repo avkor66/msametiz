@@ -1,13 +1,31 @@
 :host {
-  display: grid;
-  grid-template-columns: 200px 1fr 500px;
   width: 90vw;
   max-width: 1900px;
   margin: 0 auto;
-  height: 80px;
+  height: 90px;
+}
+.header-image {
+  height: 100%;
+}
+.header-left {
+  display: flex;
+  flex-flow: row;
+  gap: 50px;
+}
+.header-wrapper {
+  display: flex;
+  flex-flow: row;
+  gap: 50px;
+  justify-content: space-between;
+  margin: 0 30px;
 
 }
-
+.header-username {
+  max-width: min-content;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
 .header-menu {
   display: flex;
   flex-direction: column;
@@ -20,6 +38,9 @@
   gap: 10px;
   list-style: none;
   justify-items: start;
+}
+ol, ul {
+  padding-left: 0;
 }
 
 .menu-item {
@@ -49,8 +70,8 @@
 }
 
 .header-btn {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
+  display: flex;
+  width: min-content;
   grid-gap: 6px;
   align-items: center;
 }
@@ -64,5 +85,26 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+}
+
+.header-cart {
+  cursor: pointer;
+  margin: 0 5px;
+  position: relative;
+  font-size: 50px;
+}
+
+.header-cart-volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  top: 32%;
+  left: 25%;
+  color: var(--bs-info);
+  font-style: normal;
 }
 

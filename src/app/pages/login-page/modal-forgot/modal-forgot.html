@@ -1,0 +1,45 @@
+<div class="modal-content">
+    <form
+            class="login-form"
+            [formGroup]="modalForm"
+            (ngSubmit)="onSubmit()"
+    >
+        <div class="modal-detail">
+            <div class="modal-detail__title">Сбросить пароль</div>
+            <div class="modal-detail__description">
+                    Введите свой адрес электронной почты и мы вышлем вам инструкцию по восстановлению пароля.
+            </div>
+            <div class="modal-detail__input">
+
+                <label class="control-label mb16">
+                    Email:
+                    <input
+                        class="control-input"
+                        formControlName="inputEmail"
+                        type="text"
+                        placeholder="Введите Email"
+                    >
+                </label>
+            </div>
+            <button
+                class="modal-close"
+                (click)="modalService.close()"
+            >
+            </button>
+            <div class="modal-detail__send">
+
+                <button
+                   class="btn-custom btn-custom-forgot"
+                   type="submit"
+                >
+                    Отправить
+                </button>
+            </div>
+            <div class="modal-detail__description mt6">
+                {{message$ | async}}
+            </div>
+        </div>
+    </form>
+
+</div>
+

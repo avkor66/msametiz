@@ -2,8 +2,8 @@
   --dark-color: #000000;
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
-  --gray-color: #5F646D;
-  --dark-hover-color: #161616;
+  --gray-color: #635555;
+  --dark-hover-color: #393838;
   --light-transparent-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -11,4 +11,16 @@
   .container-fluid {
     background-color: var(--light-transparent-color);
   }
+}
+.calc-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.row-custom {
+}
+
+.content-wrapper {
 }

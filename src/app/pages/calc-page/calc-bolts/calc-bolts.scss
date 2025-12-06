@@ -1,7 +1,10 @@
+:host {
+}
+
 .calc {
   background-color: #fff;
   font-family: Nunito, sans-serif;
-  min-height: 86vh;
+  min-height: 77vh;
   color: #006790;
   display: flex;
   justify-content: left;
@@ -47,15 +50,13 @@
     &-buttons {
       display: flex;
       gap: 10px;
-
       .abtn {
-        background-color: #d6eaff;
+        background-color: #0189bd;
         border: none;
         border-radius: 8px;
         padding: 12px 24px;
         cursor: pointer;
         font-weight: 600;
-        color: #006790;
         transition: all 0.3s;
 
         &.active,

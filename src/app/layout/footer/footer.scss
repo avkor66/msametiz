@@ -1,11 +1,15 @@
 :host {
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
-  height: 220px;
+  justify-content: end;
+  height: auto;
   width: 90vw;
   max-width: 1900px;
   margin: 30px auto 20px auto;
+  //position: absolute;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
 }
 
 .footer-wrapper {

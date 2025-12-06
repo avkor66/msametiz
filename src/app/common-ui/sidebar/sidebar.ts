@@ -33,11 +33,6 @@ export class Sidebar {
       label: 'Поиск',
       icon: 'search',
       link: 'search'
-    },
-    {
-      label: 'Admin',
-      icon: 'settings',
-      link: 'admin'
     }
   ]
 

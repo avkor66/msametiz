@@ -1,7 +1,7 @@
 :root {
   --dark-color: #000000;
   --light-color: #FFFFFF;
-  --primary-color: #AE7AFF;
+  --primary-color: #dac1fb;
   --gray-color: #5F646D;
   --dark-hover-color: #161616;
   --light-transparent-color: rgba(255, 255, 255, 0.75);
@@ -10,27 +10,27 @@
 :host{
   @media (min-width: 1200px) {
     .col-xl-2 {
-      width: 18.666667%;
+      width: 20.666667%;
     }
   }
   @media (min-width: 1400px) {
     .col-xl-2 {
-      width: 16.866667%;
+      width: 18.866667%;
     }
   }
   @media (min-width: 1600px) {
     .col-xl-2 {
-      width: 14.466667%;
+      width: 16.466667%;
     }
   }
   @media (min-width: 1800px) {
     .col-xl-2 {
-      width: 12.266667%;
+      width: 14.266667%;
     }
   }
   @media (min-width: 2000px) {
     .col-xl-2 {
-      width: 11%;
+      width: 12.5%;
     }
   }
   .container-fluid {
