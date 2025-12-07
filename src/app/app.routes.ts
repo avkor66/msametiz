@@ -53,6 +53,7 @@ import {ShoppingCart} from "./product-ui/shopping-cart/shopping-cart";
 import {CalcEmbedded} from "./pages/calc-page/calc-embedded/calc-embedded";
 import {OrdersPage} from "./pages/orders-page/orders-page";
 import {ResetPasswordPage} from "./pages/login-page/reset-password-page/reset-password-page";
+import {CalcOrders} from "./pages/calc-page/calc-orders/calc-orders";
 
 export const routes: Routes = [
   {path: '', component: Layout, children: [
@@ -71,6 +72,7 @@ export const routes: Routes = [
       {path: 'nuts', component: CalcNuts},
       {path: 'cart', component: ShoppingCart},
       {path: 'embedded', component: CalcEmbedded},
+      {path: 'orders', component: CalcOrders},
     ]},
   {path: 'account', component: LayoutProfile, children: [
       {path: '', redirectTo: 'profile/me', pathMatch: 'full'},

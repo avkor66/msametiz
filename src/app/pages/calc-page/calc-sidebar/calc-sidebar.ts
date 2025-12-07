@@ -55,6 +55,9 @@ export class CalcSidebar implements OnInit, OnDestroy {
   menuCartItems: MenuItem[] = [
     { label: 'Корзина', icon: 'bi-cart-dash-fill', link: '/calc/cart', cascade: null },
   ]
+  menuCartOrders: MenuItem[] = [
+    { label: 'Заявки', icon: 'bi-list-ol', link: '/calc/orders', cascade: null }
+  ]
   menuDetailItems: MenuItem[] = [
     { label: 'Закладные', icon: 'bi-view-list', link: '/calc/embedded', cascade: null },
   ]

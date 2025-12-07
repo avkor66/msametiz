@@ -16,7 +16,6 @@ export class GuestService {
     if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
       return crypto.randomUUID();
     }
-    // fallback: RFC 4122 v4
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
       const r = (Math.random() * 16) | 0;
       const v = c === 'x' ? r : (r & 0x3) | 0x8;
@@ -35,13 +34,13 @@ export class GuestService {
   getGuestId(): string {
     return localStorage.getItem(this.guestKey)!;
   }
-
+  public initGuest() {
+    this.initGuestId();
+    this.initSessionId();
+  }
   private initSessionId(): string {
-    let sessionId = sessionStorage.getItem(this.sessionKey);
-    if (!sessionId) {
-      sessionId = this.generateUUID();
-      sessionStorage.setItem(this.sessionKey, sessionId);
-    }
+    const sessionId = this.generateUUID();
+    sessionStorage.setItem(this.sessionKey, sessionId);
     return sessionId;
   }
 

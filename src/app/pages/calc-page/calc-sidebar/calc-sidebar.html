@@ -56,7 +56,21 @@
                data-bs-toggle="collapse"
                class="nav-link px-3 py-sm-1 align-middle">
                 <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline me-3">{{item.label}}</span>
-                <span class="badge text-bg-info rounded-pill align-middle">{{cartItems()}}</span>
+                @if (cartItems()) {
+                    <span class="badge text-bg-info rounded-pill align-middle">{{cartItems()}}</span>
+                }
+            </a>
+        </li>
+    }
+    @for (item of menuCartOrders; track item) {
+        <li>
+            <a [routerLink]="item.link"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }"
+               data-bs-toggle="collapse"
+               class="nav-link px-3 py-sm-1 align-middle">
+                <i class="fs-4 {{item.icon}}"></i> <span class="ms-2 d-none d-sm-inline me-3">{{item.label}}</span>
+<!--                <span class="badge text-bg-info rounded-pill align-middle">{{cartItems()}}</span>-->
             </a>
         </li>
     }

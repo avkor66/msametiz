@@ -13,6 +13,7 @@ export class ProfileService {
   http: HttpClient = inject(HttpClient)
 
   private apiUrlApplications: string = `${environment.apiApplicationsUrl}cart/costs`;
+  private apiUrlApplicationsOrders: string = `${environment.apiApplicationsUrl}order`;
   baseUrl: string = environment.apiUsersUrl;
 
   me = signal<Profile | null>(null);
@@ -74,6 +75,12 @@ export class ProfileService {
 
   loadUserOrders(email: string | undefined) {
     return this.http.get<IOrders[]>(`${this.apiUrlApplications}/user?email=${email}`, {
+      withCredentials: true
+    });
+  }
+
+  loadUserOrdersByGuestId(guestId: string ) {
+    return this.http.get<IOrders[]>(`${this.apiUrlApplicationsOrders}/guest/${guestId}`, {
       withCredentials: true
     });
   }
