@@ -6,6 +6,9 @@ export const environment = {
   // apiApplicationsUrl: 'http://localhost:8084/',
   // apiUsersUrl: 'http://localhost/users/',
   apiUsersUrl: 'http://localhost:8081/',
-  apiMaterialsUrl: 'http://localhost/materials/',
-  apiCalculationsUrl: 'http://localhost/calculations/',
+  // apiMaterialsUrl: 'http://localhost/materials/',
+  apiMaterialsUrl: 'http://localhost:8082/',
+  // apiCalculationsUrl: 'http://localhost/calculations/',
+  apiCalculationsUrl: 'http://localhost:8083/',
+  yandex_metrika: ``
 };

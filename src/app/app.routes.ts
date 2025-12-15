@@ -10,7 +10,6 @@ import {Layout} from './layout/layout';
 import {ContactsPage} from './pages/contacts-page/contacts-page';
 import {ServicesPage} from './pages/services-page/services-page';
 import {ProductsPage} from './pages/products-page/products-page';
-import {CalcPage} from './pages/calc-page/calc-page';
 import {AboutPage} from './pages/about-page/about-page';
 import {ProductDetail} from './pages/products-page/product-detail/product-detail';
 import {NotFoundPage} from './pages/not-found-page/not-found-page';

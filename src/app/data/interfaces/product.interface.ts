@@ -60,6 +60,31 @@ export interface ICartSmall {
   comment: string
 }
 
+export interface IOrderForProfile {
+  anchorSpecifications: string,
+  cartId: string,
+  createdAt: string,
+  diameter: string,
+  height: number,
+  id: string,
+  innerDiameter: number,
+  length: string,
+  outerDiameter: number,
+  plateDimensions: string,
+  price: number,
+  productId: string,
+  quantity: number,
+  spannerSize: number,
+  species: string,
+  stateStandard: string,
+  steelGrade: string,
+  threadLength: string,
+  threadPitch: number,
+  updatedAt: string,
+  weightKg: number,
+  _id: string,
+  status: string
+}
 export interface ICart {
   threadPitch: number | undefined,
   height: number | undefined,

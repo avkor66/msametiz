@@ -1,7 +1,7 @@
-import {Component, inject} from '@angular/core';
-import {DatePipe} from "@angular/common";
+import {Component, inject, signal} from '@angular/core';
+import {AsyncPipe, DatePipe} from "@angular/common";
 import {Popover} from "../../../admin-panel/components/admin-dashboard/admin-dashboard-suppliers/popover/popover";
-import {IOrders} from "../../../data/interfaces/product.interface";
+import {IOrderForProfile, IOrders} from "../../../data/interfaces/product.interface";
 import {ProfileService} from "../../../data/services/profile";
 import {GuestService} from "../../../data/services/guest";
 
@@ -16,11 +16,12 @@ import {GuestService} from "../../../data/services/guest";
 })
 export class CalcOrders {
   guest = inject(GuestService)
-  data: IOrders[] = [];
+  data: IOrderForProfile[] = [];
+  guestMe = signal<string>(this.guest.getGuestId())
 
   profileService = inject(ProfileService);
   loadOrders() {
-    this.profileService.loadUserOrdersByGuestId(this.guest.getGuestId()).subscribe(
+    this.profileService.loadUserOrdersByGuestId(this.guestMe()).subscribe(
       result => {
         console.log(result);
         this.data = result;

@@ -349,6 +349,259 @@ export const boltsByGost: Record<string, GostBoltData> = {
 
 
 
+// // THIRD INITIALIZATION
+//     steelGrades: ['35', '40Х', '45', '09Г2С'],
+//     steelGrades: ['25', '35', '40Х', '25Х1МФ', '12Х18Н10Т'],
+//     steelGrades: ['35', '40Х', '45', '09Г2С'],
+//
+//
+//        SteelGrades gr = this.steelGradeRepository.findBySteelGradeName("Ст3");
+//        SteelGrades gr2 = this.steelGradeRepository.findBySteelGradeName("10");
+//        SteelGrades gr3 = this.steelGradeRepository.findBySteelGradeName("20");
+//        SteelGrades gr4 = this.steelGradeRepository.findBySteelGradeName("35");
+//        SteelGrades gr5 = this.steelGradeRepository.findBySteelGradeName("40");
+//        SteelGrades gr6 = this.steelGradeRepository.findBySteelGradeName("35Г2");
+//        SteelGrades gr7 = this.steelGradeRepository.findBySteelGradeName("20Г2Р");
+//        SteelGrades gr8 = this.steelGradeRepository.findBySteelGradeName("35Х");
+//        SteelGrades gr9 = this.steelGradeRepository.findBySteelGradeName("40Х");
+//        SteelGrades gr10 = this.steelGradeRepository.findBySteelGradeName("38ХА");
+//        SteelGrades gr11 = this.steelGradeRepository.findBySteelGradeName("30Х3МФ");
+//        SteelGrades gr12 = this.steelGradeRepository.findBySteelGradeName("40ХН2МА");
+//        SteelGrades gr13 = this.steelGradeRepository.findBySteelGradeName("25");
+//        SteelGrades gr14 = this.steelGradeRepository.findBySteelGradeName("45");
+//        SteelGrades gr15 = this.steelGradeRepository.findBySteelGradeName("09Г2С");
+//        SteelGrades gr16 = this.steelGradeRepository.findBySteelGradeName("25Х1МФ");
+//        SteelGrades gr17 = this.steelGradeRepository.findBySteelGradeName("12Х18Н10Т");
+//
+//        CatalogNutStandards ns1 = new CatalogNutStandards(
+//                "ГОСТ 5915-70",
+//                "ГОСТ 5915-70 Гайки шестигранные, класс точности В",
+//                "Класс точности В, высота m < d",
+//                "гайка","","",""
+//        );
+//        ns1.addGradeToStandard(gr4);
+//        ns1.addGradeToStandard(gr9);
+//        ns1.addGradeToStandard(gr14);
+//        ns1.addGradeToStandard(gr15);
+//        CatalogNutStandards ns2 = new CatalogNutStandards(
+//                "ГОСТ 9064-75-А",
+//                "ГОСТ 9064-75-А Гайки шестигранные (Тип А) для фланцевых соединений",
+//                "Тип А, Высота m = d, крупный шаг",
+//                "гайка","","",""
+//        );
+//        ns2.addGradeToStandard(gr13);
+//        ns2.addGradeToStandard(gr4);
+//        ns2.addGradeToStandard(gr9);
+//        ns2.addGradeToStandard(gr16);
+//        ns2.addGradeToStandard(gr17);
+//        CatalogNutStandards ns3 = new CatalogNutStandards(
+//                "ГОСТ 9064-75-Б",
+//                "ГОСТ 9064-75-Б Гайки колпачковые (Тип Б) для фланцевых соединений",
+//                "Тип Б, Колпачковая гайка",
+//                "гайка","","",""
+//        );
+//        ns3.addGradeToStandard(gr13);
+//        ns3.addGradeToStandard(gr4);
+//        ns3.addGradeToStandard(gr9);
+//        ns3.addGradeToStandard(gr16);
+//        ns3.addGradeToStandard(gr17);
+//        CatalogNutStandards ns4 = new CatalogNutStandards(
+//                "ГОСТ 5927-70",
+//                "ГОСТ 5927-70 Гайки шестигранные, класс точности А",
+//                "Класс точности А, аналогичен DIN 934, высота m < d",
+//                "гайка","","",""
+//        );
+//        ns4.addGradeToStandard(gr4);
+//        ns4.addGradeToStandard(gr9);
+//        ns4.addGradeToStandard(gr14);
+//        ns4.addGradeToStandard(gr15);
+//
+//
+// CatalogNutSizes cns112 = new CatalogNutSizes("M12", 1.75, 18.0, 10.0, null, "Гайка M12 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns112);
+// CatalogNutSizes cns116 = new CatalogNutSizes("M16", 2.0, 24.0, 13.0, null, "Гайка M16 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns116);
+// CatalogNutSizes cns120 = new CatalogNutSizes("M20", 2.5, 30.0, 16.0, null, "Гайка M20 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns120);
+// CatalogNutSizes cns124 = new CatalogNutSizes("M24", 3.0, 36.0, 19.0, null, "Гайка M24 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns124);
+// CatalogNutSizes cns130 = new CatalogNutSizes("M30", 3.5, 46.0, 24.0, null, "Гайка M30 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns130);
+// CatalogNutSizes cns136 = new CatalogNutSizes("M36", 4.0, 55.0, 29.0, null, "Гайка M36 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns136);
+// CatalogNutSizes cns142 = new CatalogNutSizes("M42", 4.5, 65.0, 34.0, null, "Гайка M42 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns142);
+// CatalogNutSizes cns148 = new CatalogNutSizes("M48", 5.0, 75.0, 39.0, null, "Гайка M48 ГОСТ 5915-70");
+// ns1.addNutSizeToStandard(cns148);
+//
+//CatalogNutSizes cns212 = new CatalogNutSizes("M12", 1.75, 19.0, 12.0, null, "Гайка M12-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns212);
+// CatalogNutSizes cns216 = new CatalogNutSizes("M16", 2.0, 24.0, 16.0, null, "Гайка M16-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns216);
+// CatalogNutSizes cns220 = new CatalogNutSizes("M20", 2.5, 30.0, 20.0, null, "Гайка M20-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns220);
+// CatalogNutSizes cns224 = new CatalogNutSizes("M24", 3.0, 36.0, 24.0, null, "Гайка M24-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns224);
+// CatalogNutSizes cns230 = new CatalogNutSizes("M30", 3.5, 46.0, 30.0, null, "Гайка M30-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns230);
+// CatalogNutSizes cns236 = new CatalogNutSizes("M36", 4.0, 55.0, 36.0, null, "Гайка M36-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns236);
+// CatalogNutSizes cns242 = new CatalogNutSizes("M42", 4.5, 65.0, 42.0, null, "Гайка M42-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns242);
+// CatalogNutSizes cns248 = new CatalogNutSizes("M48", 5.0, 75.0, 48.0, null, "Гайка M48-6Н ГОСТ 9064-75 (Тип А)");
+// ns2.addNutSizeToStandard(cns248);
+//
+//CatalogNutSizes cns312 = new CatalogNutSizes("M12", 1.75, 19.0, 21.0, 20.0, "Гайка M12-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns312);
+// CatalogNutSizes cns316 = new CatalogNutSizes("M16", 2.0, 24.0, 28.0, 28.0, "Гайка M16-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns316);
+// CatalogNutSizes cns320 = new CatalogNutSizes("M20", 2.5, 30.0, 35.0, 34.0, "Гайка M20-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns320);
+// CatalogNutSizes cns324 = new CatalogNutSizes("M24", 3.0, 36.0, 42.0, 40.0, "Гайка M24-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns324);
+// CatalogNutSizes cns330 = new CatalogNutSizes("M30", 3.5, 46.0, 52.0, 50.0, "Гайка M30-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns330);
+// CatalogNutSizes cns336 = new CatalogNutSizes("M36", 4.0, 55.0, 62.0, 60.0, "Гайка M36-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns336);
+// CatalogNutSizes cns342 = new CatalogNutSizes("M42", 4.5, 65.0, 72.0, 70.0, "Гайка M42-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns342);
+// CatalogNutSizes cns348 = new CatalogNutSizes("M48", 5.0, 75.0, 82.0, 80.0, "Гайка M48-6Н ГОСТ 9064-75 (Тип Б)");
+// ns3.addNutSizeToStandard(cns348);
+//
+//
+//
+//CatalogNutSizes cns412 = new CatalogNutSizes("M12", 1.75, 19.0, 9.6, null, "Гайка M12 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns412);
+// CatalogNutSizes cns416 = new CatalogNutSizes("M16", 2.0, 24.0, 13.0, null, "Гайка M16 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns416);
+// CatalogNutSizes cns420 = new CatalogNutSizes("M20", 2.5, 30.0, 16.0, null, "Гайка M20 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns420);
+// CatalogNutSizes cns424 = new CatalogNutSizes("M24", 3.0, 36.0, 19.0, null, "Гайка M24 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns424);
+// CatalogNutSizes cns430 = new CatalogNutSizes("M30", 3.5, 46.0, 24.0, null, "Гайка M30 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns430);
+// CatalogNutSizes cns436 = new CatalogNutSizes("M36", 4.0, 55.0, 29.0, null, "Гайка M36 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns436);
+// CatalogNutSizes cns442 = new CatalogNutSizes("M42", 4.5, 65.0, 34.0, null, "Гайка M42 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns442);
+// CatalogNutSizes cns448 = new CatalogNutSizes("M48", 5.0, 75.0, 38.0, null, "Гайка M48 ГОСТ 5927-70");
+// ns4.addNutSizeToStandard(cns448);
+//
+//
+//
+//
+//
+//
+//
+//
+//        CatalogBoltStandards bs1 = new CatalogBoltStandards(
+//                "ГОСТ 7798-70",
+//                "ГОСТ 7798-70 Болты с шестигранной головкой, класс точности В",
+//                "Стандартный болт общего назначения. Геометрические параметры соответствуют крупному шагу резьбы.",
+//                "болт","","",""
+//        );
+//        bs1.addGradeToStandard(gr);
+//        bs1.addGradeToStandard(gr2);
+//        bs1.addGradeToStandard(gr3);
+//        bs1.addGradeToStandard(gr4);
+//        bs1.addGradeToStandard(gr5);
+//        bs1.addGradeToStandard(gr8);
+//        bs1.addGradeToStandard(gr11);
+//
+//
+// CatalogBoltSizes cbs12 = new CatalogBoltSizes("M12", 1.75, 18.0, 7.5, 20, 200, 10, "Болт M12 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs12);
+// CatalogBoltSizes cbs14 = new CatalogBoltSizes("M14", 2.0, 21.0, 8.8, 25, 200, 10, "Болт M14 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs14);
+// CatalogBoltSizes cbs16 = new CatalogBoltSizes("M16", 2.0, 24.0, 10.0, 30, 250, 10, "Болт M16 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs16);
+// CatalogBoltSizes cbs18 = new CatalogBoltSizes("M18", 2.5, 27.0, 11.5, 30, 250, 10, "Болт M18 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs18);
+// CatalogBoltSizes cbs20 = new CatalogBoltSizes("M20", 2.5, 30.0, 12.5, 35, 300, 10, "Болт M20 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs20);
+// CatalogBoltSizes cbs22 = new CatalogBoltSizes("M22", 2.5, 34.0, 14.0, 40, 300, 10, "Болт M22 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs22);
+// CatalogBoltSizes cbs24 = new CatalogBoltSizes("M24", 3.0, 36.0, 15.0, 40, 300, 10, "Болт M24 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs24);
+// CatalogBoltSizes cbs27 = new CatalogBoltSizes("M27", 3.0, 41.0, 17.0, 50, 350, 10, "Болт M27 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs27);
+// CatalogBoltSizes cbs30 = new CatalogBoltSizes("M30", 3.5, 46.0, 18.7, 50, 400, 20, "Болт M30 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs30);
+// CatalogBoltSizes cbs36 = new CatalogBoltSizes("M36", 4.0, 55.0, 22.5, 60, 450, 20, "Болт M36 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs36);
+// CatalogBoltSizes cbs42 = new CatalogBoltSizes("M42", 4.5, 65.0, 26.0, 70, 500, 20, "Болт M42 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs42);
+// CatalogBoltSizes cbs48 = new CatalogBoltSizes("M48", 5.0, 75.0, 30.0, 80, 500, 20, "Болт M48 ГОСТ 7798-70");
+// bs1.addBoltSizeToStandard(cbs48);
+//
+//
+//
+//
+//
+//
+//        CatalogBoltStandards bs2 = new CatalogBoltStandards(
+//                "ГОСТ 7805-70",
+//                "ГОСТ 7805-70 Болты с шестигранной головкой, класс точности А",
+//                "Болт повышенной точности. Геометрические параметры соответствуют крупному шагу резьбы.",
+//                "болт","","",""
+//        );
+//        bs2.addGradeToStandard(gr)
+//        bs2.addGradeToStandard(gr2)
+//        bs2.addGradeToStandard(gr3)
+//        bs2.addGradeToStandard(gr4)
+//        bs2.addGradeToStandard(gr5)
+//        bs2.addGradeToStandard(gr6)
+//        bs2.addGradeToStandard(gr7)
+//        bs2.addGradeToStandard(gr8)
+//        bs2.addGradeToStandard(gr9)
+//        bs2.addGradeToStandard(gr10)
+//        bs2.addGradeToStandard(gr11)
+//        bs2.addGradeToStandard(gr12)
+//
+// CatalogBoltSizes cbs100 = new CatalogBoltSizes("M6", 1.0, 10.0, 4.0, 10, 100, 5, "Болт M6 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs100);
+// CatalogBoltSizes cbs101 = new CatalogBoltSizes("M8", 1.25, 13.0, 5.3, 12, 120, 5, "Болт M8 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs101);
+// CatalogBoltSizes cbs102 = new CatalogBoltSizes("M10", 1.5, 16.0, 6.4, 16, 150, 5, "Болт M10 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs102);
+// CatalogBoltSizes cbs103 = new CatalogBoltSizes("M12", 1.75, 18.0, 7.5, 20, 200, 10, "Болт M12 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs103);
+// CatalogBoltSizes cbs104 = new CatalogBoltSizes("M14", 2.0, 21.0, 8.8, 25, 200, 10, "Болт M14 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs104);
+// CatalogBoltSizes cbs105 = new CatalogBoltSizes("M16", 2.0, 24.0, 10.0, 30, 250, 10, "Болт M16 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs105);
+// CatalogBoltSizes cbs106 = new CatalogBoltSizes("M18", 2.5, 27.0, 11.5, 30, 250, 10, "Болт M18 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs106);
+// CatalogBoltSizes cbs107 = new CatalogBoltSizes("M20", 2.5, 30.0, 12.5, 35, 300, 10, "Болт M20 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs107);
+// CatalogBoltSizes cbs108 = new CatalogBoltSizes("M22", 2.5, 34.0, 14.0, 40, 300, 10, "Болт M22 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs108);
+// CatalogBoltSizes cbs109 = new CatalogBoltSizes("M24", 3.0, 36.0, 15.0, 40, 300, 10, "Болт M24 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs109);
+// CatalogBoltSizes cbs110 = new CatalogBoltSizes("M27", 3.0, 41.0, 17.0, 50, 350, 10, "Болт M27 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs110);
+// CatalogBoltSizes cbs111 = new CatalogBoltSizes("M30", 3.5, 46.0, 18.7, 50, 400, 20, "Болт M30 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs111);
+// CatalogBoltSizes cbs112 = new CatalogBoltSizes("M36", 4.0, 55.0, 22.5, 60, 450, 20, "Болт M36 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs112);
+// CatalogBoltSizes cbs113 = new CatalogBoltSizes("M42", 4.5, 65.0, 26.0, 70, 500, 20, "Болт M42 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs113);
+// CatalogBoltSizes cbs114 = new CatalogBoltSizes("M48", 5.0, 75.0, 30.0, 80, 500, 20, "Болт M48 ГОСТ 7805-70");
+// bs2.addBoltSizeToStandard(cbs114);
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
 
 
 
@@ -610,16 +863,16 @@ const templateSelectOptions = {
 
 //
 
-
-// SECOND INITIALIZATION
-//Java initialization steel grades
+//
+// // SECOND INITIALIZATION
+// // Java initialization steel grades
 //
 //        SteelGrades gr = this.steelGradeRepository.findBySteelGradeName("09Г2С");
 //        SteelGrades gr2 = this.steelGradeRepository.findBySteelGradeName("45");
 //        SteelGrades gr3 = this.steelGradeRepository.findBySteelGradeName("40Х");
 //        SteelGrades gr4 = this.steelGradeRepository.findBySteelGradeName("12Х18Н10Т");
 //        SteelGrades gr5 = this.steelGradeRepository.findBySteelGradeName("35");
-////
+// //
 //
 //
 //        CatalogWasherStandards ccws1 = this.washerStandardRepository.findByStandard("ГОСТ 10450-78");
@@ -644,8 +897,8 @@ const templateSelectOptions = {
 //        ccws.addGradeToStandard(gr);
 //        this.washerStandardRepository.save(ccws);
 
-// FIRST INITIALIZATION
-//Java initialization washer stndards and washer sizes
+// // FIRST INITIALIZATION
+// // Java initialization washer stndards and washer sizes
 //
 //        CatalogWasherStandards ws1 = new CatalogWasherStandards(
 //                "ГОСТ 11371-78",
@@ -761,8 +1014,8 @@ const templateSelectOptions = {
 //
 //
 //
-////Java initialization steel stndards and steel grades
-////1050
+// //Java initialization steel stndards and steel grades
+// //1050
 //        SteelStandard gost1050 = new SteelStandard("ГОСТ 1050-88", "ГОСТ 1050-88: Качественная углеродистая конструкционная сталь", "", "GOST_1050-88.pdf", "");
 //        SteelGrades grades1 = new SteelGrades("08", "Сталь качественная, содержит около 0.08% углерода","10","Марка 08 - сталь сваривается без ограничений.","Используется для изготовления деталей высокой пластичности, шайбы, патрубки, прокладки, работающие при температуре от -40°С до 450°С.", 7871.0);
 //        SteelGrades grades2 = new SteelGrades("08кп","Сталь качественная, 0.08% С, кипящая/полуспокойная", "08","Марка 08кп, 08пс - сталь сваривается без ограничений.","Использование для изготовления шайб, вилок, труб, втулок, проушин, тяг.", 7871.0);
@@ -965,7 +1218,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// Ст0
+// // Ст0
 //        SteelGrades grades30 = new SteelGrades(
 //                "Ст0",
 //                "Сталь 'ноль', обыкновенного качества",
@@ -976,7 +1229,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades30);
 //
-//// Ст2кп
+// // Ст2кп
 //        SteelGrades grades31 = new SteelGrades(
 //                "Ст2кп",
 //                "Сталь 'два', кипящая/полуспокойная/спокойная",
@@ -987,7 +1240,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades31);
 //
-//// Ст2пс
+// // Ст2пс
 //        SteelGrades grades32 = new SteelGrades(
 //                "Ст2пс",
 //                "Сталь 'два', кипящая/полуспокойная/спокойная",
@@ -998,7 +1251,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades32);
 //
-//// Ст2сп
+// // Ст2сп
 //        SteelGrades grades33 = new SteelGrades(
 //                "Ст2сп",
 //                "Сталь 'два', кипящая/полуспокойная/спокойная",
@@ -1009,7 +1262,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades33);
 //
-//// Ст3кп
+// // Ст3кп
 //        SteelGrades grades34 = new SteelGrades(
 //                "Ст3кп",
 //                "Сталь 'три', кипящая",
@@ -1020,7 +1273,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades34);
 //
-//// Ст3пс
+// // Ст3пс
 //        SteelGrades grades35 = new SteelGrades(
 //                "Ст3пс",
 //                "Сталь 'три', полуспокойная/спокойная",
@@ -1031,7 +1284,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades35);
 //
-//// Ст3сп
+// // Ст3сп
 //        SteelGrades grades36 = new SteelGrades(
 //                "Ст3сп",
 //                "Сталь 'три', полуспокойная/спокойная",
@@ -1042,7 +1295,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades36);
 //
-//// Ст3Гпс
+// // Ст3Гпс
 //        SteelGrades grades37 = new SteelGrades(
 //                "Ст3Гпс",
 //                "Сталь 'три', повышенное содержание марганца (Г), полуспокойная",
@@ -1053,7 +1306,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades37);
 //
-//// Ст4кп
+// // Ст4кп
 //        SteelGrades grades38 = new SteelGrades(
 //                "Ст4кп",
 //                "Сталь 'четыре', кипящая",
@@ -1064,7 +1317,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades38);
 //
-//// Ст4пс
+// // Ст4пс
 //        SteelGrades grades39 = new SteelGrades(
 //                "Ст4пс",
 //                "Сталь 'четыре', полуспокойная",
@@ -1075,8 +1328,8 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades39);
 //
-//// **Продолжение нумерации после grades39:**
-//// Ст5пс
+// // **Продолжение нумерации после grades39:**
+// // Ст5пс
 //        SteelGrades grades40 = new SteelGrades(
 //                "Ст5пс",
 //                "Сталь 'пять', полуспокойная/спокойная",
@@ -1087,7 +1340,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades40);
 //
-//// Ст5сп
+// // Ст5сп
 //        SteelGrades grades41 = new SteelGrades(
 //                "Ст5сп",
 //                "Сталь 'пять', полуспокойная/спокойная",
@@ -1098,7 +1351,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades41);
 //
-//// Ст6пс
+// // Ст6пс
 //        SteelGrades grades42 = new SteelGrades(
 //                "Ст6пс",
 //                "Сталь 'шесть', полуспокойная",
@@ -1109,7 +1362,7 @@ const templateSelectOptions = {
 //        );
 //        gost380.addGradeToStandard(grades42);
 //
-//// Ст6сп
+// // Ст6сп
 //        SteelGrades grades43 = new SteelGrades(
 //                "Ст6сп",
 //                "Сталь 'шесть', спокойная",
@@ -1123,14 +1376,14 @@ const templateSelectOptions = {
 //
 //
 //
-//// 9045
+// // 9045
 //        SteelStandard gost9045 = new SteelStandard("ГОСТ 9045-80", "ГОСТ 9045-80: Низкоуглеродистая качественная сталь", "https://gost.ru/document/125860", "GOST 9045-80.pdf", "");
 //        SteelGrades grades29 = new SteelGrades("08Ю", "Сталь качественная, содержит около 0.08% углерода (08), легированная алюминием (Ю)", "", "Марка 08Ю - сталь сваривается без ограничений.", "Изготовление деталей холодной штамповкой сложной и особо сложной вытяжкой.", 7871.0);
 //        gost9045.addGradeToStandard(grades29);
 //        this.steelStandardRepository.save(gost9045);
 //
 //
-////5520
+// //5520
 //        SteelStandard gost5520 = new SteelStandard(
 //                "ГОСТ 5520-79",
 //                "ГОСТ 5520-79: Углеродистая качественная сталь для котлов и сосудов под давлением",
@@ -1139,7 +1392,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 16К
+// // 16К
 //        SteelGrades grades1000 = new SteelGrades(
 //                "16К",
 //                "Сталь качественная, 0.16% С, котловая",
@@ -1150,7 +1403,7 @@ const templateSelectOptions = {
 //        );
 //        gost5520.addGradeToStandard(grades1000);
 //
-//// 18К
+// // 18К
 //        SteelGrades grades1001 = new SteelGrades(
 //                "18К",
 //                "Сталь качественная, 0.18% С, котловая",
@@ -1161,7 +1414,7 @@ const templateSelectOptions = {
 //        );
 //        gost5520.addGradeToStandard(grades1001);
 //
-//// 20К
+// // 20К
 //        SteelGrades grades1002 = new SteelGrades(
 //                "20К",
 //                "Сталь качественная, 0.20% С, котловая",
@@ -1172,7 +1425,7 @@ const templateSelectOptions = {
 //        );
 //        gost5520.addGradeToStandard(grades1002);
 //
-//// 22К
+// // 22К
 //        SteelGrades grades1003 = new SteelGrades(
 //                "22К",
 //                "Сталь качественная, 0.22% С, котловая",
@@ -1186,7 +1439,7 @@ const templateSelectOptions = {
 //        this.steelStandardRepository.save(gost5520);
 //
 //
-////1414
+// //1414
 //        SteelStandard gost1414 = new SteelStandard(
 //                "ГОСТ 1414-75",
 //                "ГОСТ 1414-75: Конструкционная сталь высокой обрабатываемости резанием",
@@ -1195,7 +1448,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// А20
+// // А20
 //        SteelGrades grades900 = new SteelGrades(
 //                "А20",
 //                "Автоматная сталь (А), около 0.20% углерода, сернистая",
@@ -1206,7 +1459,7 @@ const templateSelectOptions = {
 //        );
 //        gost1414.addGradeToStandard(grades900);
 //
-//// А30
+// // А30
 //        SteelGrades grades901 = new SteelGrades(
 //                "А30",
 //                "Автоматная сталь (А), около 0.30% углерода, сернистая",
@@ -1219,7 +1472,7 @@ const templateSelectOptions = {
 //
 //        this.steelStandardRepository.save(gost1414);
 //
-////19281
+// //19281
 //        SteelStandard gost19281 = new SteelStandard(
 //                "ГОСТ 19281-89",
 //                "ГОСТ 19281-89: Сталь низколегированная повышенной прочности",
@@ -1228,7 +1481,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 09Г2
+// // 09Г2
 //        SteelGrades grades300 = new SteelGrades(
 //                "09Г2",
 //                "Низколегированная (Марганец), около 0.09% С",
@@ -1239,7 +1492,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades300);
 //
-//// 14Г2
+// // 14Г2
 //        SteelGrades grades301 = new SteelGrades(
 //                "14Г2",
 //                "Низколегированная (Марганец), около 0.14% С",
@@ -1250,7 +1503,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades301);
 //
-//// 12ГС
+// // 12ГС
 //        SteelGrades grades302 = new SteelGrades(
 //                "12ГС",
 //                "Низколегированная (Марганец, Кремний), около 0.12% С",
@@ -1261,7 +1514,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades302);
 //
-//// 16ГС
+// // 16ГС
 //        SteelGrades grades303 = new SteelGrades(
 //                "16ГС",
 //                "Низколегированная (Марганец, Кремний), около 0.16% С",
@@ -1272,7 +1525,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades303);
 //
-//// 17ГС
+// // 17ГС
 //        SteelGrades grades304 = new SteelGrades(
 //                "17ГС",
 //                "Низколегированная (Марганец, Кремний), около 0.17% С",
@@ -1283,7 +1536,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades304);
 //
-//// 09Г2С
+// // 09Г2С
 //        SteelGrades grades305 = new SteelGrades(
 //                "09Г2С",
 //                "Низколегированная (Марганец, Кремний), около 0.09% С",
@@ -1294,7 +1547,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades305);
 //
-//// 10Г2С1
+// // 10Г2С1
 //        SteelGrades grades306 = new SteelGrades(
 //                "10Г2С1",
 //                "Низколегированная (Марганец, Кремний), около 0.10% С",
@@ -1305,7 +1558,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades306);
 //
-//// 10Г2БД
+// // 10Г2БД
 //        SteelGrades grades307 = new SteelGrades(
 //                "10Г2БД",
 //                "Низколегированная (Марганец, Ниобий, Медь), около 0.10% С",
@@ -1316,7 +1569,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades307);
 //
-//// 15Г2СФД
+// // 15Г2СФД
 //        SteelGrades grades308 = new SteelGrades(
 //                "15Г2СФД",
 //                "Низколегированная (Марганец, Кремний, Ванадий, Азот), около 0.15% С",
@@ -1327,7 +1580,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades308);
 //
-//// 14Г2АФ
+// // 14Г2АФ
 //        SteelGrades grades309 = new SteelGrades(
 //                "14Г2АФ",
 //                "Низколегированная (Марганец, Ванадий, Азот), около 0.14% С",
@@ -1338,7 +1591,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades309);
 //
-//// 16Г2АФ
+// // 16Г2АФ
 //        SteelGrades grades310 = new SteelGrades(
 //                "16Г2АФ",
 //                "Низколегированная (Марганец, Ванадий, Азот), около 0.16% С",
@@ -1349,7 +1602,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades310);
 //
-//// 18Г2Афпс
+// // 18Г2Афпс
 //        SteelGrades grades311 = new SteelGrades(
 //                "18Г2Афпс",
 //                "Низколегированная (Марганец, Ванадий, Азот), около 0.18% С, полуспокойная",
@@ -1360,7 +1613,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades311);
 //
-//// 14ХГС
+// // 14ХГС
 //        SteelGrades grades312 = new SteelGrades(
 //                "14ХГС",
 //                "Низколегированная (Хром, Марганец, Кремний), около 0.14% С",
@@ -1371,7 +1624,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades312);
 //
-//// 15Г2АФДпс
+// // 15Г2АФДпс
 //        SteelGrades grades313 = new SteelGrades(
 //                "15Г2АФДпс",
 //                "Низколегированная (Марганец, Ванадий, Азот, Медь, Фосфор), около 0.15% С, полуспокойная",
@@ -1382,7 +1635,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades313);
 //
-//// 10ХСНД
+// // 10ХСНД
 //        SteelGrades grades314 = new SteelGrades(
 //                "10ХСНД",
 //                "Низколегированная (Хром, Кремний, Никель, Медь), около 0.10% С, атмосферостойкая",
@@ -1393,7 +1646,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades314);
 //
-//// 10ХНДП
+// // 10ХНДП
 //        SteelGrades grades315 = new SteelGrades(
 //                "10ХНДП",
 //                "Низколегированная (Хром, Никель, Медь, Фосфор), около 0.10% С, атмосферостойкая",
@@ -1404,7 +1657,7 @@ const templateSelectOptions = {
 //        );
 //        gost19281.addGradeToStandard(grades315);
 //
-//// 15ХСНД
+// // 15ХСНД
 //        SteelGrades grades316 = new SteelGrades(
 //                "15ХСНД",
 //                "Низколегированная (Хром, Кремний, Никель, Медь), около 0.15% С, атмосферостойкая",
@@ -1418,7 +1671,7 @@ const templateSelectOptions = {
 //        this.steelStandardRepository.save(gost19281);
 //
 //
-////5781
+// //5781
 //        SteelStandard gost5781 = new SteelStandard(
 //                "ГОСТ 5781-82",
 //                "ГОСТ 5781-82: Арматурная низколегированная сталь",
@@ -1427,7 +1680,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 20ХГ2Ц
+// // 20ХГ2Ц
 //        SteelGrades grades400 = new SteelGrades(
 //                "20ХГ2Ц",
 //                "Низколегированная (Хром, Марганец, Цирконий), около 0.20% С, арматурная",
@@ -1438,7 +1691,7 @@ const templateSelectOptions = {
 //        );
 //        gost5781.addGradeToStandard(grades400);
 //
-//// 35ГС
+// // 35ГС
 //        SteelGrades grades401 = new SteelGrades(
 //                "35ГС",
 //                "Низколегированная (Марганец, Кремний), около 0.35% С, арматурная",
@@ -1449,7 +1702,7 @@ const templateSelectOptions = {
 //        );
 //        gost5781.addGradeToStandard(grades401);
 //
-//// 25Г2С
+// // 25Г2С
 //        SteelGrades grades402 = new SteelGrades(
 //                "25Г2С",
 //                "Низколегированная (Марганец, Кремний), около 0.25% С, арматурная",
@@ -1462,7 +1715,7 @@ const templateSelectOptions = {
 //
 //        this.steelStandardRepository.save(gost5781);
 //
-////4543
+// //4543
 //        SteelStandard gost4543 = new SteelStandard(
 //                "ГОСТ 4543-71",
 //                "ГОСТ 4543-71: Легированная конструкционная сталь",
@@ -1471,7 +1724,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 15Х
+// // 15Х
 //        SteelGrades grades200 = new SteelGrades(
 //                "15Х",
 //                "Легированная (Хром), около 0.15% С",
@@ -1482,7 +1735,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades200);
 //
-//// 20Х
+// // 20Х
 //        SteelGrades grades201 = new SteelGrades(
 //                "20Х",
 //                "Легированная (Хром), около 0.20% С",
@@ -1493,7 +1746,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades201);
 //
-//// 30Х
+// // 30Х
 //        SteelGrades grades202 = new SteelGrades(
 //                "30Х",
 //                "Легированная (Хром), около 0.30% С",
@@ -1504,7 +1757,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades202);
 //
-//// 35Х
+// // 35Х
 //        SteelGrades grades203 = new SteelGrades(
 //                "35Х",
 //                "Легированная (Хром), около 0.35% С",
@@ -1515,7 +1768,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades203);
 //
-//// 38ХА
+// // 38ХА
 //        SteelGrades grades204 = new SteelGrades(
 //                "38ХА",
 //                "Легированная (Хром, Алюминий), около 0.38% С, азотируемая",
@@ -1526,7 +1779,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades204);
 //
-//// 40Х
+// // 40Х
 //        SteelGrades grades205 = new SteelGrades(
 //                "40Х",
 //                "Легированная (Хром), около 0.40% С",
@@ -1537,7 +1790,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades205);
 //
-//// 45Х
+// // 45Х
 //        SteelGrades grades206 = new SteelGrades(
 //                "45Х",
 //                "Легированная (Хром), около 0.45% С",
@@ -1548,7 +1801,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades206);
 //
-//// 50Х
+// // 50Х
 //        SteelGrades grades207 = new SteelGrades(
 //                "50Х",
 //                "Легированная (Хром), около 0.50% С",
@@ -1559,7 +1812,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades207);
 //
-//// 15Г
+// // 15Г
 //        SteelGrades grades208 = new SteelGrades(
 //                "15Г",
 //                "Легированная (Марганец), около 0.15%-0.20% С",
@@ -1570,7 +1823,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades208);
 //
-//// 20Г
+// // 20Г
 //        SteelGrades grades209 = new SteelGrades(
 //                "20Г",
 //                "Легированная (Марганец), около 0.15%-0.20% С",
@@ -1581,7 +1834,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades209);
 //
-//// 30Г
+// // 30Г
 //        SteelGrades grades210 = new SteelGrades(
 //                "30Г",
 //                "Легированная (Марганец), около 0.30% С",
@@ -1592,7 +1845,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades210);
 //
-//// 35Г
+// // 35Г
 //        SteelGrades grades211 = new SteelGrades(
 //                "35Г",
 //                "Легированная (Марганец), около 0.35% С",
@@ -1603,7 +1856,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades211);
 //
-//// 40Г
+// // 40Г
 //        SteelGrades grades212 = new SteelGrades(
 //                "40Г",
 //                "Легированная (Марганец), около 0.40% С",
@@ -1614,7 +1867,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades212);
 //
-//// 45Г
+// // 45Г
 //        SteelGrades grades213 = new SteelGrades(
 //                "45Г",
 //                "Легированная (Марганец), около 0.45% С",
@@ -1625,7 +1878,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades213);
 //
-//// 50Г
+// // 50Г
 //        SteelGrades grades214 = new SteelGrades(
 //                "50Г",
 //                "Легированная (Марганец), около 0.50% С",
@@ -1636,7 +1889,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades214);
 //
-//// 10Г2
+// // 10Г2
 //        SteelGrades grades215 = new SteelGrades(
 //                "10Г2",
 //                "Легированная (Марганец), около 0.10% С",
@@ -1647,7 +1900,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades215);
 //
-//// 35Г2
+// // 35Г2
 //        SteelGrades grades216 = new SteelGrades(
 //                "35Г2",
 //                "Легированная (Марганец), около 0.35% С",
@@ -1658,7 +1911,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades216);
 //
-//// 40Г2
+// // 40Г2
 //        SteelGrades grades217 = new SteelGrades(
 //                "40Г2",
 //                "Легированная (Марганец), около 0.40% С",
@@ -1669,7 +1922,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades217);
 //
-//// 45Г2
+// // 45Г2
 //        SteelGrades grades218 = new SteelGrades(
 //                "45Г2",
 //                "Легированная (Марганец), около 0.45% С",
@@ -1680,7 +1933,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades218);
 //
-//// 50Г2
+// // 50Г2
 //        SteelGrades grades219 = new SteelGrades(
 //                "50Г2",
 //                "Легированная (Марганец), около 0.50% С",
@@ -1691,7 +1944,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades219);
 //
-//// 47ГТ
+// // 47ГТ
 //        SteelGrades grades220 = new SteelGrades(
 //                "47ГТ",
 //                "Легированная (Марганец, Титан), около 0.47% С",
@@ -1702,7 +1955,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades220);
 //
-//// 18ХГТ
+// // 18ХГТ
 //        SteelGrades grades221 = new SteelGrades(
 //                "18ХГТ",
 //                "Легированная (Хром, Марганец, Титан), около 0.18% С, цементуемая",
@@ -1713,7 +1966,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades221);
 //
-//// 20ХГР
+// // 20ХГР
 //        SteelGrades grades222 = new SteelGrades(
 //                "20ХГР",
 //                "Легированная (Хром, Марганец, Бор), около 0.20% С, цементуемая",
@@ -1724,7 +1977,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades222);
 //
-//// 25Х1Т
+// // 25Х1Т
 //        SteelGrades grades223 = new SteelGrades(
 //                "25Х1Т",
 //                "Легированная (Хром, Титан), около 0.25% С",
@@ -1735,7 +1988,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades223);
 //
-//// 30ХГТ
+// // 30ХГТ
 //        SteelGrades grades224 = new SteelGrades(
 //                "30ХГТ",
 //                "Легированная (Хром, Марганец, Титан), около 0.30% С",
@@ -1746,7 +1999,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades224);
 //
-//// 33ХС
+// // 33ХС
 //        SteelGrades grades225 = new SteelGrades(
 //                "33ХС",
 //                "Легированная (Хром, Кремний), около 0.33% С",
@@ -1757,7 +2010,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades225);
 //
-//// 38ХС
+// // 38ХС
 //        SteelGrades grades226 = new SteelGrades(
 //                "38ХС",
 //                "Легированная (Хром, Кремний), около 0.38%-0.40% С",
@@ -1768,7 +2021,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades226);
 //
-//// 40ХС
+// // 40ХС
 //        SteelGrades grades227 = new SteelGrades(
 //                "40ХС",
 //                "Легированная (Хром, Кремний), около 0.38%-0.40% С",
@@ -1779,7 +2032,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades227);
 //
-//// 15ХФ
+// // 15ХФ
 //        SteelGrades grades228 = new SteelGrades(
 //                "15ХФ",
 //                "Легированная (Хром, Ванадий), около 0.15% С",
@@ -1790,7 +2043,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades228);
 //
-//// 40ХФА
+// // 40ХФА
 //        SteelGrades grades229 = new SteelGrades(
 //                "40ХФА",
 //                "Легированная (Хром, Ванадий), около 0.40% С",
@@ -1801,7 +2054,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades229);
 //
-//// 15ХМ
+// // 15ХМ
 //        SteelGrades grades230 = new SteelGrades(
 //                "15ХМ",
 //                "Легированная (Хром, Молибден), около 0.15% С, теплоустойчивая",
@@ -1812,7 +2065,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades230);
 //
-//// 30ХМ
+// // 30ХМ
 //        SteelGrades grades231 = new SteelGrades(
 //                "30ХМ",
 //                "Легированная (Хром, Молибден), около 0.30% С",
@@ -1823,7 +2076,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades231);
 //
-//// 30ХМА
+// // 30ХМА
 //        SteelGrades grades232 = new SteelGrades(
 //                "30ХМА",
 //                "Легированная (Хром, Молибден), около 0.30% С",
@@ -1834,7 +2087,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades232);
 //
-//// 35ХМ
+// // 35ХМ
 //        SteelGrades grades233 = new SteelGrades(
 //                "35ХМ",
 //                "Легированная (Хром, Молибден), около 0.35% С",
@@ -1845,7 +2098,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades233);
 //
-//// 38ХМ
+// // 38ХМ
 //        SteelGrades grades234 = new SteelGrades(
 //                "38ХМ",
 //                "Легированная (Хром, Молибден), около 0.38% С",
@@ -1856,7 +2109,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades234);
 //
-//// 20ХН
+// // 20ХН
 //        SteelGrades grades235 = new SteelGrades(
 //                "20ХН",
 //                "Легированная (Хром, Никель), около 0.20% С, цементуемая",
@@ -1867,7 +2120,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades235);
 //
-//// 40ХН
+// // 40ХН
 //        SteelGrades grades236 = new SteelGrades(
 //                "40ХН",
 //                "Легированная (Хром, Никель), около 0.40% С",
@@ -1878,7 +2131,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades236);
 //
-//// 45ХН
+// // 45ХН
 //        SteelGrades grades237 = new SteelGrades(
 //                "45ХН",
 //                "Легированная (Хром, Никель), около 0.45% С",
@@ -1889,7 +2142,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades237);
 //
-//// 50ХН
+// // 50ХН
 //        SteelGrades grades238 = new SteelGrades(
 //                "50ХН",
 //                "Легированная (Хром, Никель), около 0.50% С",
@@ -1900,7 +2153,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades238);
 //
-//// 20ХНР
+// // 20ХНР
 //        SteelGrades grades239 = new SteelGrades(
 //                "20ХНР",
 //                "Легированная (Хром, Никель, Бор), около 0.20% С, цементуемая",
@@ -1911,7 +2164,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades239);
 //
-//// 12ХН2
+// // 12ХН2
 //        SteelGrades grades240 = new SteelGrades(
 //                "12ХН2",
 //                "Легированная (Хром, Никель), около 0.12% С, цементуемая",
@@ -1922,7 +2175,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades240);
 //
-//// 12ХН3А
+// // 12ХН3А
 //        SteelGrades grades241 = new SteelGrades(
 //                "12ХН3А",
 //                "Легированная (Хром, Никель), около 0.12% С, цементуемая",
@@ -1933,7 +2186,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades241);
 //
-//// 20ХН3А
+// // 20ХН3А
 //        SteelGrades grades242 = new SteelGrades(
 //                "20ХН3А",
 //                "Легированная (Хром, Никель), около 0.20% С, цементуемая",
@@ -1944,7 +2197,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades242);
 //
-//// 12Х2Н4А
+// // 12Х2Н4А
 //        SteelGrades grades243 = new SteelGrades(
 //                "12Х2Н4А",
 //                "Легированная (Хром, Никель), около 0.12% С, цементуемая",
@@ -1955,7 +2208,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades243);
 //
-//// 20Х2Н4А
+// // 20Х2Н4А
 //        SteelGrades grades244 = new SteelGrades(
 //                "20Х2Н4А",
 //                "Легированная (Хром, Никель), около 0.20% С, цементуемая",
@@ -1966,7 +2219,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades244);
 //
-//// 30ХН3А
+// // 30ХН3А
 //        SteelGrades grades245 = new SteelGrades(
 //                "30ХН3А",
 //                "Легированная (Хром, Никель), около 0.30% С",
@@ -1977,7 +2230,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades245);
 //
-//// 20ХГСА
+// // 20ХГСА
 //        SteelGrades grades246 = new SteelGrades(
 //                "20ХГСА",
 //                "Легированная (Хром, Марганец, Кремний), около 0.20% С",
@@ -1988,7 +2241,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades246);
 //
-//// 25ХГСА
+// // 25ХГСА
 //        SteelGrades grades247 = new SteelGrades(
 //                "25ХГСА",
 //                "Легированная (Хром, Марганец, Кремний), около 0.25% С",
@@ -1999,7 +2252,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades247);
 //
-//// 30ХГС
+// // 30ХГС
 //        SteelGrades grades248 = new SteelGrades(
 //                "30ХГС",
 //                "Легированная (Хром, Марганец, Кремний), около 0.30% С",
@@ -2010,7 +2263,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades248);
 //
-//// 30ХН2МА
+// // 30ХН2МА
 //        SteelGrades grades249 = new SteelGrades(
 //                "30ХН2МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.30% С",
@@ -2021,7 +2274,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades249);
 //
-//// 38ХН2МА
+// // 38ХН2МА
 //        SteelGrades grades250 = new SteelGrades(
 //                "38ХН2МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.38% С",
@@ -2032,7 +2285,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades250);
 //
-//// 40ХН2МА
+// // 40ХН2МА
 //        SteelGrades grades251 = new SteelGrades(
 //                "40ХН2МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.40% С",
@@ -2043,7 +2296,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades251);
 //
-//// 40Х2Н2МА
+// // 40Х2Н2МА
 //        SteelGrades grades252 = new SteelGrades(
 //                "40Х2Н2МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.40% С",
@@ -2054,7 +2307,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades252);
 //
-//// 38ХН3МА
+// // 38ХН3МА
 //        SteelGrades grades253 = new SteelGrades(
 //                "38ХН3МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.38% С",
@@ -2065,7 +2318,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades253);
 //
-//// 18Х2Н4МА
+// // 18Х2Н4МА
 //        SteelGrades grades254 = new SteelGrades(
 //                "18Х2Н4МА",
 //                "Легированная (Хром, Никель, Молибден), около 0.18% С, цементуемая",
@@ -2076,7 +2329,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades254);
 //
-//// 30ХГСА
+// // 30ХГСА
 //        SteelGrades grades255 = new SteelGrades(
 //                "30ХГСА",
 //                "Легированная (Хром, Марганец, Кремний, Алюминий), около 0.30% С, высокопрочная",
@@ -2087,7 +2340,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades255);
 //
-//// 35ХГСА
+// // 35ХГСА
 //        SteelGrades grades256 = new SteelGrades(
 //                "35ХГСА",
 //                "Легированная (Хром, Марганец, Кремний, Алюминий), около 0.35% С, высокопрочная",
@@ -2098,7 +2351,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades256);
 //
-//// 30ХГСН2А
+// // 30ХГСН2А
 //        SteelGrades grades257 = new SteelGrades(
 //                "30ХГСН2А",
 //                "Легированная (Хром, Марганец, Кремний, Никель, Азот), около 0.30% С, высокопрочная",
@@ -2109,7 +2362,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades257);
 //
-//// 38ХГН
+// // 38ХГН
 //        SteelGrades grades258 = new SteelGrades(
 //                "38ХГН",
 //                "Легированная (Хром, Марганец, Никель), около 0.38% С",
@@ -2120,7 +2373,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades258);
 //
-//// 20ХГНР
+// // 20ХГНР
 //        SteelGrades grades259 = new SteelGrades(
 //                "20ХГНР",
 //                "Легированная (Хром, Марганец, Никель, Бор), около 0.20% С, цементуемая",
@@ -2131,7 +2384,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades259);
 //
-//// 20ХН2М
+// // 20ХН2М
 //        SteelGrades grades260 = new SteelGrades(
 //                "20ХН2М",
 //                "Легированная (Хром, Никель, Молибден), около 0.20% С, цементуемая",
@@ -2142,7 +2395,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades260);
 //
-//// 30ХН2МФА
+// // 30ХН2МФА
 //        SteelGrades grades261 = new SteelGrades(
 //                "30ХН2МФА",
 //                "Легированная (Хром, Никель, Молибден, Ванадий), около 0.30% С",
@@ -2153,7 +2406,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades261);
 //
-//// 36Х2Н2МФА
+// // 36Х2Н2МФА
 //        SteelGrades grades262 = new SteelGrades(
 //                "36Х2Н2МФА",
 //                "Легированная (Хром, Никель, Молибден, Ванадий), около 0.36% С",
@@ -2164,7 +2417,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades262);
 //
-//// 38ХН3МФА
+// // 38ХН3МФА
 //        SteelGrades grades263 = new SteelGrades(
 //                "38ХН3МФА",
 //                "Легированная (Хром, Никель, Молибден, Ванадий), около 0.38% С",
@@ -2175,7 +2428,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades263);
 //
-//// 45ХН2МФА
+// // 45ХН2МФА
 //        SteelGrades grades264 = new SteelGrades(
 //                "45ХН2МФА",
 //                "Легированная (Хром, Никель, Молибден, Ванадий), около 0.45% С",
@@ -2186,7 +2439,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades264);
 //
-//// 20ХН4ФА
+// // 20ХН4ФА
 //        SteelGrades grades265 = new SteelGrades(
 //                "20ХН4ФА",
 //                "Легированная (Хром, Никель, Ванадий), около 0.20% С",
@@ -2197,7 +2450,7 @@ const templateSelectOptions = {
 //        );
 //        gost4543.addGradeToStandard(grades265);
 //
-//// 38Х2МЮА
+// // 38Х2МЮА
 //        SteelGrades grades266 = new SteelGrades(
 //                "38Х2МЮА",
 //                "Легированная (Хром, Молибден, Алюминий), около 0.38% С, азотируемая",
@@ -2213,7 +2466,7 @@ const templateSelectOptions = {
 //
 //
 //
-////14959
+// //14959
 //        SteelStandard gost14959 = new SteelStandard(
 //                "ГОСТ 14959-79",
 //                "ГОСТ 14959-79: Рессорно-пружинная углеродистая и легированная сталь",
@@ -2222,7 +2475,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 65
+// // 65
 //        SteelGrades grades500 = new SteelGrades(
 //                "65",
 //                "Углеродистая пружинная сталь, около 0.65% С",
@@ -2233,7 +2486,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades500);
 //
-//// 70
+// // 70
 //        SteelGrades grades501 = new SteelGrades(
 //                "70",
 //                "Углеродистая пружинная сталь, около 0.70% С",
@@ -2244,7 +2497,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades501);
 //
-//// 75
+// // 75
 //        SteelGrades grades502 = new SteelGrades(
 //                "75",
 //                "Углеродистая пружинная сталь, около 0.75% С",
@@ -2255,7 +2508,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades502);
 //
-//// 85
+// // 85
 //        SteelGrades grades503 = new SteelGrades(
 //                "85",
 //                "Углеродистая пружинная сталь, около 0.85% С",
@@ -2266,7 +2519,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades503);
 //
-//// 60Г
+// // 60Г
 //        SteelGrades grades504 = new SteelGrades(
 //                "60Г",
 //                "Легированная (Марганец), около 0.60% С, пружинная",
@@ -2277,7 +2530,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades504);
 //
-//// 65Г
+// // 65Г
 //        SteelGrades grades505 = new SteelGrades(
 //                "65Г",
 //                "Легированная (Марганец), около 0.65% С, пружинная",
@@ -2288,7 +2541,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades505);
 //
-//// 55С2
+// // 55С2
 //        SteelGrades grades506 = new SteelGrades(
 //                "55С2",
 //                "Легированная (Кремний), около 0.55% С, пружинная",
@@ -2299,7 +2552,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades506);
 //
-//// 60С2
+// // 60С2
 //        SteelGrades grades507 = new SteelGrades(
 //                "60С2",
 //                "Легированная (Кремний), около 0.60% С, пружинная",
@@ -2310,7 +2563,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades507);
 //
-//// 60С2А
+// // 60С2А
 //        SteelGrades grades508 = new SteelGrades(
 //                "60С2А",
 //                "Легированная (Кремний), около 0.60% С, пружинная (А - качественная)",
@@ -2321,7 +2574,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades508);
 //
-//// 70С3А
+// // 70С3А
 //        SteelGrades grades509 = new SteelGrades(
 //                "70С3А",
 //                "Легированная (Кремний), около 0.70% С, пружинная",
@@ -2332,7 +2585,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades509);
 //
-//// 55ХГР
+// // 55ХГР
 //        SteelGrades grades510 = new SteelGrades(
 //                "55ХГР",
 //                "Легированная (Хром, Марганец, Бор), около 0.55% С, пружинная",
@@ -2343,7 +2596,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades510);
 //
-//// 50ХФА
+// // 50ХФА
 //        SteelGrades grades511 = new SteelGrades(
 //                "50ХФА",
 //                "Легированная (Хром, Ванадий), около 0.50% С, пружинная",
@@ -2354,7 +2607,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades511);
 //
-//// 60С2ХА
+// // 60С2ХА
 //        SteelGrades grades512 = new SteelGrades(
 //                "60С2ХА",
 //                "Легированная (Кремний, Хром), около 0.60% С, пружинная",
@@ -2365,7 +2618,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades512);
 //
-//// 60С2ХФА
+// // 60С2ХФА
 //        SteelGrades grades513 = new SteelGrades(
 //                "60С2ХФА",
 //                "Легированная (Кремний, Хром, Ванадий), около 0.60% С, пружинная",
@@ -2376,7 +2629,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades513);
 //
-//// 65С2ВА
+// // 65С2ВА
 //        SteelGrades grades514 = new SteelGrades(
 //                "65С2ВА",
 //                "Легированная (Кремний, Вольфрам), около 0.65% С, пружинная",
@@ -2387,7 +2640,7 @@ const templateSelectOptions = {
 //        );
 //        gost14959.addGradeToStandard(grades514);
 //
-//// 60С2Н2А
+// // 60С2Н2А
 //        SteelGrades grades515 = new SteelGrades(
 //                "60С2Н2А",
 //                "Легированная (Кремний, Никель), около 0.60% С, пружинная",
@@ -2401,7 +2654,7 @@ const templateSelectOptions = {
 //        this.steelStandardRepository.save(gost14959);
 //
 //
-////1435
+// //1435
 //        SteelStandard gost1435 = new SteelStandard(
 //                "ГОСТ 1435-90",
 //                "ГОСТ 1435-90: Сталь инструментальная нелегированная",
@@ -2410,7 +2663,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// У7
+// // У7
 //        SteelGrades grades600 = new SteelGrades(
 //                "У7",
 //                "Углеродистая инструментальная, около 0.7% С.",
@@ -2421,7 +2674,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades600);
 //
-//// У7А
+// // У7А
 //        SteelGrades grades601 = new SteelGrades(
 //                "У7А",
 //                "Углеродистая инструментальная, около 0.7% С. (А - качественная)",
@@ -2432,7 +2685,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades601);
 //
-//// У8
+// // У8
 //        SteelGrades grades602 = new SteelGrades(
 //                "У8",
 //                "Углеродистая инструментальная, около 0.8% С.",
@@ -2443,7 +2696,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades602);
 //
-//// У8А
+// // У8А
 //        SteelGrades grades603 = new SteelGrades(
 //                "У8А",
 //                "Углеродистая инструментальная, около 0.8% С. (А - качественная)",
@@ -2454,7 +2707,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades603);
 //
-//// У9
+// // У9
 //        SteelGrades grades604 = new SteelGrades(
 //                "У9",
 //                "Углеродистая инструментальная, около 0.9% С.",
@@ -2465,7 +2718,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades604);
 //
-//// У9А
+// // У9А
 //        SteelGrades grades605 = new SteelGrades(
 //                "У9А",
 //                "Углеродистая инструментальная, около 0.9% С. (А - качественная)",
@@ -2476,7 +2729,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades605);
 //
-//// У10
+// // У10
 //        SteelGrades grades606 = new SteelGrades(
 //                "У10",
 //                "Углеродистая инструментальная, около 1.0% С.",
@@ -2487,7 +2740,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades606);
 //
-//// У10А
+// // У10А
 //        SteelGrades grades607 = new SteelGrades(
 //                "У10А",
 //                "Углеродистая инструментальная, около 1.0% С. (А - качественная)",
@@ -2498,7 +2751,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades607);
 //
-//// У12
+// // У12
 //        SteelGrades grades608 = new SteelGrades(
 //                "У12",
 //                "Углеродистая инструментальная, около 1.2% С.",
@@ -2509,7 +2762,7 @@ const templateSelectOptions = {
 //        );
 //        gost1435.addGradeToStandard(grades608);
 //
-//// У12А
+// // У12А
 //        SteelGrades grades609 = new SteelGrades(
 //                "У12А",
 //                "Углеродистая инструментальная, около 1.2% С. (А - качественная)",
@@ -2522,7 +2775,7 @@ const templateSelectOptions = {
 //
 //        this.steelStandardRepository.save(gost1435);
 //
-////5950
+// //5950
 //
 //        SteelStandard gost5950 = new SteelStandard(
 //                "ГОСТ 5950-73",
@@ -2532,7 +2785,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// ХВ4Ф
+// // ХВ4Ф
 //        SteelGrades grades700 = new SteelGrades(
 //                "ХВ4Ф",
 //                "Легированная (Хром, Вольфрам, Ванадий). Для режущего инструмента.",
@@ -2543,7 +2796,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades700);
 //
-//// 9Х1
+// // 9Х1
 //        SteelGrades grades701 = new SteelGrades(
 //                "9Х1",
 //                "Легированная (Хром), около 0.9% С. Для холодной и горячей прокатки.",
@@ -2554,7 +2807,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades701);
 //
-//// 9ХС
+// // 9ХС
 //        SteelGrades grades702 = new SteelGrades(
 //                "9ХС",
 //                "Легированная (Хром, Кремний), около 0.9% С. Для режущего и мерительного инструмента.",
@@ -2565,7 +2818,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades702);
 //
-//// ХВГ
+// // ХВГ
 //        SteelGrades grades703 = new SteelGrades(
 //                "ХВГ",
 //                "Легированная (Хром, Вольфрам, Марганец). Для мерительного и режущего инструмента.",
@@ -2576,7 +2829,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades703);
 //
-//// 9ХВГ
+// // 9ХВГ
 //        SteelGrades grades704 = new SteelGrades(
 //                "9ХВГ",
 //                "Легированная (Хром, Вольфрам, Марганец), около 0.9% С. Для калибров и штампов.",
@@ -2587,7 +2840,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades704);
 //
-//// Х6ВФ
+// // Х6ВФ
 //        SteelGrades grades705 = new SteelGrades(
 //                "Х6ВФ",
 //                "Легированная (Хром, Вольфрам, Ванадий). Для холодной деформации.",
@@ -2598,7 +2851,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades705);
 //
-//// Х12
+// // Х12
 //        SteelGrades grades706 = new SteelGrades(
 //                "Х12",
 //                "Легированная (Хром). Для штампов с высокой износостойкостью.",
@@ -2609,7 +2862,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades706);
 //
-//// Х12ВМФ
+// // Х12ВМФ
 //        SteelGrades grades707 = new SteelGrades(
 //                "Х12ВМФ",
 //                "Легированная (Хром). Для штампов с высокой износостойкостью.",
@@ -2620,7 +2873,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades707);
 //
-//// Х12МФ
+// // Х12МФ
 //        SteelGrades grades708 = new SteelGrades(
 //                "Х12МФ",
 //                "Легированная (Хром, Молибден, Ванадий). Высокая износостойкость.",
@@ -2631,7 +2884,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades708);
 //
-//// Х12Ф1
+// // Х12Ф1
 //        SteelGrades grades709 = new SteelGrades(
 //                "Х12Ф1",
 //                "Легированная (Хром, Ванадий). Высокая износостойкость.",
@@ -2642,7 +2895,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades709);
 //
-//// 7ХГ2ВМФ
+// // 7ХГ2ВМФ
 //        SteelGrades grades710 = new SteelGrades(
 //                "7ХГ2ВМФ",
 //                "Легированная (Хром, Марганец, Вольфрам, Молибден, Ванадий), около 0.7% С. Для холодной деформации.",
@@ -2653,7 +2906,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades710);
 //
-//// 7Х3
+// // 7Х3
 //        SteelGrades grades711 = new SteelGrades(
 //                "7Х3",
 //                "Легированная (Хром), около 0.7% С. Для горячей деформации.",
@@ -2664,7 +2917,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades711);
 //
-//// 8Х3
+// // 8Х3
 //        SteelGrades grades712 = new SteelGrades(
 //                "8Х3",
 //                "Легированная (Хром), около 0.8% С. Для горячей деформации.",
@@ -2675,7 +2928,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades712);
 //
-//// 5ХНМ
+// // 5ХНМ
 //        SteelGrades grades713 = new SteelGrades(
 //                "5ХНМ",
 //                "Легированная (Хром, Никель, Молибден). Для молотовых штампов.",
@@ -2686,7 +2939,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades713);
 //
-//// 5ХГМ
+// // 5ХГМ
 //        SteelGrades grades714 = new SteelGrades(
 //                "5ХГМ",
 //                "Легированная (Хром, Марганец, Молибден). Для молотовых штампов.",
@@ -2697,7 +2950,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades714);
 //
-//// 4ХМФС
+// // 4ХМФС
 //        SteelGrades grades715 = new SteelGrades(
 //                "4ХМФС",
 //                "Легированная (Хром, Молибден, Ванадий, Кремний). Для прессового инструмента.",
@@ -2708,7 +2961,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades715);
 //
-//// 4Х5МФС
+// // 4Х5МФС
 //        SteelGrades grades716 = new SteelGrades(
 //                "4Х5МФС",
 //                "Легированная (Хром, Молибден, Ванадий, Кремний). Для горячего деформирования.",
@@ -2719,7 +2972,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades716);
 //
-//// 4Х5МФ1С
+// // 4Х5МФ1С
 //        SteelGrades grades717 = new SteelGrades(
 //                "4Х5МФ1С",
 //                "Легированная (Хром, Молибден, Ванадий, Кремний). Для литья под давлением.",
@@ -2730,7 +2983,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades717);
 //
-//// 3Х3М3Ф
+// // 3Х3М3Ф
 //        SteelGrades grades718 = new SteelGrades(
 //                "3Х3М3Ф",
 //                "Легированная (Хром, Молибден, Ванадий), около 0.3% С. Для высокотемпературного деформирования.",
@@ -2741,7 +2994,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades718);
 //
-//// 6ХС
+// // 6ХС
 //        SteelGrades grades719 = new SteelGrades(
 //                "6ХС",
 //                "Легированная (Хром, Кремний), около 0.6% С. Для холодной штамповки.",
@@ -2752,7 +3005,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades719);
 //
-//// 4ХВ2С
+// // 4ХВ2С
 //        SteelGrades grades720 = new SteelGrades(
 //                "4ХВ2С",
 //                "Легированная (Хром, Вольфрам, Кремний). Для пневматического инструмента.",
@@ -2763,7 +3016,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades720);
 //
-//// 5ХВ2СФ
+// // 5ХВ2СФ
 //        SteelGrades grades721 = new SteelGrades(
 //                "5ХВ2СФ",
 //                "Легированная (Хром, Вольфрам, Ванадий, Кремний). Для режущего и деревообделочного инструмента.",
@@ -2774,7 +3027,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades721);
 //
-//// 6ХВ2С
+// // 6ХВ2С
 //        SteelGrades grades722 = new SteelGrades(
 //                "6ХВ2С",
 //                "Легированная (Хром, Вольфрам, Ванадий, Кремний). Для режущего и деревообделочного инструмента.",
@@ -2785,7 +3038,7 @@ const templateSelectOptions = {
 //        );
 //        gost5950.addGradeToStandard(grades722);
 //
-//// 6ХВГ
+// // 6ХВГ
 //        SteelGrades grades723 = new SteelGrades(
 //                "6ХВГ",
 //                "Легированная (Хром, Вольфрам, Марганец), около 0.6% С. Для горячей штамповки.",
@@ -2800,7 +3053,7 @@ const templateSelectOptions = {
 //
 //
 //
-////19265
+// //19265
 //        SteelStandard gost19265 = new SteelStandard(
 //                "ГОСТ 19265-73",
 //                "ГОСТ 19265-73: Быстрорежущая инструментальная сталь",
@@ -2809,7 +3062,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// Р18
+// // Р18
 //        SteelGrades grades800 = new SteelGrades(
 //                "Р18",
 //                "Быстрорежущая (Вольфрам 18%). Высокая теплостойкость.",
@@ -2820,7 +3073,7 @@ const templateSelectOptions = {
 //        );
 //        gost19265.addGradeToStandard(grades800);
 //
-//// Р6М5К5
+// // Р6М5К5
 //        SteelGrades grades801 = new SteelGrades(
 //                "Р6М5К5",
 //                "Быстрорежущая (Вольфрам 6%, Молибден 5%, Кобальт 5%). Повышенная теплостойкость.",
@@ -2831,7 +3084,7 @@ const templateSelectOptions = {
 //        );
 //        gost19265.addGradeToStandard(grades801);
 //
-//// Р9М4Н8
+// // Р9М4Н8
 //        SteelGrades grades802 = new SteelGrades(
 //                "Р9М4Н8",
 //                "Быстрорежущая (Вольфрам 9%, Молибден 4%, Никель 8%). Для высокопрочных материалов.",
@@ -2844,7 +3097,7 @@ const templateSelectOptions = {
 //
 //        this.steelStandardRepository.save(gost19265);
 //
-////801
+// //801
 //        SteelStandard gost801 = new SteelStandard(
 //                "ГОСТ 801-78",
 //                "ГОСТ 801-78: Подшипниковая сталь",
@@ -2853,7 +3106,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// ШХ15
+// // ШХ15
 //        SteelGrades grades810 = new SteelGrades(
 //                "ШХ15",
 //                "Хромистая подшипниковая, около 1.5% Cr. Наиболее распространенная.",
@@ -2864,7 +3117,7 @@ const templateSelectOptions = {
 //        );
 //        gost801.addGradeToStandard(grades810);
 //
-//// ШХ15СГ
+// // ШХ15СГ
 //        SteelGrades grades811 = new SteelGrades(
 //                "ШХ15СГ",
 //                "Хромистая подшипниковая с повышенным содержанием кремния и марганца.",
@@ -2875,7 +3128,7 @@ const templateSelectOptions = {
 //        );
 //        gost801.addGradeToStandard(grades811);
 //
-//// ШХ4
+// // ШХ4
 //        SteelGrades grades812 = new SteelGrades(
 //                "ШХ4",
 //                "Хромистая подшипниковая, около 0.4% Cr.",
@@ -2890,7 +3143,7 @@ const templateSelectOptions = {
 //
 //
 //
-////20072
+// //20072
 //        SteelStandard gost20072 = new SteelStandard(
 //                "ГОСТ 20072-74",
 //                "ГОСТ 20072-74: Теплоустойчивая легированная сталь",
@@ -2899,7 +3152,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 12МХ
+// // 12МХ
 //        SteelGrades grades820 = new SteelGrades(
 //                "12МХ",
 //                "Легированная (Молибден, Хром), около 0.12% С. Для работы до 530°С.",
@@ -2910,7 +3163,7 @@ const templateSelectOptions = {
 //        );
 //        gost20072.addGradeToStandard(grades820);
 //
-//// 12Х1МФ
+// // 12Х1МФ
 //        SteelGrades grades821 = new SteelGrades(
 //                "12Х1МФ",
 //                "Легированная (Хром, Молибден, Ванадий), около 0.12% С. Для работы до 580°С.",
@@ -2921,7 +3174,7 @@ const templateSelectOptions = {
 //        );
 //        gost20072.addGradeToStandard(grades821);
 //
-//// 25Х1МФ
+// // 25Х1МФ
 //        SteelGrades grades822 = new SteelGrades(
 //                "25Х1МФ",
 //                "Легированная (Хром, Молибден, Ванадий), около 0.25% С. Крепежные детали.",
@@ -2932,7 +3185,7 @@ const templateSelectOptions = {
 //        );
 //        gost20072.addGradeToStandard(grades822);
 //
-//// 20ХЭМВФ
+// // 20ХЭМВФ
 //        SteelGrades grades823 = new SteelGrades(
 //                "20ХЭМВФ",
 //                "Легированная (Хром, Кремний, Молибден, Вольфрам, Ванадий), около 0.20% С. Крепежные детали.",
@@ -2943,7 +3196,7 @@ const templateSelectOptions = {
 //        );
 //        gost20072.addGradeToStandard(grades823);
 //
-//// 15Х5М
+// // 15Х5М
 //        SteelGrades grades824 = new SteelGrades(
 //                "15Х5М",
 //                "Легированная (Хром 5%, Молибден). Высокая сопротивляемость окислению.",
@@ -2959,7 +3212,7 @@ const templateSelectOptions = {
 //
 //
 //
-////5632
+// //5632
 //        SteelStandard gost5632 = new SteelStandard(
 //                "ГОСТ 5632-72",
 //                "ГОСТ 5632-72: Высоколегированная сталь и сплавы коррозионностойкие, жаростойкие и жаропрочные",
@@ -2968,7 +3221,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 40Х9С2
+// // 40Х9С2
 //        SteelGrades grades100 = new SteelGrades(
 //                "40Х9С2",
 //                "Жаростойкая (Хром, Кремний), ферритный класс. Клапаны двигателей.",
@@ -2979,7 +3232,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades100);
 //
-//// 40Х10С2М
+// // 40Х10С2М
 //        SteelGrades grades101 = new SteelGrades(
 //                "40Х10С2М",
 //                "Жаростойкая (Хром, Кремний, Молибден). Клапаны двигателей.",
@@ -2990,7 +3243,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades101);
 //
-//// 08Х13
+// // 08Х13
 //        SteelGrades grades102 = new SteelGrades(
 //                "08Х13",
 //                "Коррозионностойкие (Хром), мартенситный класс. Для деталей с повышенной пластичностью.",
@@ -3001,7 +3254,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades102);
 //
-//// 12Х13
+// // 12Х13
 //        SteelGrades grades103 = new SteelGrades(
 //                "12Х13",
 //                "Коррозионностойкие (Хром), мартенситный класс. Для деталей с повышенной пластичностью.",
@@ -3012,7 +3265,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades103);
 //
-//// 20Х13
+// // 20Х13
 //        SteelGrades grades104 = new SteelGrades(
 //                "20Х13",
 //                "Коррозионностойкие (Хром), мартенситный класс. Для деталей с повышенной пластичностью.",
@@ -3023,7 +3276,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades104);
 //
-//// 30Х13
+// // 30Х13
 //        SteelGrades grades105 = new SteelGrades(
 //                "30Х13",
 //                "Коррозионностойкие (Хром), мартенситный класс. Режущий инструмент.",
@@ -3034,7 +3287,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades105);
 //
-//// 40Х13
+// // 40Х13
 //        SteelGrades grades106 = new SteelGrades(
 //                "40Х13",
 //                "Коррозионностойкие (Хром), мартенситный класс. Режущий инструмент.",
@@ -3045,7 +3298,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades106);
 //
-//// 10Х14АГ16
+// // 10Х14АГ16
 //        SteelGrades grades107 = new SteelGrades(
 //                "10Х14АГ16",
 //                "Коррозионностойкая (Хром, Азот, Марганец), аустенитный класс. Немагнитные детали.",
@@ -3056,7 +3309,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades107);
 //
-//// 12Х17
+// // 12Х17
 //        SteelGrades grades108 = new SteelGrades(
 //                "12Х17",
 //                "Коррозионностойкая (Хром), ферритный класс. Для кислых сред.",
@@ -3067,7 +3320,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades108);
 //
-//// 08Х17Т
+// // 08Х17Т
 //        SteelGrades grades109 = new SteelGrades(
 //                "08Х17Т",
 //                "Коррозионностойкие (Хром, Титан), ферритный класс. Сварные конструкции в кислых средах.",
@@ -3078,7 +3331,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades109);
 //
-//// 08Х18Т1
+// // 08Х18Т1
 //        SteelGrades grades110 = new SteelGrades(
 //                "08Х18Т1",
 //                "Коррозионностойкие (Хром, Титан), ферритный класс. Сварные конструкции в кислых средах.",
@@ -3089,7 +3342,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades110);
 //
-//// 95Х18
+// // 95Х18
 //        SteelGrades grades111 = new SteelGrades(
 //                "95Х18",
 //                "Коррозионностойкая (Хром). Высокая твердость и износостойкость.",
@@ -3100,7 +3353,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades111);
 //
-//// 15Х25Т
+// // 15Х25Т
 //        SteelGrades grades112 = new SteelGrades(
 //                "15Х25Т",
 //                "Жаростойкая (Хром, Титан), ферритный класс. Сварные конструкции без ударов.",
@@ -3111,7 +3364,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades112);
 //
-//// 15Х28
+// // 15Х28
 //        SteelGrades grades113 = new SteelGrades(
 //                "15Х28",
 //                "Жаростойкая (Хром), ферритный класс. Сварные конструкции с ударами.",
@@ -3122,7 +3375,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades113);
 //
-//// 20Х23Н13
+// // 20Х23Н13
 //        SteelGrades grades114 = new SteelGrades(
 //                "20Х23Н13",
 //                "Жаропрочные (Хром, Никель), аустенитный класс. Для высоких температур.",
@@ -3133,7 +3386,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades114);
 //
-//// 20Х23Н18
+// // 20Х23Н18
 //        SteelGrades grades115 = new SteelGrades(
 //                "20Х23Н18",
 //                "Жаропрочные (Хром, Никель), аустенитный класс. Для высоких температур.",
@@ -3144,7 +3397,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades115);
 //
-//// 20Н23Н18
+// // 20Н23Н18
 //        SteelGrades grades116 = new SteelGrades(
 //                "20Н23Н18",
 //                "Жаропрочная (Никель, Хром), аустенитный класс. Для работы до 1100°С.",
@@ -3155,7 +3408,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades116);
 //
-//// 10Х23Н18
+// // 10Х23Н18
 //        SteelGrades grades117 = new SteelGrades(
 //                "10Х23Н18",
 //                "Жаропрочная (Хром, Никель), аустенитный класс. Листовые детали до 1100°С.",
@@ -3166,7 +3419,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades117);
 //
-//// 20Х25Н20С2
+// // 20Х25Н20С2
 //        SteelGrades grades118 = new SteelGrades(
 //                "20Х25Н20С2",
 //                "Жаропрочная (Хром, Никель, Кремний). Печные детали до 1100°С.",
@@ -3177,7 +3430,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades118);
 //
-//// 15Х12ВНМФ
+// // 15Х12ВНМФ
 //        SteelGrades grades119 = new SteelGrades(
 //                "15Х12ВНМФ",
 //                "Жаропрочная (Хром, Вольфрам, Никель, Молибден, Ванадий). Для работы до 780°С.",
@@ -3188,7 +3441,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades119);
 //
-//// 20Х12ВНМФ
+// // 20Х12ВНМФ
 //        SteelGrades grades120 = new SteelGrades(
 //                "20Х12ВНМФ",
 //                "Жаропрочная (Хром, Вольфрам, Никель, Молибден, Ванадий). Высоконагруженные детали.",
@@ -3199,7 +3452,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades120);
 //
-//// Х12Н8Г8МФБ
+// // Х12Н8Г8МФБ
 //        SteelGrades grades121 = new SteelGrades(
 //                "Х12Н8Г8МФБ",
 //                "Жаропрочная (Хром, Никель, Марганец, Молибден, Ванадий, Ниобий). Крепежные детали.",
@@ -3210,7 +3463,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades121);
 //
-//// 13Х11Н2В2МФ
+// // 13Х11Н2В2МФ
 //        SteelGrades grades122 = new SteelGrades(
 //                "13Х11Н2В2МФ",
 //                "Жаропрочная (Хром, Никель, Вольфрам, Молибден, Ванадий). Ответственные нагруженные детали.",
@@ -3221,7 +3474,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades122);
 //
-//// 45Х14Н14В2М
+// // 45Х14Н14В2М
 //        SteelGrades grades123 = new SteelGrades(
 //                "45Х14Н14В2М",
 //                "Жаропрочная (Хром, Никель, Вольфрам, Молибден). Детали арматуры и трубопроводов.",
@@ -3232,7 +3485,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades123);
 //
-//// 40Х15Н7Г7Ф2МС
+// // 40Х15Н7Г7Ф2МС
 //        SteelGrades grades124 = new SteelGrades(
 //                "40Х15Н7Г7Ф2МС",
 //                "Жаропрочная (Хром, Никель, Марганец, Ванадий, Молибден, Кремний). Для работы до 650°С.",
@@ -3243,7 +3496,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades124);
 //
-//// 08Х17Н13М21
+// // 08Х17Н13М21
 //        SteelGrades grades125 = new SteelGrades(
 //                "08Х17Н13М21",
 //                "Коррозионностойкая (Хром, Никель, Молибден). Сварные металлоконструкции.",
@@ -3254,7 +3507,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades125);
 //
-//// 10Х17Н3М2Т
+// // 10Х17Н3М2Т
 //        SteelGrades grades126 = new SteelGrades(
 //                "10Х17Н3М2Т",
 //                "Коррозионностойкая (Хром, Никель, Молибден, Титан). Крепежные детали.",
@@ -3265,7 +3518,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades126);
 //
-//// 03Х17Н14М2
+// // 03Х17Н14М2
 //        SteelGrades grades127 = new SteelGrades(
 //                "03Х17Н14М2",
 //                "Коррозионностойкая (Хром, Никель, Молибден), низкоуглеродистая. Химическое оборудование.",
@@ -3276,7 +3529,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades127);
 //
-//// 03Х17Н14М3
+// // 03Х17Н14М3
 //        SteelGrades grades128 = new SteelGrades(
 //                "03Х17Н14М3",
 //                "Коррозионностойкая (Хром, Никель, Молибден), низкоуглеродистая. Повышенная стойкость в агрессивных средах.",
@@ -3287,7 +3540,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades128);
 //
-//// 08Х17Н13М2Т
+// // 08Х17Н13М2Т
 //        SteelGrades grades129 = new SteelGrades(
 //                "08Х17Н13М2Т",
 //                "Коррозионностойкая (Хром, Никель, Молибден, Титан). Повышенная устойчивость к высоким температурам и хлоридам.",
@@ -3298,7 +3551,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades129);
 //
-//// 31Х19Н9МВБТ
+// // 31Х19Н9МВБТ
 //        SteelGrades grades130 = new SteelGrades(
 //                "31Х19Н9МВБТ",
 //                "Жаропрочная (Хром, Никель, Молибден, Вольфрам, Ниобий, Титан). Сварные металлоконструкции.",
@@ -3309,7 +3562,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades130);
 //
-//// 10Х14Г14Н4Т
+// // 10Х14Г14Н4Т
 //        SteelGrades grades131 = new SteelGrades(
 //                "10Х14Г14Н4Т",
 //                "Коррозионностойкая (Хром, Марганец, Никель, Титан). Для работы до -253°С.",
@@ -3320,7 +3573,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades131);
 //
-//// 14Х17Н2
+// // 14Х17Н2
 //        SteelGrades grades132 = new SteelGrades(
 //                "14Х17Н2",
 //                "Коррозионностойкая (Хром, Никель), мартенситно-ферритный класс. Компрессорные машины.",
@@ -3331,7 +3584,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades132);
 //
-//// 12Х18Н9
+// // 12Х18Н9
 //        SteelGrades grades133 = new SteelGrades(
 //                "12Х18Н9",
 //                "Коррозионностойкая (Хром, Никель), аустенитный класс. Холоднокатаные листы и ленты.",
@@ -3342,7 +3595,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades133);
 //
-//// 17Х18Н9
+// // 17Х18Н9
 //        SteelGrades grades134 = new SteelGrades(
 //                "17Х18Н9",
 //                "Коррозионностойкая (Хром, Никель), аустенитный класс. Холоднокатаные листы и ленты.",
@@ -3353,7 +3606,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades134);
 //
-//// 08Х18Н10
+// // 08Х18Н10
 //        SteelGrades grades135 = new SteelGrades(
 //                "08Х18Н10",
 //                "Коррозионностойкие (Хром, Никель, Титан), аустенитный класс. Наиболее распространенные.",
@@ -3364,7 +3617,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades135);
 //
-//// 08Х18Н11
+// // 08Х18Н11
 //        SteelGrades grades136 = new SteelGrades(
 //                "08Х18Н11",
 //                "Коррозионностойкие (Хром, Никель, Титан), аустенитный класс. Наиболее распространенные.",
@@ -3375,7 +3628,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades136);
 //
-//// 08Х18Н10Т
+// // 08Х18Н10Т
 //        SteelGrades grades137 = new SteelGrades(
 //                "08Х18Н10Т",
 //                "Коррозионностойкие (Хром, Никель, Титан), аустенитный класс. Наиболее распространенные.",
@@ -3386,7 +3639,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades137);
 //
-//// 12Х18Н9Т
+// // 12Х18Н9Т
 //        SteelGrades grades138 = new SteelGrades(
 //                "12Х18Н9Т",
 //                "Коррозионностойкие (Хром, Никель, Титан), аустенитный класс. Наиболее распространенные.",
@@ -3397,7 +3650,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades138);
 //
-//// 12Х18Н10Т
+// // 12Х18Н10Т
 //        SteelGrades grades139 = new SteelGrades(
 //                "12Х18Н10Т",
 //                "Коррозионностойкие (Хром, Никель, Титан), аустенитный класс. Наиболее распространенные.",
@@ -3408,7 +3661,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades139);
 //
-//// 12Х18Н12Т
+// // 12Х18Н12Т
 //        SteelGrades grades140 = new SteelGrades(
 //                "12Х18Н12Т",
 //                "Коррозионностойкая (Хром, Никель, Титан), аустенитный класс. Трубный прокат.",
@@ -3419,7 +3672,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades140);
 //
-//// 08Х18Г8Н2Т
+// // 08Х18Г8Н2Т
 //        SteelGrades grades141 = new SteelGrades(
 //                "08Х18Г8Н2Т",
 //                "Коррозионностойкая (Хром, Марганец, Никель, Титан), аустенитный класс. Сварная аппаратура.",
@@ -3430,7 +3683,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades141);
 //
-//// 20Х20Н14С2
+// // 20Х20Н14С2
 //        SteelGrades grades142 = new SteelGrades(
 //                "20Х20Н14С2",
 //                "Жаростойкая (Хром, Никель, Кремний). Детали термических печей.",
@@ -3441,7 +3694,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades142);
 //
-//// Х25Н16Г7АР
+// // Х25Н16Г7АР
 //        SteelGrades grades143 = new SteelGrades(
 //                "Х25Н16Г7АР",
 //                "Жаростойкая (Хром, Никель, Марганец, Азот). Листовой, трубный прокат, проволока.",
@@ -3452,7 +3705,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades143);
 //
-//// 08Х22Н6Т
+// // 08Х22Н6Т
 //        SteelGrades grades144 = new SteelGrades(
 //                "08Х22Н6Т",
 //                "Коррозионностойкая (Хром, Никель, Титан), дуплексный класс. Сварные аппараты под давлением.",
@@ -3463,7 +3716,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades144);
 //
-//// 06ХН28МДТ
+// // 06ХН28МДТ
 //        SteelGrades grades145 = new SteelGrades(
 //                "06ХН28МДТ",
 //                "Коррозионностойкий сплав (Хром, Никель, Молибден, Медь, Титан). Сварные конструкции в кислой среде.",
@@ -3474,7 +3727,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades145);
 //
-//// ХН35ВТ
+// // ХН35ВТ
 //        SteelGrades grades146 = new SteelGrades(
 //                "ХН35ВТ",
 //                "Жаропрочный сплав (Хром, Никель, Вольфрам, Титан). Пружины, крепежные детали.",
@@ -3485,7 +3738,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades146);
 //
-//// ХН35ВТЮ
+// // ХН35ВТЮ
 //        SteelGrades grades147 = new SteelGrades(
 //                "ХН35ВТЮ",
 //                "Жаропрочный сплав (Хром, Никель, Вольфрам, Титан, Алюминий). Детали компрессорных машин.",
@@ -3496,7 +3749,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades147);
 //
-//// ХН70Ю
+// // ХН70Ю
 //        SteelGrades grades148 = new SteelGrades(
 //                "ХН70Ю",
 //                "Жаростойкий сплав (Хром, Никель, Алюминий). Работа при невысоких температурах.",
@@ -3507,7 +3760,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades148);
 //
-//// ХН70ВМЮТ
+// // ХН70ВМЮТ
 //        SteelGrades grades149 = new SteelGrades(
 //                "ХН70ВМЮТ",
 //                "Жаропрочный сплав (Хром, Никель, Вольфрам, Молибден, Алюминий, Титан). Крепежные детали.",
@@ -3518,7 +3771,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades149);
 //
-//// ХН70ВМЮФ
+// // ХН70ВМЮФ
 //        SteelGrades grades150 = new SteelGrades(
 //                "ХН70ВМЮФ",
 //                "Жаропрочный сплав (Хром, Никель, Вольфрам, Молибден, Алюминий, Ванадий). Тяжелонагруженные детали.",
@@ -3529,7 +3782,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades150);
 //
-//// ХН77ТЮР
+// // ХН77ТЮР
 //        SteelGrades grades151 = new SteelGrades(
 //                "ХН77ТЮР",
 //                "Жаропрочный сплав (Хром, Никель, Титан, Алюминий, Бор). Тяжелонагруженные детали.",
@@ -3540,7 +3793,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades151);
 //
-//// ХН78Т
+// // ХН78Т
 //        SteelGrades grades152 = new SteelGrades(
 //                "ХН78Т",
 //                "Жаропрочный сплав (Хром, Никель, Титан). Для работы до 1100°С.",
@@ -3551,7 +3804,7 @@ const templateSelectOptions = {
 //        );
 //        gost5632.addGradeToStandard(grades152);
 //
-//// ХН80ТБО
+// // ХН80ТБО
 //        SteelGrades grades153 = new SteelGrades(
 //                "ХН80ТБО",
 //                "Жаропрочный сплав (Хром, Никель, Титан, Ниобий, Бор). Крепежные детали.",
@@ -3569,7 +3822,7 @@ const templateSelectOptions = {
 //
 //
 //
-////997
+// //997
 //        SteelStandard gost977 = new SteelStandard(
 //                "ГОСТ 977-88",
 //                "ГОСТ 977-88: Стали для отливок нелегированные и легированные конструкционные и легированные со специальными свойствами",
@@ -3578,7 +3831,7 @@ const templateSelectOptions = {
 //                ""
 //        );
 //
-//// 15Л
+// // 15Л
 //        SteelGrades grades50 = new SteelGrades(
 //                "15Л",
 //                "Нелегированная конструкционная для отливок, около 0.15% С. Для сварно-литых конструкций с большим объемом сварки.",
@@ -3589,7 +3842,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades50);
 //
-//// 20Л
+// // 20Л
 //        SteelGrades grades51 = new SteelGrades(
 //                "20Л",
 //                "Нелегированная конструкционная для отливок, около 0.20% С. Для сварно-литых конструкций, работающих при температуре до 450°С.",
@@ -3600,7 +3853,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades51);
 //
-//// 25Л
+// // 25Л
 //        SteelGrades grades52 = new SteelGrades(
 //                "25Л",
 //                "Нелегированная конструкционная для отливок, около 0.25% С. Для сварно-литых конструкций под давлением.",
@@ -3611,7 +3864,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades52);
 //
-//// 30Л
+// // 30Л
 //        SteelGrades grades53 = new SteelGrades(
 //                "30Л",
 //                "Нелегированная конструкционная для отливок, около 0.30% С. Для деталей, работающих под средними нагрузками.",
@@ -3622,7 +3875,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades53);
 //
-//// 35Л
+// // 35Л
 //        SteelGrades grades54 = new SteelGrades(
 //                "35Л",
 //                "Нелегированная конструкционная для отливок, около 0.35% С. Для деталей, работающих под средними нагрузками.",
@@ -3633,7 +3886,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades54);
 //
-//// 40Л
+// // 40Л
 //        SteelGrades grades55 = new SteelGrades(
 //                "40Л",
 //                "Нелегированная конструкционная для отливок, около 0.40% С. Для деталей, работающих при температуре до 400°С.",
@@ -3644,7 +3897,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades55);
 //
-//// 45Л
+// // 45Л
 //        SteelGrades grades56 = new SteelGrades(
 //                "45Л",
 //                "Нелегированная конструкционная для отливок, около 0.45% С.",
@@ -3655,7 +3908,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades56);
 //
-//// 50Л
+// // 50Л
 //        SteelGrades grades57 = new SteelGrades(
 //                "50Л",
 //                "Нелегированная конструкционная для отливок, около 0.50% С. Для машиностроения.",
@@ -3666,7 +3919,7 @@ const templateSelectOptions = {
 //        );
 //        gost977.addGradeToStandard(grades57);
 //
-//// 45ГЛ
+// // 45ГЛ
 //        SteelGrades grades58 = new SteelGrades(
 //                "45ГЛ",
 //                "Легированная конструкционная для отливок (Марганец), около 0.45% С. Для деталей повышенной прочности.",
@@ -3682,5 +3935,5 @@ const templateSelectOptions = {
 //
 //
 //
-
-
+//
+//

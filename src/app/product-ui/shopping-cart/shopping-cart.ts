@@ -69,10 +69,19 @@ export class ShoppingCart implements OnInit {
                 length: '',
                 threadLength: '',
                 steelGrade: '',
+                productId: '',
+                threadPitch: 0,
+                spannerSize: 0,
+                weightKg: 0,
+                plateDimensions: '',
+                anchorSpecifications: ''
               }
               console.log(this.store.select(ProductSelectors.selectProductById(item.productId))
-                .pipe(take(1)) // Берем только одно значение
+                .pipe(take(1))
                 .subscribe(product => {
+                  console.log('product');
+                  console.log(product);
+                  ob.productId = product?.id!
                   ob.height = product?.height!
                   ob.outerDiameter = product?.outerDiameter!
                   ob.innerDiameter = product?.innerDiameter!
@@ -82,6 +91,11 @@ export class ShoppingCart implements OnInit {
                   ob.length = product?.length!
                   ob.threadLength = product?.threadLength!
                   ob.steelGrade = product?.steelGrade!
+                  ob.threadPitch = product?.threadPitch!
+                  ob.spannerSize = product?.spannerSize!
+                  ob.weightKg = product?.weightKg!
+                  ob.plateDimensions = product?.plateDimensions!
+                  ob.anchorSpecifications = product?.anchorSpecifications!
                 }))
             return ({
               ...ob,

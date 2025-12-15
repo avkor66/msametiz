@@ -3,13 +3,14 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { environment } from '../../../environments/environment';
 import {
-  IBrands,
+  IBrands, IOrderForProfile,
   IOrders, ISeries,
   ISteelGrade,
   ISteelStandard,
   ISupplierMaterials,
   IWasherStandard
 } from "../interfaces/product.interface";
+import {Profile} from "../interfaces/profile.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class AdminService {
   }
 
   getOrdersFromApplications() {
-    return this.http.get<IOrders[]>(this.apiUrlApplications);
+    return this.http.get<{orders:IOrderForProfile[], carts:Profile[]}>(this.apiUrlApplications);
   }
 
   getSteelStandards() {

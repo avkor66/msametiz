@@ -4,7 +4,7 @@ import {map, Observable, tap} from 'rxjs';
 import {Profile, User} from '../interfaces/profile.interface';
 import {Pageable} from '../interfaces/pageable.interface';
 import {environment} from '../../../environments/environment';
-import {IOrders} from "../interfaces/product.interface";
+import {IOrderForProfile, IOrders} from "../interfaces/product.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -74,13 +74,13 @@ export class ProfileService {
   }
 
   loadUserOrders(email: string | undefined) {
-    return this.http.get<IOrders[]>(`${this.apiUrlApplications}/user?email=${email}`, {
+    return this.http.get<IOrderForProfile[]>(`${this.apiUrlApplications}/user?email=${email}`, {
       withCredentials: true
     });
   }
 
   loadUserOrdersByGuestId(guestId: string ) {
-    return this.http.get<IOrders[]>(`${this.apiUrlApplicationsOrders}/guest/${guestId}`, {
+    return this.http.get<IOrderForProfile[]>(`${this.apiUrlApplicationsOrders}/guest/${guestId}`, {
       withCredentials: true
     });
   }

@@ -7,7 +7,7 @@
             <th class="fw-100 text-center" scope="col">Продукт</th>
             <th class="fw-100 text-center" scope="col">Стандарт</th>
             <th class="fw-100 text-center" scope="col">Размеры</th>
-            <th class="fw-200 text-center" scope="col">Комментарий</th>
+            <th class="fw-200 text-center" scope="col">Стоимость</th>
             <th class="fw-100 text-center" scope="col">Дата</th>
             <th class="fw-80" scope="col">Статус</th>
             <th class="fw-330" scope="col">ID</th>
@@ -21,49 +21,42 @@
                 <tr>
                     <th class="p-1 fs-075" scope="row">{{i + 1}}</th>
                     <td class="p-1 fs-090">
-                        <app-popover
-                                [mainContent]="item.contact.name"
-                                [hoverMessage]="item.contact.name + item.contact.email + item.contact.phone">
-                        </app-popover>
+                        {{ guestMe() }}
                     </td>
                     <td class="p-1 fs-090 text-center">
-                        @for (icart of item.cart; track icart) {
-                            {{icart.species }}
-                        }
+                        {{ item.species}}
+
                     </td>
                     <td class="p-1 fs-075 text-left">
                         <p class="mb-0">
-                            {{ item.cart[0].steelGrade }}
+                            {{ item.steelGrade }}
                         </p>
                         <p class="mb-0">
-                            {{ item.cart[0].stateStandard }}
+                            {{ item.stateStandard }}
                         </p>
                     </td>
                     <td class="p-1 fs-080 text-center">
                         <app-popover
-                                [mainContent]="item.cart[0].diameter"
-                                [hoverMessage]="item.cart[0].height + item.cart[0].length + item.cart[0].threadLength">
+                                [mainContent]="item.diameter"
+                                [hoverMessage]="item.height + item.length + item.threadLength">
                         </app-popover>
-                    <td class="p-1 fs-075">{{ item.cart[0].comment }}</td>
+                    <td class="p-1 fs-075">{{ item.price }}</td>
                     <td class="p-1 fs-080 text-center">
                         <p class="mb-0">
-                            {{ item.userMeta.createdAt | date:'dd.MM.yyyy':'Europe/Moscow' }}
+                            {{ item.createdAt | date:'dd.MM.yyyy':'Europe/Moscow' }}
                         </p>
                         <p class="mb-0">
-                            {{ item.userMeta.createdAt | date:'HH:mm':'Europe/Moscow' }}
+                            {{ item.updatedAt | date:'HH:mm':'Europe/Moscow' }}
                         </p>
                     </td>
                     <td class="p-1 fs-075 text-center">{{ item.status }}</td>
                     <td class="p-1 fs-075">
                         <p class="mb-0">
-                            {{ item.guestId }}
-                        </p>
-                        <p class="mb-0">
-                            {{ item.sessionId }}
+                            {{ item.quantity }}
                         </p>
                     </td>
-                    <td class="p-1 fs-090 text-center">{{ item.device }}</td>
-                    <td class="p-1 fs-090 text-primary">{{ item.cart[0].delivery ? 'Нужна доставка' : 'Не нужна доставка' }} </td>
+                    <td class="p-1 fs-090 text-center">{{ item.plateDimensions }}</td>
+                    <td class="p-1 fs-090 text-primary">{{ item.spannerSize }} </td>
                 </tr>
             }
         </tbody>
