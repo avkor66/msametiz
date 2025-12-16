@@ -7,6 +7,7 @@ import {ProfileService} from "../../data/services/profile";
 import {Auth} from "../../auth/auth";
 import {logMessages} from "@angular/build/src/tools/esbuild/utils";
 import {Profile} from "../../data/interfaces/profile.interface";
+import {switchMap, tap} from "rxjs";
 
 @Component({
   selector: 'app-orders-page',
@@ -25,17 +26,21 @@ export class OrdersPage implements OnInit {
   meAccount: Profile | undefined = undefined;
 
   loadOrders() {
-    this.profileService.getMe().subscribe(data => {
-      console.log(data);
-      this.meAccount = data;
-      this.profileService.loadUserOrders(data.email).subscribe(
-        result => {
-          console.log(result);
-          this.data = result;
-        }
+    this.profileService.getMe()
+      .pipe(
+        tap(data => {
+          console.log('data');
+          console.log(data);
+        }),
+        switchMap(data =>
+          this.profileService.loadUserOrders(data.email)
+        )
       )
-
-    })
+      .subscribe(result => {
+        console.log('result');
+        console.log(result);
+        this.data = result;
+      })
   }
 
   ngOnInit() {

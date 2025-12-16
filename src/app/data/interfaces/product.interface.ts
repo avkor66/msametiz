@@ -60,6 +60,13 @@ export interface ICartSmall {
   comment: string
 }
 
+export interface ICartsForAdmin extends IOrders {
+  orders: IOrderForProfile[];
+  createdAt: Date;
+  updatedAt: Date;
+  id: string;
+}
+
 export interface IOrderForProfile {
   anchorSpecifications: string,
   cartId: string,

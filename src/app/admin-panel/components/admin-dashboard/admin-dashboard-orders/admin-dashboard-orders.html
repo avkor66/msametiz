@@ -1,62 +1,121 @@
-<table class="table table-light custom-table-width table-hover align-middle">
-    <thead>
-    <tr>
-        <th class="fw-20 " scope="col">#</th>
-        <th class="fw-130" scope="col">Клиент</th>
-        <th class="fw-100 text-center" scope="col">Продукт</th>
-        <th class="fw-100 text-center" scope="col">Стандарт</th>
-        <th class="fw-100 text-center" scope="col">Размеры</th>
-        <th class="fw-200 text-center" scope="col">Комментарий</th>
-        <th class="fw-100 text-center" scope="col">Дата</th>
-        <th class="fw-80" scope="col">Статус</th>
-        <th class="fw-330" scope="col">ID</th>
-        <th class="fw-80 text-center" scope="col">Device</th>
-        <th class="fw-150" scope="col">Примечание</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="order__wrapper">
+    <ul class="order-header">
+            <li class="order-header__column">&#35;</li>
+            <li class="order-header__column">ID</li>
+            <li class="order-header__column">Клиент</li>
+            <li class="order-header__column">Дата</li>
+            <li class="order-header__column">Статус</li>
+            <li class="order-header__column">Количество</li>
+            <li class="order-header__column">Сумма</li>
+            <li class="order-header__column">Устройство</li>
+            <li class="order-header__column">IP</li>
+            <li class="order-header__column">Примечание</li>
+    </ul>
+    <div class="order-content">
+        @for (item of data | async; track item; let i = $index) {
+            <div class="order-content-line__wrapper">
+                <ul class="order-content-line" (click)="heightTarget($event)" [attr.data-id]="item.id">
+                    <li class="order-content-line__item">
+                        {{i + 1}}
+                    </li>
+                    <li class="order-content-line__item">
+                        {{item.guestId.slice(28,36)}}
+                    </li>
+                    <li class="order-content-line__item">
+                        <app-popover
+                                [mainContent]="item.contact.email"
+                                [hoverMessage]="item.contact.name">
+                        </app-popover>
+                    </li>
+                    <li class="order-content-line__item">
+                        @let date = item.createdAt | date:'dd.MM.yyyy':'Europe/Moscow';
+                        @let time = item.updatedAt | date:'HH:mm':'Europe/Moscow';
+                        <app-popover
+                                [mainContent]="date?.toString()"
+                                [hoverMessage]="time?.toString()">
+                        </app-popover>
+                    </li>
+                    <li class="order-content-line__item">
+                        Неизвестно
+                    </li>
+                    <li class="order-content-line__item text-left">
+                        Деталей: {{item.orders.length}}
+                    </li>
+                    <li class="order-content-line__item">
+                        Считаю
+                    </li>
+                    <li class="order-content-line__item">
+                        {{item.device}}
+                    </li>
+                    <li class="order-content-line__item">
+                        {{ item.userMeta.ip }}
+                    </li>
+                    <li class="order-content-line__item">
+                        Не настроено
+                    </li>
+                </ul>
 
-        @for (item of data.orders; track item; let i = $index) {
-            <tr>
-                <th class="p-1 fs-075" scope="row">{{i + 1}}</th>
-                <td class="p-1 fs-090">
-                    <app-popover
-                            [mainContent]="item.species"
-                            [hoverMessage]="item.diameter">
-                    </app-popover>
-                </td>
-                <td class="p-1 fs-090 text-center">
+                <div
+                    class="order-content__subcontent"
+                    [id]="item.id"
+                    [ngClass]="{'subcontent-height': activeCartId === item.id}"
+                >
+                    <ul class="order-content-subline">
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                        <li class="order-content-subline__item">#</li>
+                    </ul>
+                    @for (order of item.orders; track order.id; let j = $index) {
+                        <ul class="order-content-subline">
+                            <li class="order-content-subline__item">
+                                {{j + 1}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                {{order.species}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                <app-popover
+                                        [mainContent]="order.diameter"
+                                        [hoverMessage]="order.steelGrade">
+                                </app-popover>
+                            </li>
+                            <li class="order-content-subline__item">
+                                {{ order.stateStandard}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                Количество: {{order.quantity}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                {{order.price | currency: 'RUB ' : 'symbol'}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                {{ order.stateStandard}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                Неизвестно
+                            </li>
+                            <li class="order-content-subline__item">
+                                {{order.status}}
+                            </li>
+                            <li class="order-content-subline__item">
+                                Не настроено
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
 
-                </td>
-                <td class="p-1 fs-075 text-left">
-                    <p class="mb-0">
-                    </p>
-                    <p class="mb-0">
-                    </p>
-                </td>
-                <td class="p-1 fs-080 text-center">
-
-                <td class="p-1 fs-075"></td>
-                <td class="p-1 fs-080 text-center">
-                    <p class="mb-0">
-                        {{ item.createdAt | date:'dd.MM.yyyy':'Europe/Moscow' }}
-                    </p>
-                    <p class="mb-0">
-                        {{ item.updatedAt | date:'HH:mm':'Europe/Moscow' }}
-                    </p>
-                </td>
-                <td class="p-1 fs-075 text-center">{{ item.status }}</td>
-                <td class="p-1 fs-075">
-                    <p class="mb-0">
-                        {{ item.stateStandard }}
-                    </p>
-                    <p class="mb-0">
-                        {{ item.steelGrade }}
-                    </p>
-                </td>
-                <td class="p-1 fs-090 text-center">{{ item.quantity }}</td>
-                <td class="p-1 fs-090 text-primary"> </td>
-            </tr>
         }
-    </tbody>
-</table>
+    </div>
+    <div class="order-footer">
+
+    </div>
+
+</div>

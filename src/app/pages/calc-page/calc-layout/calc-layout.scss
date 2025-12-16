@@ -8,6 +8,9 @@
 }
 
 :host{
+  .col-xl-2 {
+    width: max-content;
+  }
   .container-fluid {
     background-color: var(--light-transparent-color);
   }
