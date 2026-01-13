@@ -37,5 +37,5 @@ export const appConfig: ApplicationConfig = {
     provideState(fromCart.cartFeatureKey, fromCart.cartReducer),
     provideEffects([ProductEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
-]
+  ]
 };
